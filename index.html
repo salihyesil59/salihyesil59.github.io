@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salih Yeşil — Mathematical Physics</title>
+<meta name="description" content="Salih Yeşil — MSc student in mathematical physics at Istanbul University. Cosmology, modified gravity, quantum computing, and machine learning for physics.">
+<meta name="author" content="Salih Yeşil">
+<meta name="theme-color" content="#0a0c10">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Salih Yeşil — Mathematical Physics">
+<meta property="og:description" content="Cosmology, modified gravity, quantum computing, and machine learning for physics.">
+<meta property="og:url" content="https://salihyesil59.github.io/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<canvas id="cosmic-web" aria-hidden="true"></canvas>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="#top"><span class="nav__glyph">✦</span> Salih Yeşil</a>
+    <ul class="nav__links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#models">Models</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1Zm0 20a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1ZM1 13a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2H1Zm20 0a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2h-2ZM4.2 5.6a1 1 0 0 1 1.4-1.4l1.4 1.4A1 1 0 0 1 5.6 7L4.2 5.6Zm13.4 13.4a1 1 0 1 1 1.4-1.4l1.4 1.4a1 1 0 0 1-1.4 1.4l-1.4-1.4ZM17.6 7a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 1 1 1.4 1.4L19 7a1 1 0 0 1-1.4 0ZM4.2 19.8a1 1 0 0 1 0-1.4L5.6 17A1 1 0 0 1 7 18.4l-1.4 1.4a1 1 0 0 1-1.4 0Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────── hero ───────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="hero__kicker">MSc Mathematical Physics · Istanbul University</p>
+      <h1 class="hero__name">Salih&nbsp;Yeşil</h1>
+      <p class="hero__lede">
+        I work on the <em>background cosmology of gravity theories that are not general relativity</em> —
+        <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span>, <span class="tex">f(T)</span>,
+        <span class="tex">f(Q)</span>, Gauss–Bonnet — and on the machinery needed to take them seriously:
+        symbolic field equations on one end, Bayesian model comparison against real data on the other.
+        Alongside that, quantum algorithms and fine-tuned language models for physics.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">See the work</a>
+        <a class="btn" href="https://github.com/salihyesil59" rel="me noopener" target="_blank">GitHub ↗</a>
+        <a class="btn" href="https://huggingface.co/salihyesil59" rel="me noopener" target="_blank">Hugging Face ↗</a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>Affiliation</dt><dd>Istanbul University</dd></div>
+        <div><dt>Focus</dt><dd>Modified gravity &amp; dark energy</dd></div>
+        <div><dt>Tools</dt><dd>Python · Wolfram Language · PyTorch</dd></div>
+        <div><dt>Also</dt><dd>Quantum computing · ML for physics</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── research ───────────────────────── -->
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">01</span> Research interests</h2>
+
+      <div class="cards">
+        <article class="card card--topic">
+          <h3>Cosmology &amp; dark energy</h3>
+          <p>
+            Expansion histories <span class="tex">E(z)</span>, distance measures, the BAO ruler, structure
+            growth and <span class="tex">fσ<sub>8</sub></span>. Which dark-energy parametrisations are actually
+            distinguishable by the data, and which only look distinguishable because of the shape
+            that was assumed.
+          </p>
+          <ul class="tagrow">
+            <li>ΛCDM</li><li>CPL / JBP / BA</li><li>PEDE · GEDE</li><li>H₀ tension</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Modified gravity</h3>
+          <p>
+            From an action to observables, symbolically. Curvature-based
+            <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span>, the teleparallel
+            <span class="tex">f(T)</span> and symmetric-teleparallel <span class="tex">f(Q)</span>
+            families, Gauss–Bonnet terms — plus the constraint analysis that says how many degrees
+            of freedom a theory really propagates.
+          </p>
+          <ul class="tagrow">
+            <li>Field equations</li><li>Friedmann equations</li><li>G<sub>eff</sub> &amp; slip</li><li>Mode counting</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Bayesian inference</h3>
+          <p>
+            MCMC parameter estimation, convergence diagnostics, and honest model comparison
+            (AIC/BIC, evidence) — because a modified-gravity model with three extra parameters
+            fitting slightly better is not, on its own, news.
+          </p>
+          <ul class="tagrow">
+            <li>MCMC</li><li>Model selection</li><li>SNe · BAO · CC</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Quantum computing</h3>
+          <p>
+            Reproducing quantum algorithms from the literature and running them on simulators and
+            real backends — currently the quantum permutation algorithm of Yalçınkaya &amp; Gedik
+            (PRA <strong>96</strong>, 062339).
+          </p>
+          <ul class="tagrow">
+            <li>Qiskit</li><li>Algorithm replication</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Machine learning for physics</h3>
+          <p>
+            Fine-tuning open-weight LLMs and vision-language models on physics and mathematical
+            notation: physics question answering, and handwritten-formula → LaTeX transcription.
+          </p>
+          <ul class="tagrow">
+            <li>LoRA / Unsloth</li><li>VLM OCR</li><li>Llama · Qwen</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Scientific software</h3>
+          <p>
+            Research code that other people can actually run: packaged, tested, documented, and
+            verified against limits where the answer is already known. A method that cannot
+            recover general relativity cannot be trusted with anything else.
+          </p>
+          <ul class="tagrow">
+            <li>PyPI</li><li>CI</li><li>Reproducibility</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── projects ───────────────────────── -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">02</span> Projects</h2>
+      <p class="section__lede">Open-source research code. Star counts load live from the GitHub API.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects by topic">
+        <button class="chip is-active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="cosmology" type="button">Cosmology</button>
+        <button class="chip" data-filter="gravity" type="button">Gravity</button>
+        <button class="chip" data-filter="quantum" type="button">Quantum</button>
+        <button class="chip" data-filter="ml" type="button">ML / AI</button>
+        <button class="chip" data-filter="tools" type="button">Tools</button>
+      </div>
+
+      <div class="cards cards--projects" id="project-grid">
+
+        <article class="card card--project" data-topics="cosmology tools" data-repo="CosmoFit">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/CosmoFit" target="_blank" rel="noopener">CosmoFit</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            A Python library for cosmological parameter estimation by MCMC. Modular model framework
+            with curvature supported end to end, and a wide bench of dark-energy models —
+            ΛCDM, wCDM, CPL, JBP, BA, logarithmic DE, PEDE, GEDE, sign-switching Λ, Chaplygin gas,
+            interacting DE — set up so that a fit can be compared rather than just reported.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>MCMC</li><li>PyPI</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/CosmoFit" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://salihyesil59.github.io/CosmoFit/" target="_blank" rel="noopener">Docs ↗</a>
+            <a href="https://pypi.org/project/cosmofit/" target="_blank" rel="noopener">PyPI ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="gravity cosmology" data-repo="wljs-gr-toolkit">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/wljs-gr-toolkit" target="_blank" rel="noopener">wljs-gr-toolkit</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Nine Wolfram Language notebooks for symbolic general relativity and modified gravity.
+            A metric goes in and curvature tensors come out; an action goes in and field equations,
+            Friedmann equations and <span class="tex">E(z)</span> come out — then distances, growth,
+            <span class="tex">G<sub>eff</sub></span>, the teleparallel families, and a Hamiltonian
+            mode count. Every notebook ends in verification cells against known limits.
+          </p>
+          <ul class="tagrow">
+            <li>Wolfram Language</li><li>WLJS Notebook</li><li>f(R) · f(T) · f(Q)</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/wljs-gr-toolkit" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="gravity cosmology" data-repo="CosmoCalc">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/CosmoCalc" target="_blank" rel="noopener">CosmoCalc</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Background cosmology for an <em>arbitrary, user-supplied</em> gravity theory. You hand it
+            your own <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span> or
+            <span class="tex">f(Q)</span> as a symbolic expression plus a reference background, and it
+            integrates out the expansion history that theory actually predicts — the complement to
+            CosmoFit, which fits published models to data.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>SymPy</li><li>Modified gravity</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/CosmoCalc" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="quantum" data-repo="Quantum-Computing">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/Quantum-Computing" target="_blank" rel="noopener">Quantum-Computing</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Notebooks replicating the quantum algorithms of <em>“Optimization and experimental
+            realization of the quantum permutation algorithm”</em> (Yalçınkaya &amp; Gedik, Phys. Rev. A
+            <strong>96</strong>, 062339, 2017).
+          </p>
+          <ul class="tagrow">
+            <li>Jupyter</li><li>Quantum algorithms</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/Quantum-Computing" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://doi.org/10.1103/PhysRevA.96.062339" target="_blank" rel="noopener">Paper ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="ml" data-repo="qwen3vl-8b-latex">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/qwen3vl-8b-latex" target="_blank" rel="noopener">qwen3VL-LaTeX</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Qwen3-VL 8B fine-tuned to turn handwritten or printed mathematics into LaTeX — from an
+            image of a formula, or from a plain-language description of one. Trained with a bias
+            toward the notation physics actually uses: integrals, matrices, Dirac brackets.
+          </p>
+          <ul class="tagrow">
+            <li>VLM</li><li>Unsloth</li><li>Math OCR</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/qwen3vl-8b-latex" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://huggingface.co/salihyesil59/qwen3VL_Latex" target="_blank" rel="noopener">Model card ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="ml" data-repo="llama3.1-8b-physics">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">llama3.1-8b-physics</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Llama 3.1 8B fine-tuned on physics, for explanation and question answering — the FLRW
+            metric, expansion history, and the rest of the standard graduate vocabulary.
+          </p>
+          <ul class="tagrow">
+            <li>LLM</li><li>Fine-tuning</li><li>Physics QA</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://huggingface.co/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">Model card ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="tools" data-repo="antenna-length-calculator">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/antenna-length-calculator" target="_blank" rel="noopener">antenna-length-calculator</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            A small utility for monopole and dipole antenna lengths at a given frequency — the kind
+            of thing worth writing once instead of re-deriving on paper every time.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Electromagnetics</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/antenna-length-calculator" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── models ───────────────────────── -->
+  <section class="section" id="models">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">03</span> Open-weight models</h2>
+      <p class="section__lede">Published on the Hugging Face Hub — free to download and run locally.</p>
+
+      <ul class="modellist">
+        <li>
+          <a href="https://huggingface.co/salihyesil59/qwen3VL_Latex" target="_blank" rel="noopener">
+            <span class="modellist__name">qwen3VL_Latex</span>
+            <span class="modellist__meta">Vision-language · 8B · image → LaTeX</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://huggingface.co/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">
+            <span class="modellist__name">llama3.1-8b-physics</span>
+            <span class="modellist__meta">Causal LM · 8B · physics question answering</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── contact ───────────────────────── -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">04</span> Contact</h2>
+      <p class="section__lede">
+        Open to collaboration on modified-gravity phenomenology, cosmological data analysis, or
+        anything at the intersection of machine learning and theoretical physics.
+      </p>
+      <ul class="linklist">
+        <li><a href="https://github.com/salihyesil59" rel="me noopener" target="_blank">GitHub <span>salihyesil59</span></a></li>
+        <li><a href="https://huggingface.co/salihyesil59" rel="me noopener" target="_blank">Hugging Face <span>salihyesil59</span></a></li>
+        <li><a id="mail-link" href="#">Email <span data-mail>click to reveal</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Salih Yeşil · signature <span class="tex">(−,+,+,+)</span> · static page, no trackers</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
