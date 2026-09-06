@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Salih Yeşil — Mathematical Physics</title>
-<meta name="description" content="Salih Yeşil — MSc student in mathematical physics at Istanbul University. Cosmology, modified gravity, quantum computing, and machine learning for physics.">
+<meta name="description" content="Salih Yeşil — MSc student in mathematical physics at Istanbul University. Cosmology, modified gravity, string theory, quantum computing, and machine learning for physics.">
 <meta name="author" content="Salih Yeşil">
 <meta name="theme-color" content="#0a0c10">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Salih Yeşil — Mathematical Physics">
-<meta property="og:description" content="Cosmology, modified gravity, quantum computing, and machine learning for physics.">
+<meta property="og:description" content="Cosmology, modified gravity, string theory, quantum computing, and machine learning for physics.">
 <meta property="og:url" content="https://salihyesil59.github.io/">
 <meta name="twitter:card" content="summary">
 
@@ -54,7 +54,8 @@
         <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span>, <span class="tex">f(T)</span>,
         <span class="tex">f(Q)</span>, Gauss–Bonnet — and on the machinery needed to take them seriously:
         symbolic field equations on one end, Bayesian model comparison against real data on the other.
-        Alongside that, quantum algorithms and fine-tuned language models for physics.
+        Alongside that: the bosonic string as something to simulate rather than quote, quantum
+        algorithms, and fine-tuned language models for physics.
       </p>
 
       <div class="hero__actions">
@@ -67,7 +68,7 @@
         <div><dt>Affiliation</dt><dd>Istanbul University</dd></div>
         <div><dt>Focus</dt><dd>Modified gravity &amp; dark energy</dd></div>
         <div><dt>Tools</dt><dd>Python · Wolfram Language · PyTorch</dd></div>
-        <div><dt>Also</dt><dd>Quantum computing · ML for physics</dd></div>
+        <div><dt>Also</dt><dd>String theory · Quantum computing · ML</dd></div>
       </dl>
     </div>
   </section>
@@ -102,6 +103,19 @@
           </p>
           <ul class="tagrow">
             <li>Field equations</li><li>Friedmann equations</li><li>G<sub>eff</sub> &amp; slip</li><li>Mode counting</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>String theory</h3>
+          <p>
+            The bosonic string treated as something to compute with rather than quote: worldsheet
+            dynamics and the Virasoro constraints, the light-cone spectrum, the critical dimension
+            falling out of the conformal anomaly, compactification and T-duality, D-branes, and
+            tree-level amplitudes.
+          </p>
+          <ul class="tagrow">
+            <li>Worldsheet</li><li>Light-cone quantisation</li><li>T-duality</li><li>D-branes</li>
           </ul>
         </article>
 
@@ -165,6 +179,7 @@
         <button class="chip is-active" data-filter="all" type="button">All</button>
         <button class="chip" data-filter="cosmology" type="button">Cosmology</button>
         <button class="chip" data-filter="gravity" type="button">Gravity</button>
+        <button class="chip" data-filter="strings" type="button">Strings</button>
         <button class="chip" data-filter="quantum" type="button">Quantum</button>
         <button class="chip" data-filter="ml" type="button">ML / AI</button>
         <button class="chip" data-filter="tools" type="button">Tools</button>
@@ -213,23 +228,23 @@
           </footer>
         </article>
 
-        <article class="card card--project" data-topics="gravity cosmology" data-repo="CosmoCalc">
+        <article class="card card--project" data-topics="strings tools" data-repo="string-th">
           <header class="card__head">
-            <h3><a href="https://github.com/salihyesil59/CosmoCalc" target="_blank" rel="noopener">CosmoCalc</a></h3>
+            <h3><a href="https://github.com/salihyesil59/string-th" target="_blank" rel="noopener">string-th</a></h3>
             <span class="stars" data-stars hidden>—</span>
           </header>
           <p class="card__desc">
-            Background cosmology for an <em>arbitrary, user-supplied</em> gravity theory. You hand it
-            your own <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span> or
-            <span class="tex">f(Q)</span> as a symbolic expression plus a reference background, and it
-            integrates out the expansion history that theory actually predicts — the complement to
-            CosmoFit, which fits published models to data.
+            A simulation toolkit for the bosonic string. It solves the worldsheet equations
+            numerically, counts the quantum states, identifies which particle each vibration is,
+            and reproduces the classic results — the critical dimension, the Regge trajectory,
+            T-duality, D-brane gauge symmetry, the Veneziano amplitude — as computed output rather
+            than quoted facts. Anything that can be checked two ways is checked two ways.
           </p>
           <ul class="tagrow">
-            <li>Python</li><li>SymPy</li><li>Modified gravity</li><li>MIT</li>
+            <li>Python</li><li>Worldsheet</li><li>D-branes</li><li>Animations</li><li>MIT</li>
           </ul>
           <footer class="card__links">
-            <a href="https://github.com/salihyesil59/CosmoCalc" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://github.com/salihyesil59/string-th" target="_blank" rel="noopener">Repository ↗</a>
           </footer>
         </article>
 
