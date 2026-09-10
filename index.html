@@ -85,10 +85,11 @@
             Expansion histories <span class="tex">E(z)</span>, distance measures, the BAO ruler, structure
             growth and <span class="tex">fσ<sub>8</sub></span>. Which dark-energy parametrisations are actually
             distinguishable by the data, and which only look distinguishable because of the shape
-            that was assumed.
+            that was assumed — which is also the case for reconstructing those functions with no
+            model at all, where the method itself becomes part of the error budget.
           </p>
           <ul class="tagrow">
-            <li>ΛCDM</li><li>CPL / JBP / BA</li><li>PEDE · GEDE</li><li>H₀ tension</li>
+            <li>ΛCDM</li><li>CPL / JBP / BA</li><li>PEDE · GEDE</li><li>Reconstruction</li><li>H₀ tension</li>
           </ul>
         </article>
 
@@ -205,6 +206,29 @@
             <a href="https://github.com/salihyesil59/CosmoFit" target="_blank" rel="noopener">Repository ↗</a>
             <a href="https://salihyesil59.github.io/CosmoFit/" target="_blank" rel="noopener">Docs ↗</a>
             <a href="https://pypi.org/project/cosmofit/" target="_blank" rel="noopener">PyPI ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="cosmology tools" data-repo="CosmoRecon">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/CosmoRecon" target="_blank" rel="noopener">CosmoRecon</a></h3>
+            <span class="stars" data-stars hidden>—</span>
+          </header>
+          <p class="card__desc">
+            Model-independent reconstruction of <span class="tex">H(z)</span>,
+            <span class="tex">d<sub>L</sub>(z)</span> and <span class="tex">fσ<sub>8</sub>(z)</span> — and then
+            the question the field mostly does not answer: how much of that result is the method
+            rather than the measurement? A reconstruction is carried as a posterior over functions,
+            as draws rather than a curve with error bars, so correlations survive every operation;
+            significance is computed in the eigenbasis of the statistic's own covariance, with the
+            effective degrees of freedom measured rather than assumed.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Gaussian processes</li><li>Null tests</li><li>Pre-alpha</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/CosmoRecon" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://github.com/salihyesil59/CosmoRecon/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
           </footer>
         </article>
 
