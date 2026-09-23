@@ -54,7 +54,7 @@
         <span class="tex">f(R)</span>, <span class="tex">f(R,T)</span>, <span class="tex">f(T)</span>,
         <span class="tex">f(Q)</span>, Gauss–Bonnet — and on the machinery needed to take them seriously:
         symbolic field equations on one end, Bayesian model comparison against real data on the other.
-        Alongside that: the bosonic string as something to simulate rather than quote, quantum
+        Alongside that: string theory as something to simulate rather than quote, quantum
         algorithms, and fine-tuned language models for physics.
       </p>
 
@@ -110,13 +110,13 @@
         <article class="card card--topic">
           <h3>String theory</h3>
           <p>
-            The bosonic string treated as something to compute with rather than quote: worldsheet
-            dynamics and the Virasoro constraints, the light-cone spectrum, the critical dimension
-            falling out of the conformal anomaly, compactification and T-duality, D-branes, and
-            tree-level amplitudes.
+            The string treated as something to compute with rather than quote: worldsheet dynamics
+            and the Virasoro constraints, the light-cone spectrum, the critical dimension falling
+            out of the conformal anomaly, compactification and T-duality, orbifolds, D-branes, and
+            the superstring and heterotic constructions built on top of all of it.
           </p>
           <ul class="tagrow">
-            <li>Worldsheet</li><li>Light-cone quantisation</li><li>T-duality</li><li>D-branes</li>
+            <li>Worldsheet</li><li>Light-cone quantisation</li><li>T-duality</li><li>Orbifolds</li><li>Superstrings</li>
           </ul>
         </article>
 
@@ -219,9 +219,11 @@
             <span class="tex">d<sub>L</sub>(z)</span> and <span class="tex">fσ<sub>8</sub>(z)</span> — and then
             the question the field mostly does not answer: how much of that result is the method
             rather than the measurement? A reconstruction is carried as a posterior over functions,
-            as draws rather than a curve with error bars, so correlations survive every operation;
-            significance is computed in the eigenbasis of the statistic's own covariance, with the
-            effective degrees of freedom measured rather than assumed.
+            as draws rather than a curve with error bars, so correlations survive every null test —
+            <span class="tex">Om</span>, curvature, distance duality, litmus, growth–geometry.
+            Significance is computed in the eigenbasis of the statistic's own covariance with the
+            effective degrees of freedom measured rather than counted, and a method ensemble splits
+            a published error bar into the part the data measured and the part the method chose.
           </p>
           <ul class="tagrow">
             <li>Python</li><li>Gaussian processes</li><li>Null tests</li><li>Pre-alpha</li><li>MIT</li>
@@ -239,16 +241,18 @@
           </header>
           <p class="card__desc">
             An interactive desktop application that teaches cosmology from the size of the universe
-            to inflation and the open problems. 43 lessons across 7 levels, 15 hands-on simulators —
-            from a Hubble-diagram fitter and a CMB power-spectrum explorer to 2D N-body structure
-            formation and a slow-roll inflation model graded against Planck and BICEP/Keck — plus
-            quizzes with explained answers, a glossary, and a physics engine verified against astropy.
+            to the open problems at the frontier. 53 lessons across 8 levels, each readable two ways
+            — the story in words, or every formula and derivation — and 24 simulators standing on
+            real data: Pantheon+ supernovae, SPARC rotation curves, the WMAP sky, an SDSS slice.
+            Quizzes with spaced repetition, worked problem sets, a 184-term glossary, classroom mode
+            and PDF printing, on a physics engine verified against astropy.
           </p>
           <ul class="tagrow">
-            <li>Python</li><li>Qt</li><li>Education</li><li>Simulators</li>
+            <li>Python</li><li>Qt</li><li>Education</li><li>Real data</li><li>TR / EN</li><li>MIT</li>
           </ul>
           <footer class="card__links">
             <a href="https://github.com/salihyesil59/cosmos" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://github.com/salihyesil59/cosmos/releases/tag/v0.1.0" target="_blank" rel="noopener">Release v0.1.0 ↗</a>
             <a href="https://github.com/salihyesil59/cosmos/blob/main/ROADMAP.md" target="_blank" rel="noopener">Roadmap ↗</a>
           </footer>
         </article>
@@ -279,14 +283,15 @@
             <span class="stars" data-stars hidden>—</span>
           </header>
           <p class="card__desc">
-            A simulation toolkit for the bosonic string. It solves the worldsheet equations
-            numerically, counts the quantum states, identifies which particle each vibration is,
-            and reproduces the classic results — the critical dimension, the Regge trajectory,
-            T-duality, D-brane gauge symmetry, the Veneziano amplitude — as computed output rather
-            than quoted facts. Anything that can be checked two ways is checked two ways.
+            A simulation toolkit for string theory. It solves the worldsheet equations numerically —
+            bosons by leapfrog, fermions by Lax–Wendroff — counts the quantum states, and reproduces
+            the classic results as computed output rather than quoted facts: the critical dimension,
+            the Regge trajectory, T-duality, orbifold twisted sectors, all five superstring theories
+            and the two heterotic lattices. It starts with the bosonic string and each layer is
+            required to reproduce the one below it. Anything checkable two ways is checked two ways.
           </p>
           <ul class="tagrow">
-            <li>Python</li><li>Worldsheet</li><li>D-branes</li><li>Animations</li><li>MIT</li>
+            <li>Python</li><li>Worldsheet</li><li>Superstrings</li><li>Heterotic</li><li>Animations</li><li>MIT</li>
           </ul>
           <footer class="card__links">
             <a href="https://github.com/salihyesil59/string-th" target="_blank" rel="noopener">Repository ↗</a>
