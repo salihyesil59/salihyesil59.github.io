@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.2 From Data to a Number: Likelihood, χ² and 5σ · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.2 From Data to a Number: Likelihood, χ² and 5σ</h1><p class="lead">How a table of measurements becomes &quot;Ωm = 0.33 ± 0.02&quot;. The likelihood, the chi-squared, what a sigma really means, and why cosmologists let a random walker do the work.</p><p class="meta">≈ 20 min read · Before this: <a href="../lessons/L7_1.html">L7.1</a>, <a href="../lessons/L3_3.html">L3.3</a> · Simulators: <a href="../simulators.html#S19">Likelihood &amp; MCMC Explorer</a>, <a href="../simulators.html#S16">Supernova Ia Discovery</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>How a model plus data gives a likelihood</li>
+<li>Why χ² is the likelihood in disguise, and what χ²/dof tells you</li>
+<li>What "5σ" means, and what it does not</li>
+<li>Why parameters are estimated with a random walk (MCMC) rather than a formula</li>
+</ul></td></tr></table>
+<h2>The question behind every number</h2>
+<p>Papers end with statements like <img src="../assets/img/0aaeabd9f6c8c3cb.png" width="141" height="14" style="vertical-align: middle"/>. Where
+does such a line come from? Always from the same three ingredients:</p>
+<ol>
+<li>a <strong>model</strong> that predicts what should be measured, for each set of parameters;</li>
+<li>a <strong>likelihood</strong> that scores how well a prediction matches the data;</li>
+<li>a way to <strong>explore</strong> the parameters and report the range that survives.</li>
+</ol>
+<h2>Step 1: the likelihood</h2>
+<p>Suppose each measurement <img src="../assets/img/2899eea7ee963bc2.png" width="14" height="16" style="vertical-align: middle"/> has a Gaussian uncertainty <img src="../assets/img/73463bf9d71c7643.png" width="16" height="12" style="vertical-align: middle"/> and the
+model predicts <img src="../assets/img/ed781ef832a3b2ed.png" width="41" height="18" style="vertical-align: middle"/> for parameters <img src="../assets/img/35a722e64e17c28f.png" width="8" height="13" style="vertical-align: middle"/>. The probability of getting
+the data you actually got is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/16ced38063cd0f37.png" width="282" height="45" /></p>
+<p>Multiplying thousands of small numbers is numerically hopeless, so everyone works
+with its logarithm, and the constants in front do not depend on <img src="../assets/img/35a722e64e17c28f.png" width="8" height="13" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/cd0a3046ff63d2cd.png" width="505" height="45" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">χ² is not a separate idea</b></p><p>For Gaussian errors, <strong>minimising χ² and maximising the likelihood are the same
+operation</strong>. Every point contributes the square of its miss, measured in units of
+its own error bar. A point that misses by 2σ costs four times as much as one that
+misses by 1σ.</p></td></tr></table>
+<h2>Step 2: reading χ²</h2>
+<p>The minimum value of χ² says how good the best fit is. With <img src="../assets/img/f493e39889dbe532.png" width="14" height="12" style="vertical-align: middle"/> data points and
+<img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> fitted parameters there are <img src="../assets/img/e1ee3a085f2d34ed.png" width="42" height="13" style="vertical-align: middle"/> <strong>degrees of freedom</strong>, and each one
+should contribute about 1:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/c478d250c9776c8f.png" width="96" height="24" /></p>
+<ul>
+<li>Much larger than 1: the model is wrong, or the error bars are too small.</li>
+<li>Much smaller than 1: the error bars are too large (or correlated errors have
+  been treated as independent — the usual reason in cosmology).</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">What the app gets</b></p><p>Fitting the real Pantheon+ supernovae in the simulators here gives χ²/dof ≈ 0.44.
+That is not a miraculous fit: the bundled errors are the diagonal ones only, and
+the published analysis uses a full covariance matrix that ties nearby supernovae
+together. The best-fit parameters survive this simplification; the error bars are
+the part you should not quote.</p></td></tr></table>
+<h2>Step 3: error bars from the curvature</h2>
+<p>Move one parameter away from its best value and χ² rises. How far you may move
+before the fit becomes unacceptable <strong>is</strong> the error bar:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/bc46c741fdcbc27f.png" width="521" height="24" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/19bd07aa225e2081.png" width="640" height="340" /></p>
+<p>A sharp, narrow parabola means a precise measurement; a shallow one means the
+data barely care about that parameter. For a contour in <strong>two</strong> parameters the
+thresholds are larger (Δχ² = 2.30 and 6.17 for 68% and 95%), because two things
+are being allowed to vary at once.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">What 5σ does and does not mean</b></p><p>"5σ" says: <em>if there were no effect, data this extreme would appear by chance
+about once in 3.5 million times.</em> It is a statement about randomness only. It
+says nothing about a miscalibrated telescope, an unnoticed selection effect or a
+wrong model — and those are what usually go wrong. Several 5σ results in the
+history of physics were systematics, not discoveries.</p></td></tr></table>
+<h2>Step 4: exploring the parameters</h2>
+<p>With two parameters you can simply compute χ² on a grid, as simulator S16 does.
+With six — the standard ΛCDM set — a grid of 100 points per axis needs 10¹²
+evaluations. Nobody does that. Instead a <strong>random walker</strong> explores the parameter
+space: this is <a href="../glossary.html#mcmc" title="A random walk through parameter space that visits each region in proportion to its posterior probability. The density of visited points is the measurement, error bars and correlations included." style="color:#c7771a; text-decoration:none;">Markov chain Monte Carlo</a>.</p>
+<p>The Metropolis rule is three lines:</p>
+<ol>
+<li>From the current parameters, propose a nearby set.</li>
+<li>Compute the likelihood there. If it is better, move.</li>
+<li>If it is worse by a factor <img src="../assets/img/b7b93e1781ab4aa2.png" width="8" height="9" style="vertical-align: middle"/>, move anyway with probability <img src="../assets/img/b7b93e1781ab4aa2.png" width="8" height="9" style="vertical-align: middle"/>; otherwise
+   stay where you are and write the current point down again.</li>
+</ol>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/2aee663bba75f204.png" width="640" height="340" /></p>
+<p>Run this long enough and the density of recorded points <strong>is</strong> the posterior
+distribution. The mean of the cloud is the measurement, its width is the error
+bar, and its tilt is the correlation between parameters.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">The three numbers that tell you a chain is healthy</b></p><ul>
+<li><strong>Acceptance rate</strong> — around 25% for a few parameters. Near 0% or 100% means
+  the proposal step is the wrong size.</li>
+<li><strong>Burn-in</strong> — the walker starts wherever you put it; those first steps are
+  discarded.</li>
+<li><strong>R̂</strong> — start several walkers far apart. If they end up describing the same
+  distribution, R̂ ≈ 1. Above about 1.01, they have not converged.</li>
+</ul></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Likelihood &amp; MCMC Explorer</b></p><p style='margin:0;'>Run the chain on the real supernovae, then set the proposal step to 0.005 and to 0.4 and watch the acceptance rate, the shape of the cloud and the effective sample size.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S19" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Likelihood &amp; MCMC Explorer</b></a></p></td></tr></table>
+<h2>Priors, briefly</h2>
+<p>A likelihood tells you how well parameters fit the data; a <strong>prior</strong> says what
+you believed before. Multiplying them gives the <strong>posterior</strong>, which is what a
+chain samples. In cosmology most priors are deliberately dull — "Ωm is between 0
+and 1" — but they matter whenever the data are weak, and honest papers say what
+they used.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>A model plus Gaussian errors gives a likelihood; <img src="../assets/img/fe1ef40bb828df4f.png" width="50" height="13" style="vertical-align: middle"/> is χ².</li>
+<li>χ²/dof near 1 means the model and the error bars are both plausible.</li>
+<li>Error bars come from how fast χ² rises: Δχ² = 1, 4, 25 for 1σ, 2σ, 5σ.</li>
+<li>A sigma counts randomness only; systematics are a separate, harder argument.</li>
+<li>MCMC turns parameter estimation into a walk, and the cloud of visited points is
+  the answer, error bars and correlations included.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="7"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="0"><p><b>1.</b> For Gaussian errors, minimising χ² is the same as:</p><ol type="a"><li><button type="button" data-index="0">Maximising the likelihood</button></li><li><button type="button" data-index="1">Minimising the number of parameters</button></li><li><button type="button" data-index="2">Maximising the number of data points</button></li><li><button type="button" data-index="3">Setting all the error bars equal</button></li></ol><p class="explanation" hidden>−2 ln L = χ² plus a constant, so the two operations find the same best fit.</p></div><div class="question" data-answer="1"><p><b>2.</b> A fit to 1000 points with 3 free parameters gives χ² = 2500. What does that suggest?</p><ol type="a"><li><button type="button" data-index="0">An excellent fit</button></li><li><button type="button" data-index="1">χ²/dof ≈ 2.5: the model is probably wrong or the error bars are too small</button></li><li><button type="button" data-index="2">The error bars are too large</button></li><li><button type="button" data-index="3">Nothing can be said</button></li></ol><p class="explanation" hidden>There are 997 degrees of freedom, so each should contribute about 1; 2.5 per point is a poor fit.</p></div><div class="question" data-answer="2"><p><b>3.</b> How far may a single parameter move from its best-fit value before the fit is 5σ worse?</p><ol type="a"><li><button type="button" data-index="0">Δχ² = 1</button></li><li><button type="button" data-index="1">Δχ² = 5</button></li><li><button type="button" data-index="2">Δχ² = 25</button></li><li><button type="button" data-index="3">Δχ² = 125</button></li></ol><p class="explanation" hidden>For one parameter the thresholds are Δχ² = n², so 5σ corresponds to Δχ² = 25.</p></div><div class="question" data-answer="1"><p><b>4.</b> A result is quoted at 5σ. Which statement is correct?</p><ol type="a"><li><button type="button" data-index="0">The result cannot be wrong</button></li><li><button type="button" data-index="1">Random fluctuations would produce data this extreme about once in 3.5 million times; systematic errors are a separate question</button></li><li><button type="button" data-index="2">The systematic errors are certainly under control</button></li><li><button type="button" data-index="3">The model has been proved</button></li></ol><p class="explanation" hidden>A sigma counts randomness only. Several historical 5σ claims turned out to be instrumental systematics.</p></div><div class="question" data-answer="1"><p><b>5.</b> Why do cosmologists use MCMC instead of computing χ² on a grid?</p><ol type="a"><li><button type="button" data-index="0">Grids are less accurate</button></li><li><button type="button" data-index="1">With six or more parameters a grid needs an impossible number of evaluations, while a chain follows the probability</button></li><li><button type="button" data-index="2">MCMC needs no model</button></li><li><button type="button" data-index="3">Because it is faster for one parameter</button></li></ol><p class="explanation" hidden>A 100-point grid in six dimensions is 10¹² evaluations; a chain samples where the probability actually is.</p></div><div class="question" data-answer="2"><p><b>6.</b> In a Metropolis chain, what happens to a proposal that fits the data worse than the current point?</p><ol type="a"><li><button type="button" data-index="0">It is always rejected</button></li><li><button type="button" data-index="1">It is always accepted</button></li><li><button type="button" data-index="2">It is accepted with a probability equal to the likelihood ratio</button></li><li><button type="button" data-index="3">The chain stops</button></li></ol><p class="explanation" hidden>Accepting worse points with probability r is what lets the walker explore the whole distribution instead of sliding into the nearest minimum.</p></div><div class="question" data-answer="1"><p><b>7.</b> Four chains started in four different corners give R̂ = 1.35 for Ωm. What should you do?</p><ol type="a"><li><button type="button" data-index="0">Quote the mean of the four chains</button></li><li><button type="button" data-index="1">Run longer or fix the proposal step: the chains have not converged</button></li><li><button type="button" data-index="2">Discard three of the chains</button></li><li><button type="button" data-index="3">Report a 5σ detection</button></li></ol><p class="explanation" hidden>R̂ compares the spread within each chain with the spread between them; well above 1 means they are still describing different distributions.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_1.html">◀ L7.1 Reading a Scientific Plot</a><a href="../lessons/L7_3.html">L7.3 MCMC in Practice: Degeneracies, Combined Probes and Convergence ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L6.1 Minimal General Relativity: Metrics, Geodesics and the FLRW Metric · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 6 · Advanced Topics</p><h1>L6.1 Minimal General Relativity: Metrics, Geodesics and the FLRW Metric</h1><p class="lead">The mathematical language of cosmology. How a metric describes distances in curved spacetime, why free particles follow geodesics, and the metric of the expanding universe.</p><p class="meta">≈ 25 min read · Before this: <a href="../lessons/L2_6.html">L2.6</a>, <a href="../lessons/L0_4.html">L0.4</a> · Simulators: <a href="../simulators.html#S8">Curvature Visualizer</a>, <a href="../simulators.html#S9">Spacetime &amp; Horizon Diagram</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>What a metric is and how it measures distances and times</li>
+<li>Light cones, proper time and the flat spacetime of special relativity</li>
+<li>Geodesics as the paths of freely moving particles and light</li>
+<li>The Friedmann–Lemaître–Robertson–Walker (FLRW) metric and its three geometries</li>
+</ul></td></tr></table>
+<h2>Why a new language?</h2>
+<p>In lesson <a href="../lessons/L0_4.html">L0.4</a> we saw Einstein's idea: gravity is the curvature of
+<a href="../glossary.html#spacetime" title="The four-dimensional combination of three space dimensions and time used in relativity. In general relativity mass and energy curve spacetime." style="color:#c7771a; text-decoration:none;">spacetime</a>. To do calculations with this idea, physicists need a way to
+describe curved spaces precisely. The key tool is the <a href="../glossary.html#metric" title="The rule that gives the distance (or time interval) ds between nearby points of a space or spacetime, and so defines its geometry." style="color:#c7771a; text-decoration:none;">metric</a>: a rule that
+tells you the distance between two nearby points.</p>
+<p>This lesson introduces just enough of the mathematics to understand how cosmologists
+write down the geometry of the universe. No calculus beyond small differences is
+needed.</p>
+<h2>Distances on a flat sheet</h2>
+<p>On a flat sheet of paper with coordinates <img src="../assets/img/2f175a049ed49689.png" width="10" height="9" style="vertical-align: middle"/> and <img src="../assets/img/525f9bf0df222bca.png" width="9" height="12" style="vertical-align: middle"/>, Pythagoras gives the distance
+<img src="../assets/img/a1597a12ce05ea5f.png" width="17" height="13" style="vertical-align: middle"/> between two nearby points:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/cac50d5668314fc9.png" width="144" height="24" /></p>
+<p>In polar coordinates <img src="../assets/img/ce2de38e011a6eec.png" width="40" height="18" style="vertical-align: middle"/> the same flat space looks different:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/60da42ac9bd91f99.png" width="168" height="24" /></p>
+<p>The coefficients in front of <img src="../assets/img/6f55c26bef9c8fea.png" width="26" height="17" style="vertical-align: middle"/> and <img src="../assets/img/2f5ea2fba70939c2.png" width="29" height="20" style="vertical-align: middle"/> change, but the geometry does not.
+A metric encodes geometry <em>independently</em> of the coordinates you choose.</p>
+<h2>Distances on a sphere</h2>
+<p>On a sphere of radius <img src="../assets/img/daa7b5d152edf912.png" width="13" height="13" style="vertical-align: middle"/>, using the polar angle <img src="../assets/img/35a722e64e17c28f.png" width="8" height="13" style="vertical-align: middle"/> and longitude <img src="../assets/img/33e6282306ade26c.png" width="10" height="16" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/a4e7eaad9d8a468c.png" width="240" height="24" /></p>
+<p>The factor <img src="../assets/img/99248b4ff1db6d88.png" width="40" height="17" style="vertical-align: middle"/> says that circles of latitude shrink towards the poles. No
+choice of coordinates can turn this into the flat metric: the sphere is <strong>intrinsically
+curved</strong>. An ant living on the surface could detect it by measuring triangles
+(lesson <a href="../lessons/L2_5.html">L2.5</a>).</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Curvature Visualizer</b></p><p style='margin:0;'>Compare triangles on a sphere, on a plane and in hyperbolic space, and read how much their angle sums differ from 180°.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S8" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Curvature Visualizer</b></a></p></td></tr></table>
+<h2>Spacetime: adding time with a minus sign</h2>
+<p>Special relativity (1905) combines space and time. In flat spacetime, the
+<strong>Minkowski metric</strong> is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/6ba705d5c6c507f6.png" width="290" height="24" /></p>
+<p>The minus sign in front of time changes everything:</p>
+<ul>
+<li><img src="../assets/img/5b50d0714cd53923.png" width="54" height="17" style="vertical-align: middle"/>: the two events can be connected by something slower than light. The
+  <a href="../glossary.html#proper-time" title="The time measured by a clock moving along a path through spacetime. Clocks in stronger gravity or moving faster record less proper time." style="color:#c7771a; text-decoration:none;">proper time</a> <img src="../assets/img/496c049868d5ad63.png" width="113" height="26" style="vertical-align: middle"/> is the time measured by a
+  clock travelling between them.</li>
+<li><img src="../assets/img/f4e049a18c7007ab.png" width="54" height="17" style="vertical-align: middle"/>: the events are connected by a light ray. These <strong>null</strong> directions form
+  the <strong>light cone</strong>.</li>
+<li><img src="../assets/img/efc6de5cc3e6e09a.png" width="54" height="17" style="vertical-align: middle"/>: the events are too far apart in space for any signal to connect them.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The light cone</b></p><p>Every event has a future light cone (all places light can reach from it) and a past
+light cone (all events that can have influenced it). Nothing travels outside the light
+cone. In an expanding universe the light cones bend, which produces the horizons of
+lesson <a href="../lessons/L2_6.html">L2.6</a>.</p></td></tr></table>
+<h2>Geodesics: the straightest possible paths</h2>
+<p>On a curved surface there are no truly straight lines, but there are
+<a href="../glossary.html#geodesic" title="The straightest possible path in a curved space or spacetime. In general relativity freely falling particles and light rays follow geodesics." style="color:#c7771a; text-decoration:none;">geodesics</a>: paths that are locally as straight as possible, like great
+circles on the Earth that aircraft follow.</p>
+<p>General relativity states:</p>
+<ul>
+<li><strong>Free particles</strong> (feeling no forces other than gravity) follow timelike geodesics:
+  the paths that make their proper time as long as possible.</li>
+<li><strong>Light</strong> follows null geodesics, with <img src="../assets/img/f4e049a18c7007ab.png" width="54" height="17" style="vertical-align: middle"/> everywhere along the path.</li>
+</ul>
+<p>Gravity is not a force pulling objects off straight lines; objects simply follow
+geodesics of curved spacetime.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Clocks in gravity</b></p><p>Near a mass, the time part of the metric is multiplied by <img src="../assets/img/41c351c290de095d.png" width="113" height="21" style="vertical-align: middle"/>. Clocks
+closer to the mass tick more slowly. For GPS satellites this general-relativistic effect
+makes their clocks run about 45 microseconds per day faster than clocks on the ground,
+while their orbital speed slows them by about 7 microseconds per day. Without correcting
+the net 38 microseconds, GPS positions would drift by kilometres each day.</p></td></tr></table>
+<h2>Einstein's field equations</h2>
+<p>What decides the curvature? Einstein's field equations, published in 1915:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/5c2b99bc232796d7.png" width="186" height="29" /></p>
+<ul>
+<li><img src="../assets/img/9096d97222bb7d68.png" width="22" height="13" style="vertical-align: middle"/> is the metric, a 4 × 4 table of numbers describing distances in spacetime.</li>
+<li><img src="../assets/img/1c1eb257b8efd698.png" width="28" height="17" style="vertical-align: middle"/>, the <strong>Einstein tensor</strong>, is built from derivatives of the metric and
+  measures curvature.</li>
+<li><img src="../assets/img/d7f000b3a54481f5.png" width="24" height="17" style="vertical-align: middle"/>, the <strong>energy–momentum tensor</strong>, describes the density, pressure and flow of
+  matter and energy.</li>
+<li><img src="../assets/img/b02a30988dceade4.png" width="12" height="13" style="vertical-align: middle"/> is the cosmological constant.</li>
+</ul>
+<p>The indices <img src="../assets/img/0ec0c1d4bc5f1d4d.png" width="28" height="12" style="vertical-align: middle"/> run over time and the three space directions, so this is really ten
+coupled equations. "Matter tells spacetime how to curve" is the right-hand side acting on
+the left.</p>
+<h2>The metric of the universe: FLRW</h2>
+<p>The cosmological principle (lesson <a href="../lessons/L1_3.html">L1.3</a>) is extremely restrictive. A
+spacetime that is homogeneous and isotropic at every moment must have the
+<a href="../glossary.html#flrw-metric" title="The Friedmann–Lemaître–Robertson–Walker metric, the most general description of a homogeneous and isotropic expanding spacetime. It depends only on the scale factor a(t) and the spatial curvature k." style="color:#c7771a; text-decoration:none;">Friedmann–Lemaître–Robertson–Walker metric</a>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/60e4ca9d818d8cf4.png" width="477" height="26" /></p>
+<p>Here:</p>
+<ul>
+<li><img src="../assets/img/44eff626db1682f4.png" width="6" height="12" style="vertical-align: middle"/> is <strong>cosmic time</strong>, measured by observers moving with the expansion;</li>
+<li><img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> is the <strong>scale factor</strong> (lesson <a href="../lessons/L2_1.html">L2.1</a>);</li>
+<li><img src="../assets/img/5132e13bef9cf2c0.png" width="10" height="12" style="vertical-align: middle"/> is the <strong>comoving radial distance</strong>, and <img src="../assets/img/9461040f027a7b46.png" width="26" height="16" style="vertical-align: middle"/> are directions on the sky;</li>
+<li><img src="../assets/img/06058b261cb4249a.png" width="42" height="18" style="vertical-align: middle"/> encodes the curvature of space:</li>
+</ul>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th>Geometry</th>
+<th><img src="../assets/img/06058b261cb4249a.png" width="42" height="18" style="vertical-align: middle"/></th>
+<th>Two-dimensional analogue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Closed (<img src="../assets/img/fef05adeb96aa0ca.png" width="50" height="14" style="vertical-align: middle"/>)</td>
+<td><img src="../assets/img/8e30d3a9da9250da.png" width="80" height="18" style="vertical-align: middle"/></td>
+<td>sphere</td>
+</tr>
+<tr>
+<td>Flat (<img src="../assets/img/9247445b6bad2c7c.png" width="38" height="13" style="vertical-align: middle"/>)</td>
+<td><img src="../assets/img/5132e13bef9cf2c0.png" width="10" height="12" style="vertical-align: middle"/></td>
+<td>plane</td>
+</tr>
+<tr>
+<td>Open (<img src="../assets/img/4f452c671d46cdad.png" width="50" height="13" style="vertical-align: middle"/>)</td>
+<td><img src="../assets/img/b80f921318c2b1ef.png" width="89" height="18" style="vertical-align: middle"/></td>
+<td>saddle</td>
+</tr>
+</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">One function and one number</b></p><p>The whole geometry of a homogeneous, isotropic universe is fixed by the function <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> and
+the curvature <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> with its radius <img src="../assets/img/daa7b5d152edf912.png" width="13" height="13" style="vertical-align: middle"/>. Everything else in this course, from redshift to
+horizons and distances, follows from this metric.</p></td></tr></table>
+<h2>Reading physics from the metric</h2>
+<p><strong>Light and redshift.</strong> For light moving radially, <img src="../assets/img/f4e049a18c7007ab.png" width="54" height="17" style="vertical-align: middle"/> gives
+<img src="../assets/img/8a005b36af46c505.png" width="96" height="18" style="vertical-align: middle"/>. The comoving distance travelled is <img src="../assets/img/af971a57e470e290.png" width="53" height="38" style="vertical-align: middle"/>, the particle
+horizon formula of lesson <a href="../lessons/L2_6.html">L2.6</a>. Two wave crests emitted a time
+<img src="../assets/img/e0d602fa0c93db3b.png" width="21" height="17" style="vertical-align: middle"/> apart arrive <img src="../assets/img/6ac460ca534b3cd1.png" width="104" height="18" style="vertical-align: middle"/> apart, which is exactly
+<img src="../assets/img/787064f4abfac84a.png" width="97" height="18" style="vertical-align: middle"/>.</p>
+<p><strong>Angular sizes.</strong> An object of size <img src="../assets/img/acb24f3f63327001.png" width="8" height="13" style="vertical-align: middle"/> at comoving distance <img src="../assets/img/5132e13bef9cf2c0.png" width="10" height="12" style="vertical-align: middle"/> spans an angle
+<img src="../assets/img/1d83ab69d2e123e3.png" width="82" height="18" style="vertical-align: middle"/>: the angular diameter distance of lesson
+<a href="../lessons/L2_7.html">L2.7</a> with the curvature built in.</p>
+<p><strong>Conformal time.</strong> Defining <img src="../assets/img/b451c9db0d2d848a.png" width="80" height="18" style="vertical-align: middle"/> turns the flat FLRW metric into
+<img src="../assets/img/83b6ba3acbe62b51.png" width="222" height="21" style="vertical-align: middle"/>: Minkowski space multiplied by an
+overall factor. Light then moves at 45° in an <img src="../assets/img/eef1d791b9857c4c.png" width="41" height="18" style="vertical-align: middle"/> diagram.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/25c76575b0893be8.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Spacetime &amp; Horizon Diagram</b></p><p style='margin:0;'>Switch the spacetime diagram between proper distance, comoving distance and conformal time. Watch the light cones straighten out.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S9" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Spacetime &amp; Horizon Diagram</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>A metric <img src="../assets/img/54f78efe3f6edc73.png" width="26" height="17" style="vertical-align: middle"/> gives distances between nearby points and encodes geometry independently
+  of coordinates.</li>
+<li>Spacetime metrics have a minus sign for time; <img src="../assets/img/f4e049a18c7007ab.png" width="54" height="17" style="vertical-align: middle"/> defines light cones.</li>
+<li>Free particles and light follow geodesics of curved spacetime.</li>
+<li>Einstein's equations <img src="../assets/img/13e6ab4bd052783f.png" width="182" height="21" style="vertical-align: middle"/> link curvature to
+  energy and momentum.</li>
+<li>A homogeneous, isotropic universe has the FLRW metric, fixed by <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> and the curvature <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> What does a metric tell you?</p><ol type="a"><li><button type="button" data-index="0">The mass of every object in space</button></li><li><button type="button" data-index="1">The distance or time interval between nearby points, and therefore the geometry</button></li><li><button type="button" data-index="2">The temperature of the universe</button></li><li><button type="button" data-index="3">The speed of every galaxy</button></li></ol><p class="explanation" hidden>A metric such as ds² = dx² + dy² defines distances, and through them angles, areas and curvature.</p></div><div class="question" data-answer="1"><p><b>2.</b> In the Minkowski metric ds² = −c²dt² + dx² + dy² + dz², what does ds² = 0 describe?</p><ol type="a"><li><button type="button" data-index="0">Two events at the same place</button></li><li><button type="button" data-index="1">Events connected by a light ray, forming the light cone</button></li><li><button type="button" data-index="2">Events that can never influence each other</button></li><li><button type="button" data-index="3">An object at rest</button></li></ol><p class="explanation" hidden>Light travels along null paths with ds² = 0; these directions form the light cone.</p></div><div class="question" data-answer="1"><p><b>3.</b> According to general relativity, how does a freely falling particle move?</p><ol type="a"><li><button type="button" data-index="0">In a perfectly straight line in space</button></li><li><button type="button" data-index="1">Along a geodesic, the straightest possible path in curved spacetime</button></li><li><button type="button" data-index="2">In a circle around the nearest mass</button></li><li><button type="button" data-index="3">It does not move</button></li></ol><p class="explanation" hidden>Gravity is not a force pulling objects off straight lines; free particles follow geodesics of spacetime.</p></div><div class="question" data-answer="1"><p><b>4.</b> In the FLRW metric, which quantities fully describe the geometry of a homogeneous, isotropic universe?</p><ol type="a"><li><button type="button" data-index="0">The masses of all galaxies</button></li><li><button type="button" data-index="1">The scale factor a(t) and the spatial curvature k</button></li><li><button type="button" data-index="2">The Hubble constant and the CMB temperature only</button></li><li><button type="button" data-index="3">The positions of all stars</button></li></ol><p class="explanation" hidden>Homogeneity and isotropy leave only one function of time and one curvature constant.</p></div><div class="question" data-answer="1"><p><b>5.</b> Why is conformal time useful in cosmological spacetime diagrams?</p><ol type="a"><li><button type="button" data-index="0">It makes galaxies move faster than light</button></li><li><button type="button" data-index="1">In comoving distance and conformal time, light always travels at 45°</button></li><li><button type="button" data-index="2">It removes dark energy from the equations</button></li><li><button type="button" data-index="3">It equals the age of the universe</button></li></ol><p class="explanation" hidden>dη = c dt/a turns the flat FLRW metric into Minkowski space times a factor, so light cones are straight.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L5_8.html">◀ L5.8 Galaxy Formation: Cooling, Feedback and How Galaxies Live in Their Haloes</a><a href="../lessons/L6_2.html">L6.2 Deriving the Friedmann Equations from Einstein&#x27;s Field Equations ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

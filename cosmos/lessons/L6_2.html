@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L6.2 Deriving the Friedmann Equations from Einstein&#x27;s Field Equations · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 6 · Advanced Topics</p><h1>L6.2 Deriving the Friedmann Equations from Einstein&#x27;s Field Equations</h1><p class="lead">Put the FLRW metric and a perfect fluid into Einstein&#x27;s equations and the equations of cosmology fall out. Learn what general relativity adds to the Newtonian picture.</p><p class="meta">≈ 25 min read · Before this: <a href="../lessons/L6_1.html">L6.1</a>, <a href="../lessons/L2_3.html">L2.3</a> · Simulators: <a href="../simulators.html#S18">Build Your Own Universe</a>, <a href="../simulators.html#S2">Expansion History Explorer</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>The energy–momentum tensor of a perfect fluid</li>
+<li>How the time–time and space–space parts of Einstein's equations give the two Friedmann equations</li>
+<li>Energy conservation in an expanding universe and the fluid equation</li>
+<li>What general relativity adds to the Newtonian derivation</li>
+</ul></td></tr></table>
+<h2>From geometry to dynamics</h2>
+<p>In lesson <a href="../lessons/L2_3.html">L2.3</a> we derived the Friedmann equation from Newtonian energy
+conservation. The argument was elegant but left questions open. What exactly is <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>?
+Why should pressure affect gravity? Does the derivation still hold for radiation or dark
+energy?</p>
+<p>General relativity answers all of these. The recipe has three steps:</p>
+<ol>
+<li>Choose the metric: FLRW (lesson <a href="../lessons/L6_1.html">L6.1</a>).</li>
+<li>Choose the matter: a <strong>perfect fluid</strong> with density <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> and pressure <img src="../assets/img/19dd25c1971dcc94.png" width="9" height="12" style="vertical-align: middle"/>.</li>
+<li>Insert both into Einstein's field equations.</li>
+</ol>
+<p>We will not grind through every derivative, but we will follow the logic and check the
+result.</p>
+<h2>Step 1: the metric</h2>
+<p>For simplicity take flat space. In Cartesian comoving coordinates the FLRW metric is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/c9b3023de1a1d894.png" width="352" height="24" /></p>
+<p>so the metric components are <img src="../assets/img/5b927b188c54bfab.png" width="70" height="20" style="vertical-align: middle"/> and <img src="../assets/img/64fbb389ca0be7fe.png" width="141" height="20" style="vertical-align: middle"/>, with
+all others zero. Curvature adds terms proportional to <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>, which we will restore at the
+end.</p>
+<h2>Step 2: a perfect fluid</h2>
+<p>On large scales every ingredient of the universe behaves as a
+<a href="../glossary.html#perfect-fluid" title="A fluid without viscosity or heat flow, fully described by its energy density and pressure. On large scales every component of the universe behaves as one." style="color:#c7771a; text-decoration:none;">perfect fluid</a>: no viscosity and no heat flow, fully described by its
+energy density <img src="../assets/img/c46f469b28a3566c.png" width="25" height="20" style="vertical-align: middle"/> and pressure <img src="../assets/img/19dd25c1971dcc94.png" width="9" height="12" style="vertical-align: middle"/>. For observers moving with the fluid, its
+energy–momentum tensor is simply</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/2f783c6d3e95df8a.png" width="236" height="24" /></p>
+<p>The first entry is the energy density; the other three are the pressure pushing in each
+space direction. By isotropy, the pressure is the same in all directions.</p>
+<h2>Step 3: curvature of the FLRW metric</h2>
+<p>The Einstein tensor is built from second derivatives of the metric. For the FLRW metric,
+all the derivatives involve only <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/>. The results are</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/f09dacd79a70a276.png" width="178" height="30" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/0f979fbbef7a9c5d.png" width="318" height="30" /></p>
+<p>All off-diagonal components vanish, a consequence of homogeneity and isotropy.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Why only two equations?</b></p><p>Einstein's equations are ten equations in general. Symmetry reduces them to two
+independent ones: the time–time part and the three identical space–space parts.</p></td></tr></table>
+<h2>The time–time equation: Friedmann's first equation</h2>
+<p>Setting <img src="../assets/img/0b7bfaa4e62add3b.png" width="137" height="24" style="vertical-align: middle"/> and multiplying by
+<img src="../assets/img/43c54ca47c85afb5.png" width="46" height="21" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/9be862bdfaec3bc6.png" width="201" height="32" /></p>
+<p>This is exactly the Friedmann equation of lesson <a href="../lessons/L2_3.html">L2.3</a>, now with three
+important clarifications:</p>
+<ul>
+<li><img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> includes <strong>all forms of energy</strong> divided by <img src="../assets/img/af1baf4960cff81c.png" width="17" height="17" style="vertical-align: middle"/>: rest mass, radiation, kinetic
+  energy, and dark energy.</li>
+<li><img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> is not a Newtonian energy but the <strong>curvature of space</strong> appearing in the metric.</li>
+<li><img src="../assets/img/b02a30988dceade4.png" width="12" height="13" style="vertical-align: middle"/> appears naturally as a term in the field equations.</li>
+</ul>
+<h2>The space–space equation: acceleration</h2>
+<p>The space–space components give a second equation. Subtracting the first equation from it
+eliminates <img src="../assets/img/23658ba86e8490fb.png" width="17" height="17" style="vertical-align: middle"/> and <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/0b7a7c618906d01a.png" width="200" height="30" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Pressure gravitates</b></p><p>In Newtonian gravity only mass attracts. In general relativity pressure contributes to the
+source of gravity with weight <img src="../assets/img/a13ab9b8ddb0989e.png" width="42" height="21" style="vertical-align: middle"/>. For radiation (<img src="../assets/img/65777055f88c2b86.png" width="70" height="21" style="vertical-align: middle"/>) this doubles its
+gravitational pull. For a cosmological constant, whose pressure is <img src="../assets/img/6410a416b936a292.png" width="68" height="20" style="vertical-align: middle"/>, the
+combination <img src="../assets/img/519b7396ef6491b2.png" width="70" height="21" style="vertical-align: middle"/> is negative: gravity becomes <strong>repulsive</strong> and the expansion
+accelerates. This is impossible to understand in Newtonian terms.</p></td></tr></table>
+<h2>Energy conservation: the fluid equation</h2>
+<p>In general relativity the energy–momentum tensor obeys <img src="../assets/img/ae947884bddbb425.png" width="78" height="18" style="vertical-align: middle"/>, a
+consequence of the field equations themselves. For a perfect fluid in the FLRW metric this
+gives</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/a4899ca3ce940ebe.png" width="164" height="28" /></p>
+<p>It is the first law of thermodynamics, <img src="../assets/img/3c58a707ea7ae066.png" width="85" height="16" style="vertical-align: middle"/>, for a comoving volume
+<img src="../assets/img/b5bbe448683d43bc.png" width="48" height="17" style="vertical-align: middle"/>. For an equation of state <img src="../assets/img/4239546a61132132.png" width="66" height="20" style="vertical-align: middle"/> (lesson <a href="../lessons/L3_1.html">L3.1</a>)
+it integrates to</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/bc6cace6d61e56eb.png" width="113" height="25" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/25cb104d76eeb238.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Check: differentiate the Friedmann equation</b></p><p>Differentiate the first Friedmann equation in time (with <img src="../assets/img/abf956f60893187d.png" width="41" height="14" style="vertical-align: middle"/>) and use the fluid
+equation to replace <img src="../assets/img/f01040c0cdf67d2a.png" width="9" height="16" style="vertical-align: middle"/>. The <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> terms cancel and you obtain precisely the
+acceleration equation. The three equations are not independent: any two imply the third.</p></td></tr></table>
+<h2>Evolving dark energy</h2>
+<p>If dark energy is not a constant but a fluid with a time-dependent equation of state, the
+same machinery still works. A popular description is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/fc255ebafaafa514.png" width="200" height="21" /></p>
+<p>Integrating the fluid equation gives
+<img src="../assets/img/57ed9a63f34d3fa9.png" width="217" height="20" style="vertical-align: middle"/>. Surveys such as DESI fit
+<img src="../assets/img/4e999debba8920f6.png" width="20" height="12" style="vertical-align: middle"/> and <img src="../assets/img/33db6af08f3a828a.png" width="20" height="12" style="vertical-align: middle"/> to test whether dark energy changes with time (lesson
+<a href="../lessons/L6_7.html">L6.7</a>).</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Build Your Own Universe</b></p><p style='margin:0;'>Change w0 and wa in the universe builder and watch the history, the fate and the report card respond.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S18" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Build Your Own Universe</b></a></p></td></tr></table>
+<h2>What the Newtonian derivation got right, and wrong</h2>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th></th>
+<th>Newtonian sphere</th>
+<th>General relativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Friedmann equation form</td>
+<td>✓ same</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Meaning of <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/></td>
+<td>energy of a test particle</td>
+<td>curvature of space</td>
+</tr>
+<tr>
+<td>Pressure as a source of gravity</td>
+<td>missing</td>
+<td><img src="../assets/img/519b7396ef6491b2.png" width="70" height="21" style="vertical-align: middle"/></td>
+</tr>
+<tr>
+<td>Radiation and dark energy</td>
+<td>only by analogy</td>
+<td>included exactly</td>
+</tr>
+<tr>
+<td>Cosmological constant</td>
+<td>added by hand</td>
+<td>natural term in the field equations</td>
+</tr>
+<tr>
+<td>Light, redshift, horizons</td>
+<td>not described</td>
+<td>follow from the metric</td>
+</tr>
+</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Inserting the FLRW metric and a perfect fluid into Einstein's equations leaves two
+  independent equations.</li>
+<li>The time–time part gives <img src="../assets/img/86c44b232b590bdc.png" width="213" height="22" style="vertical-align: middle"/>.</li>
+<li>The space–space part gives <img src="../assets/img/b29fabc22d6a42ee.png" width="233" height="22" style="vertical-align: middle"/>:
+  pressure gravitates, and negative pressure causes acceleration.</li>
+<li>Energy–momentum conservation gives the fluid equation and <img src="../assets/img/63ef12056f3f26c8.png" width="94" height="20" style="vertical-align: middle"/>.</li>
+<li>General relativity turns the Newtonian analogy into an exact theory, with <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> as genuine
+  spatial curvature.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> Which ingredients are inserted into Einstein&#x27;s equations to derive the Friedmann equations?</p><ol type="a"><li><button type="button" data-index="0">The Schwarzschild metric and a point mass</button></li><li><button type="button" data-index="1">The FLRW metric and a perfect fluid with density and pressure</button></li><li><button type="button" data-index="2">Newton&#x27;s law and a rotating disk</button></li><li><button type="button" data-index="3">The CMB power spectrum and supernova data</button></li></ol><p class="explanation" hidden>Symmetry reduces the ten field equations to two independent Friedmann equations.</p></div><div class="question" data-answer="1"><p><b>2.</b> What is the meaning of k in the relativistic Friedmann equation?</p><ol type="a"><li><button type="button" data-index="0">The kinetic energy of a test particle</button></li><li><button type="button" data-index="1">The curvature of space appearing in the FLRW metric</button></li><li><button type="button" data-index="2">Boltzmann&#x27;s constant</button></li><li><button type="button" data-index="3">The number of galaxies</button></li></ol><p class="explanation" hidden>In the Newtonian derivation k looked like an energy; general relativity shows it is spatial curvature.</p></div><div class="question" data-answer="1"><p><b>3.</b> In the acceleration equation, which combination acts as the source of gravity?</p><ol type="a"><li><button type="button" data-index="0">ρ − p/c²</button></li><li><button type="button" data-index="1">ρ + 3p/c²</button></li><li><button type="button" data-index="2">p only</button></li><li><button type="button" data-index="3">ρ only</button></li></ol><p class="explanation" hidden>ä/a = −(4πG/3)(ρ + 3p/c²) + Λc²/3: pressure gravitates, and negative pressure can make gravity repulsive.</p></div><div class="question" data-answer="1"><p><b>4.</b> Which equation follows from conservation of energy and momentum, ∇_μ T^μν = 0?</p><ol type="a"><li><button type="button" data-index="0">The Hubble–Lemaître law</button></li><li><button type="button" data-index="1">The fluid equation ρ̇ + 3H(ρ + p/c²) = 0</button></li><li><button type="button" data-index="2">The Planck spectrum</button></li><li><button type="button" data-index="3">The lens equation</button></li></ol><p class="explanation" hidden>It is the first law of thermodynamics for an expanding volume and gives ρ ∝ a^(−3(1+w)).</p></div><div class="question" data-answer="1"><p><b>5.</b> Why can a cosmological constant accelerate the expansion, which Newtonian gravity cannot explain?</p><ol type="a"><li><button type="button" data-index="0">It has very large mass</button></li><li><button type="button" data-index="1">Its pressure p = −ρc² makes ρ + 3p/c² negative</button></li><li><button type="button" data-index="2">It rotates the universe</button></li><li><button type="button" data-index="3">It creates new galaxies</button></li></ol><p class="explanation" hidden>In general relativity pressure contributes to gravity; strongly negative pressure produces repulsion.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L6_1.html">◀ L6.1 Minimal General Relativity: Metrics, Geodesics and the FLRW Metric</a><a href="../lessons/L6_3.html">L6.3 Inflation: Horizon, Flatness and Monopole Problems, Slow Roll, nₛ and r ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

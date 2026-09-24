@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L2.3 The Friedmann Equations · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 2 · The Expanding Universe</p><h1>L2.3 The Friedmann Equations</h1><p class="lead">Derive the equation that governs the expansion of the universe using nothing more than Newtonian gravity and energy conservation.</p><p class="meta">≈ 22 min read · Before this: <a href="../lessons/L2_1.html">L2.1</a>, <a href="../lessons/L0_4.html">L0.4</a> · Simulators: <a href="../simulators.html#S2">Expansion History Explorer</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>A Newtonian derivation of the Friedmann equation</li>
+<li>The meaning of the curvature term</li>
+<li>The acceleration equation and the role of pressure</li>
+<li>The expansion of a matter-only universe, a ∝ t^(2/3)</li>
+</ul></td></tr></table>
+<h2>The question</h2>
+<p>The scale factor <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> contains the whole history of the universe. What decides
+how it evolves? In 1922 the Russian mathematician <strong>Alexander Friedmann</strong> found
+the answer by solving Einstein's equations for a homogeneous, isotropic universe.
+Lemaître found the same equations independently in 1927.</p>
+<p>The full derivation uses general relativity, but a beautifully simple Newtonian
+argument gives the same result. Let us follow it.</p>
+<h2>An expanding sphere</h2>
+<p>Take a uniform universe with mass density <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/>. Pick any point as the centre
+(every point is equivalent) and draw a sphere of comoving radius <img src="../assets/img/5132e13bef9cf2c0.png" width="10" height="12" style="vertical-align: middle"/>. Its
+proper radius is <img src="../assets/img/ffb32990405dc7f0.png" width="53" height="16" style="vertical-align: middle"/>, and the mass inside is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/01080dca0ec19287.png" width="106" height="25" /></p>
+<p>Now follow a small galaxy of mass <img src="../assets/img/727db7eb75814646.png" width="16" height="9" style="vertical-align: middle"/> on the surface. A remarkable theorem of
+Newton (the <em>shell theorem</em>) says that the matter outside the sphere exerts no net
+force on it, so only <img src="../assets/img/9d617a9666799d0d.png" width="17" height="12" style="vertical-align: middle"/> matters. As the sphere expands, no matter crosses its
+surface, so <img src="../assets/img/9d617a9666799d0d.png" width="17" height="12" style="vertical-align: middle"/> stays constant.</p>
+<h2>Energy conservation</h2>
+<p>The galaxy on the surface of the sphere keeps a constant total energy: the faster
+it moves outwards, the more it has to spend climbing out of the gravity of the
+mass inside. Writing that statement down and tidying it up gives the equation that
+governs the whole universe.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The algebra, step by step</b></p><p>The galaxy's kinetic plus gravitational potential energy is constant:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/22ddd194528159f8.png" width="156" height="32" /></p>
+<p>Substitute <img src="../assets/img/ffb32990405dc7f0.png" width="53" height="16" style="vertical-align: middle"/> and <img src="../assets/img/6a293c1aab9bd61e.png" width="98" height="22" style="vertical-align: middle"/>, then divide by
+<img src="../assets/img/7f6effecf51fccb7.png" width="61" height="21" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/168146847527bba9.png" width="174" height="34" /></p>
+<p>The last term is a constant divided by <img src="../assets/img/86af1169ddaa5178.png" width="18" height="17" style="vertical-align: middle"/>. Writing that constant as <img src="../assets/img/9ab7d043e4e1b027.png" width="38" height="17" style="vertical-align: middle"/>
+gives the <strong>Friedmann equation</strong>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/aa45840aadff10e6.png" width="204" height="32" /></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The first Friedmann equation</b></p><p>The expansion rate squared is set by the density of the universe and by a
+constant <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>. In general relativity, <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> includes all forms of energy
+(<img src="../assets/img/fa1b742144e10484.png" width="62" height="21" style="vertical-align: middle"/>), and <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> describes the <strong>curvature of space</strong>
+(lesson <a href="../lessons/L2_5.html">L2.5</a>).</p></td></tr></table>
+<h2>Three possible fates (for matter only)</h2>
+<p>The energy <img src="../assets/img/30116dea8870ec6d.png" width="13" height="12" style="vertical-align: middle"/>, and therefore <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>, decides the future, just like a ball thrown
+upward from the Earth:</p>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th>Energy</th>
+<th>Curvature</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../assets/img/358b98fa12ccb6c2.png" width="41" height="13" style="vertical-align: middle"/></td>
+<td><img src="../assets/img/300741b2f725933f.png" width="38" height="13" style="vertical-align: middle"/> (open)</td>
+<td>Expands forever, like a ball faster than escape velocity</td>
+</tr>
+<tr>
+<td><img src="../assets/img/522ba96925f90882.png" width="41" height="13" style="vertical-align: middle"/></td>
+<td><img src="../assets/img/9247445b6bad2c7c.png" width="38" height="13" style="vertical-align: middle"/> (flat)</td>
+<td>Expands forever, just barely, slowing towards zero speed</td>
+</tr>
+<tr>
+<td><img src="../assets/img/7ae666a36f001a3a.png" width="41" height="13" style="vertical-align: middle"/></td>
+<td><img src="../assets/img/cef89f7c4c557304.png" width="38" height="13" style="vertical-align: middle"/> (closed)</td>
+<td>Expansion stops and reverses: a <strong><a href="../glossary.html#big-crunch" title="A possible fate in which gravity halts the expansion and the universe collapses back into a hot, dense state. Observations of dark energy make it very unlikely for our universe." style="color:#c7771a; text-decoration:none;">Big Crunch</a></strong></td>
+</tr>
+</tbody>
+</table>
+<p>This neat correspondence between geometry and fate holds when the universe
+contains only matter. Dark energy breaks it, as we will see in Level 3.</p>
+<h2>The acceleration equation</h2>
+<p>Differentiating, or applying Newton's second law to the galaxy directly, gives
+how the expansion speeds up or slows down. General relativity adds one important
+ingredient: <strong>pressure</strong> <img src="../assets/img/19dd25c1971dcc94.png" width="9" height="12" style="vertical-align: middle"/> also gravitates.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/66c4283b4038a197.png" width="150" height="30" /></p>
+<p>For ordinary matter and radiation, <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> and <img src="../assets/img/19dd25c1971dcc94.png" width="9" height="12" style="vertical-align: middle"/> are positive, so <img src="../assets/img/0f1d54ed4e09a6e6.png" width="38" height="13" style="vertical-align: middle"/>:
+gravity decelerates the expansion. A substance with strongly <strong>negative
+pressure</strong>, <img src="../assets/img/9b3c8e6e2e0582cd.png" width="84" height="21" style="vertical-align: middle"/>, makes <img src="../assets/img/5736ecac2ff6325e.png" width="38" height="13" style="vertical-align: middle"/>: accelerated expansion. Keep
+this in mind for dark energy.</p>
+<h2>The fluid equation</h2>
+<p>As the universe expands, the density changes. The first law of thermodynamics
+applied to an expanding volume gives</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/a4899ca3ce940ebe.png" width="164" height="28" /></p>
+<p>For pressureless matter (<img src="../assets/img/a067b50feffd58f4.png" width="37" height="16" style="vertical-align: middle"/>) this means <img src="../assets/img/f92b3f069540de9b.png" width="56" height="20" style="vertical-align: middle"/>: the same mass
+spread over a volume that grows as <img src="../assets/img/2a3f1597bd156bb9.png" width="18" height="17" style="vertical-align: middle"/>. Together, the Friedmann, acceleration
+and fluid equations determine <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> once we know what the universe contains.</p>
+<h2>Example: the Einstein–de Sitter universe</h2>
+<p>Consider a flat universe (<img src="../assets/img/9247445b6bad2c7c.png" width="38" height="13" style="vertical-align: middle"/>) containing only matter, <img src="../assets/img/bd0004c72a738858.png" width="72" height="20" style="vertical-align: middle"/>.
+The Friedmann equation becomes <img src="../assets/img/b775cb864c4b20d3.png" width="64" height="17" style="vertical-align: middle"/>, which is solved by</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/93c0780cc35943ed.png" width="114" height="30" /></p>
+<p>Then <img src="../assets/img/592f3c5cc6acab23.png" width="126" height="18" style="vertical-align: middle"/>, so the age of this universe is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/7826116a82be5a88.png" width="400" height="28" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">The age problem</b></p><p>9.3 billion years is younger than the oldest stars, which are about 12–13 billion
+years old. This "age problem" was one of the hints, before 1998, that the
+matter-only model could not be the whole story.</p></td></tr></table>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/8ec2bb8e2aa082db.png" width="640" height="340" /></p>
+<p>The figure shows <img src="../assets/img/d4368d95d985d865.png" width="29" height="18" style="vertical-align: middle"/> for several models, all passing through <img src="../assets/img/038e070ac052e5da.png" width="38" height="13" style="vertical-align: middle"/> today
+with the same <img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/> (the same slope at <img src="../assets/img/fbb9c9ee4e12336b.png" width="34" height="13" style="vertical-align: middle"/>). Their pasts and futures differ
+dramatically.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Expansion History Explorer</b></p><p style='margin:0;'>Change the matter and dark energy content and watch a(t) and the fate of the universe change.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S2" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Expansion History Explorer</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Newtonian energy conservation for an expanding sphere gives the Friedmann
+  equation <img src="../assets/img/c48dab44542e09d9.png" width="149" height="22" style="vertical-align: middle"/>.</li>
+<li>The constant <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> represents spatial curvature and, for matter only, decides the
+  fate of the universe.</li>
+<li>The acceleration equation shows that pressure gravitates; negative pressure
+  can cause acceleration.</li>
+<li>A flat matter-only universe expands as <img src="../assets/img/f5a8271dd918d54e.png" width="57" height="17" style="vertical-align: middle"/> and has age
+  <img src="../assets/img/32062900598059bb.png" width="41" height="22" style="vertical-align: middle"/>.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> In the Newtonian derivation of the Friedmann equation, which quantity stays constant for a galaxy on the edge of the expanding sphere?</p><ol type="a"><li><button type="button" data-index="0">Its speed</button></li><li><button type="button" data-index="1">Its kinetic plus gravitational potential energy</button></li><li><button type="button" data-index="2">The density inside the sphere</button></li><li><button type="button" data-index="3">The proper radius of the sphere</button></li></ol><p class="explanation" hidden>Energy conservation, ½mṘ² − GMm/R = E, leads directly to the Friedmann equation.</p></div><div class="question" data-answer="1"><p><b>2.</b> In the Friedmann equation H² = (8πG/3)ρ − kc²/a², what does the constant k describe?</p><ol type="a"><li><button type="button" data-index="0">The expansion speed today</button></li><li><button type="button" data-index="1">The curvature of space</button></li><li><button type="button" data-index="2">The temperature</button></li><li><button type="button" data-index="3">The number of galaxies</button></li></ol><p class="explanation" hidden>In general relativity k is the spatial curvature: positive (closed), zero (flat) or negative (open).</p></div><div class="question" data-answer="2"><p><b>3.</b> For a universe containing only matter, which case leads to a Big Crunch?</p><ol type="a"><li><button type="button" data-index="0">k &lt; 0 (open)</button></li><li><button type="button" data-index="1">k = 0 (flat)</button></li><li><button type="button" data-index="2">k &gt; 0 (closed)</button></li><li><button type="button" data-index="3">All of them</button></li></ol><p class="explanation" hidden>k &gt; 0 corresponds to negative total energy E, like a ball thrown slower than escape velocity: the expansion eventually reverses.</p></div><div class="question" data-answer="1"><p><b>4.</b> According to the acceleration equation, what is needed for the expansion to accelerate?</p><ol type="a"><li><button type="button" data-index="0">More ordinary matter</button></li><li><button type="button" data-index="1">A component with strongly negative pressure, p &lt; −ρc²/3</button></li><li><button type="button" data-index="2">Higher temperature</button></li><li><button type="button" data-index="3">Positive curvature</button></li></ol><p class="explanation" hidden>ä/a = −(4πG/3)(ρ + 3p/c²) is positive only if pressure is sufficiently negative.</p></div><div class="question" data-answer="1"><p><b>5.</b> How old is a flat, matter-only (Einstein–de Sitter) universe?</p><ol type="a"><li><button type="button" data-index="0">1/H0</button></li><li><button type="button" data-index="1">2/(3H0)</button></li><li><button type="button" data-index="2">1/(2H0)</button></li><li><button type="button" data-index="3">3/(2H0)</button></li></ol><p class="explanation" hidden>With a ∝ t^(2/3), H = 2/(3t), so t0 = 2/(3H0), about 9.3 billion years for H0 = 70.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L2_2.html">◀ L2.2 Cosmological Redshift vs. Doppler Redshift</a><a href="../lessons/L2_4.html">L2.4 Critical Density and Density Parameters ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

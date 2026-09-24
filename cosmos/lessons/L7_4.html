@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.4 How a Survey Is Built: DESI, Euclid, Rubin and JWST · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.4 How a Survey Is Built: DESI, Euclid, Rubin and JWST</h1><p class="lead">Every number in precision cosmology comes from a survey somebody designed. What a survey needs, why spectroscopy and imaging answer different questions, why volume and galaxy density trade off, and what the big facilities of this decade actually do.</p><p class="meta">≈ 20 min read · Before this: <a href="../lessons/L7_3.html">L7.3</a>, <a href="../lessons/L5_2.html">L5.2</a> · Simulators: <a href="../simulators.html#S21">Survey Designer</a>, <a href="../simulators.html#S13">2D N-body Structure Formation</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>The ingredients of a survey design — area, depth, density, redshift precision and time</li>
+<li>The difference between spectroscopic and photometric surveys, and what each measures best</li>
+<li>Why sample variance and shot noise limit a measurement, and what n̄P tells you</li>
+<li>Why the best survey for a fixed number of galaxies has n̄P close to 1</li>
+<li>What DESI, Euclid, Rubin and JWST are built to do, and how they complement each other</li>
+</ul></td></tr></table>
+<h2>Somebody had to decide</h2>
+<p>The BAO distances of lesson <a href="../lessons/L5_2.html">L5.2</a>, the supernova diagrams of Level 3,
+the lensing maps of Level 5 — each came from a survey whose designers had to choose
+where to point, how long to look, and which objects to measure. Those choices fixed
+the error bars years before the first photon arrived.</p>
+<p>A survey design is a set of trade-offs between five quantities:</p>
+<ol>
+<li><strong>Area</strong> — how much of the sky is covered. The whole sky is about 41 000 deg²;
+   a telescope on the ground sees roughly half of it.</li>
+<li><strong>Depth</strong> — how faint it goes, which sets how far in redshift it reaches.</li>
+<li><strong>Density</strong> — how many objects per unit volume are measured.</li>
+<li><strong>Redshift precision</strong> — spectroscopic or photometric.</li>
+<li><strong>Time</strong> — the one budget that cannot be stretched.</li>
+</ol>
+<h2>Spectroscopy or imaging?</h2>
+<p>A <strong>spectroscopic</strong> survey takes a spectrum of every target and measures its
+redshift from spectral lines to about one part in ten thousand. That gives an exact
+three-dimensional map, ideal for measuring distances with BAO and the growth of
+structure from galaxy velocities. But spectra are expensive: even with thousands of
+fibres observing at once, a survey measures tens of millions of objects, not
+billions.</p>
+<p>An <strong>imaging</strong> survey takes pictures through a few filters. From the colours alone
+it estimates a <a href="../glossary.html#photometric-redshift" title="A redshift estimated from the brightness of a galaxy in a few broad filters instead of from spectral lines. It is cheap enough for billions of galaxies but uncertain by a few percent in 1 + z, which blurs the map along the line of sight." style="color:#c7771a; text-decoration:none;">photometric redshift</a> good to a few percent in
+<img src="../assets/img/302c44df59795d76.png" width="37" height="14" style="vertical-align: middle"/> — too blurred along the line of sight for BAO in one slice, but it can measure
+<strong>billions</strong> of galaxies. Their shapes carry the signal of
+<a href="../glossary.html#weak-lensing" title="Tiny, percent-level distortions of the shapes of distant galaxies caused by intervening mass. Measured statistically, it maps dark matter and the growth of structure (cosmic shear)." style="color:#c7771a; text-decoration:none;">weak gravitational lensing</a>, which weighs the dark matter directly.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Two questions, two instruments</b></p><p>Spectroscopy measures <strong>geometry</strong> — distances and the expansion history — very
+precisely. Imaging measures <strong>growth</strong> — how much matter has clumped — through
+lensing. The strongest constraints come from combining both on the same sky.</p></td></tr></table>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/2ec214a55f3ad4d5.png" width="640" height="340" /></p>
+<h2>What limits a measurement</h2>
+<p>Two kinds of noise set the error bar of a galaxy survey.</p>
+<p><strong>Sample variance.</strong> The survey sees only a finite piece of the universe. Its
+patches of the cosmic web are a random draw, and a small volume contains few
+independent patches. The only cure is more volume.</p>
+<p><strong>Shot noise.</strong> Galaxies are discrete tracers of a smooth density field. With too
+few of them you cannot tell a real overdensity from a random clump; the noise power
+of a set of points is <img src="../assets/img/843f09c63add21b3.png" width="28" height="18" style="vertical-align: middle"/>.</p>
+<p>Which one dominates is decided by a single number: the galaxy density <img src="../assets/img/1fe2688e686cbfc6.png" width="10" height="12" style="vertical-align: middle"/>
+times the clustering power <img src="../assets/img/7fcb6e1e6232b57b.png" width="12" height="12" style="vertical-align: middle"/> at the scale you care about. The survey behaves as if
+it had only an <a href="../glossary.html#effective-volume" title="The volume a galaxy survey is worth once shot noise is taken into account: V_eff = V [n̄P / (1 + n̄P)]². A survey with too few galaxies behaves as if it had mapped only a small part of its real volume. BAO distance errors scale as 1/√V_eff." style="color:#c7771a; text-decoration:none;">effective volume</a></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/dd939e7edfaef42d.png" width="137" height="29" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/97ab7670bc637282.png" width="640" height="340" /></p>
+<ul>
+<li><img src="../assets/img/1b4993785898a6ef.png" width="54" height="13" style="vertical-align: middle"/>: <a href="../glossary.html#shot-noise" title="The noise that comes from sampling a smooth density field with a finite number of discrete objects. Its power is 1/n̄; it dominates when the galaxy density times the clustering power, n̄P, is below about 1." style="color:#c7771a; text-decoration:none;">shot noise</a> dominates and every extra galaxy counts.</li>
+<li><img src="../assets/img/bba55b4f44440160.png" width="54" height="13" style="vertical-align: middle"/>: <a href="../glossary.html#sample-variance" title="The uncertainty that comes from observing only a finite piece of the universe, whose structures are one random realisation. It can be reduced only by covering more volume; on the largest scales even the whole observable universe is a single sample." style="color:#c7771a; text-decoration:none;">sample variance</a> dominates; more galaxies in the same volume are
+  wasted, only more volume helps.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Why the optimum is n̄P = 1</b></p><p>Fix the number of galaxies <img src="../assets/img/f493e39889dbe532.png" width="14" height="12" style="vertical-align: middle"/> and spread them over a volume <img src="../assets/img/1b54fa399d9be482.png" width="10" height="13" style="vertical-align: middle"/>, so
+<img src="../assets/img/da5bdd94ff1411fd.png" width="62" height="18" style="vertical-align: middle"/> and <img src="../assets/img/90b395d86496cdc6.png" width="69" height="18" style="vertical-align: middle"/> with <img src="../assets/img/69c7e66fc206c3fb.png" width="54" height="13" style="vertical-align: middle"/>. Then
+<img src="../assets/img/aee1574f8a0544d9.png" width="144" height="21" style="vertical-align: middle"/>, which is largest at <img src="../assets/img/749121b2a1aa3254.png" width="40" height="13" style="vertical-align: middle"/>: exactly where
+<img src="../assets/img/2609faee7a2e0b02.png" width="50" height="13" style="vertical-align: middle"/>. Covering more sky than that dilutes the galaxies too much; covering
+less wastes them on a volume that is already well sampled.</p></td></tr></table>
+<p>The distance error of a BAO measurement scales as <img src="../assets/img/c4ff999f340fc176.png" width="61" height="24" style="vertical-align: middle"/>, so a
+survey with four times the effective volume halves its error bar.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Survey Designer</b></p><p style='margin:0;'>Start from the BOSS programme and switch to DESI luminous red galaxies. Read the volume, n̄P and the precision, then open "Wide or deep?" to see where the optimum area is.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S21" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Survey Designer</b></a></p></td></tr></table>
+<h2>Which galaxies?</h2>
+<p>Not all galaxies are equally useful. Massive, red, old galaxies live in the densest
+regions and cluster strongly — they have a high <a href="../glossary.html#galaxy-bias" title="How much more strongly a population of galaxies clusters than the underlying matter. Massive red galaxies, living in the densest regions, have a high bias; star-forming galaxies a lower one. A higher bias means more signal per galaxy." style="color:#c7771a; text-decoration:none;">bias</a> — so each one
+carries more signal. Star-forming emission-line galaxies are fainter clusterers but
+easy to find at high redshift. Quasars are rare, so they are shot-noise limited, but
+they are bright enough to reach redshift 2 and beyond. A modern survey targets
+several populations at once, each filling a different range of redshift.</p>
+<h2>The facilities of this decade</h2>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th>Facility</th>
+<th>What it is</th>
+<th>Survey</th>
+<th>Main measurements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DESI</strong></td>
+<td>4-m Mayall telescope, 5000 robotic fibres</td>
+<td>~14 000 deg², spectra of ~40 million galaxies and quasars (2021–2026)</td>
+<td>BAO distances to z ≈ 3.5, growth from galaxy velocities</td>
+</tr>
+<tr>
+<td><strong>Euclid</strong></td>
+<td>1.2-m ESA space telescope, launched 2023</td>
+<td>~14 000 deg², shapes of ~1.5 billion galaxies, spectra of tens of millions</td>
+<td>weak lensing, BAO at 0.9 &lt; z &lt; 1.8</td>
+</tr>
+<tr>
+<td><strong>Rubin LSST</strong></td>
+<td>8.4-m telescope, 3.2-gigapixel camera, first images 2025</td>
+<td>~18 000 deg² every few nights for ten years, ~20 billion galaxies</td>
+<td>weak lensing, millions of supernovae, strong lenses</td>
+</tr>
+<tr>
+<td><strong>JWST</strong></td>
+<td>6.5-m infrared space telescope, launched 2021</td>
+<td>tiny, extremely deep fields</td>
+<td>the first galaxies beyond z = 14, Cepheids and red giants for H0</td>
+</tr>
+</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Why so many?</b></p><p>No single instrument does everything. DESI pins down the expansion history; Euclid
+and Rubin measure how structure grew, with different systematics; JWST checks the
+rungs of the distance ladder and the earliest galaxies. Where they overlap on the
+sky, their cross-correlations cancel many of each other's errors.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">What DESI changed</b></p><p>DESI's first-year BAO measurement, from about six million redshifts, already
+rivalled the combined precision of the surveys that came before it — and, together
+with the CMB and supernovae, hinted that dark energy may evolve with time. Whether
+that hint survives is exactly the kind of question the next lessons are about.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Survey Designer</b></p><p style='margin:0;'>Choose quasars. Why does doubling their density help more than doubling the area? Then add telescope time until the density is no longer diluted.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S21" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Survey Designer</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>A survey trades area, depth, density, redshift precision and time.</li>
+<li>Spectroscopy maps geometry precisely; imaging measures billions of galaxy shapes
+  for lensing.</li>
+<li>Sample variance needs volume, shot noise needs galaxies; <img src="../assets/img/7f49e10316190161.png" width="21" height="13" style="vertical-align: middle"/> says which one
+  limits you, and <img src="../assets/img/3a2137d6c972fe98.png" width="164" height="21" style="vertical-align: middle"/> combines them.</li>
+<li>For a fixed number of galaxies the best design has <img src="../assets/img/a7729616f534013c.png" width="50" height="13" style="vertical-align: middle"/>.</li>
+<li>DESI, Euclid, Rubin and JWST are complementary: geometry, growth, and checks on the
+  distance ladder and the early universe.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="6"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> What does a spectroscopic survey measure better than an imaging survey?</p><ol type="a"><li><button type="button" data-index="0">The shapes of billions of galaxies</button></li><li><button type="button" data-index="1">Precise redshifts, and so an accurate three-dimensional map</button></li><li><button type="button" data-index="2">The number of stars in the Milky Way</button></li><li><button type="button" data-index="3">Nothing: imaging is always better</button></li></ol><p class="explanation" hidden>Spectral lines give redshifts to about 10⁻⁴, precise enough for BAO distances; imaging has photometric redshifts good only to a few percent.</p></div><div class="question" data-answer="0"><p><b>2.</b> Why do weak-lensing surveys use imaging rather than spectroscopy?</p><ol type="a"><li><button type="button" data-index="0">Lensing needs the shapes of enormous numbers of galaxies, which only imaging can measure</button></li><li><button type="button" data-index="1">Spectra cannot be taken of distant galaxies</button></li><li><button type="button" data-index="2">Lensing does not depend on distance</button></li><li><button type="button" data-index="3">Imaging has more precise redshifts</button></li></ol><p class="explanation" hidden>The lensing distortion is about 1% per galaxy, so it must be averaged over billions of shapes.</p></div><div class="question" data-answer="1"><p><b>3.</b> A survey has n̄P = 0.1 at the BAO scale. What limits its precision?</p><ol type="a"><li><button type="button" data-index="0">Sample variance: it needs more volume</button></li><li><button type="button" data-index="1">Shot noise: it needs more galaxies per unit volume</button></li><li><button type="button" data-index="2">Systematic errors</button></li><li><button type="button" data-index="3">Nothing: n̄P = 0.1 is ideal</button></li></ol><p class="explanation" hidden>Below n̄P ≈ 1 the discreteness of the galaxies dominates. The effective volume is only (0.1/1.1)² ≈ 1% of the real volume.</p></div><div class="question" data-answer="2"><p><b>4.</b> A survey with n̄P = 20 doubles its target density in the same area. What happens to its BAO error?</p><ol type="a"><li><button type="button" data-index="0">It halves</button></li><li><button type="button" data-index="1">It falls by √2</button></li><li><button type="button" data-index="2">It barely changes</button></li><li><button type="button" data-index="3">It doubles</button></li></ol><p class="explanation" hidden>At n̄P = 20 the survey is sample-variance limited: V_eff already equals 91% of V, and can only reach 95%.</p></div><div class="question" data-answer="2"><p><b>5.</b> With a fixed number of galaxies, which design gives the smallest BAO error?</p><ol type="a"><li><button type="button" data-index="0">The smallest possible area, observed as densely as possible</button></li><li><button type="button" data-index="1">The whole sky, however thinly</button></li><li><button type="button" data-index="2">The area at which n̄P is about 1</button></li><li><button type="button" data-index="3">Any area gives the same result</button></li></ol><p class="explanation" hidden>V_eff = V[n̄P/(1+n̄P)]² with n̄P ∝ 1/V is largest where n̄P = 1.</p></div><div class="question" data-answer="2"><p><b>6.</b> Which pairing of facility and main strength is correct?</p><ol type="a"><li><button type="button" data-index="0">DESI: shapes of billions of galaxies</button></li><li><button type="button" data-index="1">Rubin LSST: tens of millions of spectra</button></li><li><button type="button" data-index="2">Euclid: weak lensing from space, plus BAO at 0.9 &lt; z &lt; 1.8</button></li><li><button type="button" data-index="3">JWST: a survey of half the sky</button></li></ol><p class="explanation" hidden>DESI is spectroscopic, Rubin is an imaging survey, and JWST observes tiny, very deep fields.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_3.html">◀ L7.3 MCMC in Practice: Degeneracies, Combined Probes and Convergence</a><a href="../lessons/L7_5.html">L7.5 Simulations as Experiments: From Initial Conditions to a Mock Catalogue ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L5.4 The Matter Power Spectrum · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 5 · CMB &amp; Structure Formation</p><h1>L5.4 The Matter Power Spectrum</h1><p class="lead">How strongly is matter clumped on each scale? The power spectrum answers this question, and its shape records the whole history of the early universe.</p><p class="meta">≈ 18 min read · Before this: <a href="../lessons/L5_3.html">L5.3</a> · Simulators: <a href="../simulators.html#S13">2D N-body Structure Formation</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>What the matter power spectrum P(k) measures and how to read it</li>
+<li>The primordial spectrum and the spectral index n_s</li>
+<li>Why the spectrum turns over at the matter–radiation equality scale</li>
+<li>How the amplitude σ8 is defined and how galaxy surveys measure P(k)</li>
+</ul></td></tr></table>
+<h2>Clumpiness, scale by scale</h2>
+<p>The universe is lumpy on some scales and smooth on others. To describe this,
+cosmologists break the density field <img src="../assets/img/dea75233e0eaa58f.png" width="30" height="18" style="vertical-align: middle"/> into waves of different
+wavelengths, exactly like splitting sound into frequencies. Each wave has a
+<strong>wavenumber</strong> <img src="../assets/img/98fdf7305fc78ff4.png" width="66" height="18" style="vertical-align: middle"/>: small <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> means large scales, large <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/> small
+scales.</p>
+<p>The <a href="../glossary.html#matter-power-spectrum" title="The strength of matter density fluctuations as a function of wavenumber k = 2π/λ. It peaks near k ≈ 0.016 h/Mpc, the matter–radiation equality scale." style="color:#c7771a; text-decoration:none;">matter power spectrum</a> <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> is the average squared
+amplitude of the waves with wavenumber <img src="../assets/img/198cb11a00630e2d.png" width="9" height="13" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/188365f05e58c7c6.png" width="273" height="29" /></p>
+<p>In words: a large <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> means strong density fluctuations on scales of about
+<img src="../assets/img/b0458af635180403.png" width="36" height="18" style="vertical-align: middle"/>. The quantity <img src="../assets/img/0f4cbc186b14fb64.png" width="88" height="21" style="vertical-align: middle"/> is the variance of <img src="../assets/img/afbcb9f77d95ff84.png" width="8" height="14" style="vertical-align: middle"/> per logarithmic
+interval of scale.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Units</b></p><p>Wavenumbers are usually quoted in <img src="../assets/img/1d0b5de9b4ffe1d8.png" width="10" height="13" style="vertical-align: middle"/>/Mpc and <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> in (Mpc/<img src="../assets/img/1d0b5de9b4ffe1d8.png" width="10" height="13" style="vertical-align: middle"/>)³, where
+<img src="../assets/img/51c539364eb084cb.png" width="85" height="18" style="vertical-align: middle"/> km/s/Mpc. This removes the uncertainty in the Hubble constant from the
+comparison of surveys.</p></td></tr></table>
+<p>For a <strong>Gaussian random field</strong>, which the early universe was to excellent
+precision, the power spectrum contains <em>all</em> statistical information. It is the
+Fourier-space twin of the correlation function of lesson <a href="../lessons/L5_2.html">L5.2</a>.</p>
+<h2>The primordial spectrum</h2>
+<p>Inflation predicts that the initial fluctuations had a power-law spectrum</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/e556c7050241ad7b.png" width="124" height="22" /></p>
+<p>with <img src="../assets/img/e6a82f5a4c6dd193.png" width="17" height="12" style="vertical-align: middle"/> close to 1. The case <img src="../assets/img/61c7d5abf31d78eb.png" width="45" height="16" style="vertical-align: middle"/> is called <strong>scale-invariant</strong>
+(Harrison–Zel'dovich): the gravitational potential fluctuations have the same
+strength on every scale. Planck measures <img src="../assets/img/2917dd85998e4c94.png" width="134" height="16" style="vertical-align: middle"/>, slightly <em>below</em> 1,
+a key clue about inflation.</p>
+<h2>Processing: the transfer function</h2>
+<p>The spectrum we see today is not the primordial one. Each mode's growth depended on
+<strong>when it entered the horizon</strong>, which the <a href="../glossary.html#transfer-function" title="Describes how the growth of each Fourier mode was modified after it entered the horizon. Modes that entered during radiation domination grew less, so T(k) falls on small scales." style="color:#c7771a; text-decoration:none;">transfer function</a>
+<img src="../assets/img/a9adfcd53d61c447.png" width="32" height="18" style="vertical-align: middle"/> describes:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/38850a6039fab26b.png" width="241" height="24" /></p>
+<ul>
+<li><strong>Large scales</strong> (<img src="../assets/img/6d58c8ca80e562e6.png" width="50" height="17" style="vertical-align: middle"/>) entered the horizon after
+  matter–radiation equality. They grew steadily the whole time: <img src="../assets/img/a7fb847e720e7f1b.png" width="38" height="12" style="vertical-align: middle"/> and
+  <img src="../assets/img/b34024f436415831.png" width="56" height="14" style="vertical-align: middle"/>.</li>
+<li><strong>Small scales</strong> (<img src="../assets/img/b62dfcf341d90355.png" width="50" height="17" style="vertical-align: middle"/>) entered during the radiation era, when
+  growth stalled (the Mészáros effect of lesson <a href="../lessons/L5_3.html">L5.3</a>). The smaller
+  the scale, the longer it waited: <img src="../assets/img/7fcb6e1e6232b57b.png" width="12" height="12" style="vertical-align: middle"/> falls roughly as <img src="../assets/img/5eb78188ba4b827b.png" width="28" height="17" style="vertical-align: middle"/>.</li>
+</ul>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/147a3087c87b2f91.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The turnover measures matter density</b></p><p>The peak of <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> sits at the scale that entered the horizon at matter–radiation
+equality, <img src="../assets/img/7fd4f997fd7b1d4e.png" width="148" height="21" style="vertical-align: middle"/>, a wavelength of about
+400 Mpc/<img src="../assets/img/1d0b5de9b4ffe1d8.png" width="10" height="13" style="vertical-align: middle"/>. Its position depends on <img src="../assets/img/fab8ad657f444357.png" width="34" height="16" style="vertical-align: middle"/>, so the shape of the power
+spectrum measures the total matter density. In 1990 the APM galaxy survey found more
+power on large scales than a universe with <img src="../assets/img/848cf3a7aaf198e1.png" width="53" height="16" style="vertical-align: middle"/> allows: one of the first
+hints of a low-density universe.</p></td></tr></table>
+<p>Two smaller features are imprinted on top:</p>
+<ul>
+<li><strong>Baryon acoustic oscillations</strong>: wiggles of a few percent near
+  <img src="../assets/img/98a8f81c37f520f9.png" width="60" height="13" style="vertical-align: middle"/>–<img src="../assets/img/3ce73b06edc4e3b0.png" width="37" height="13" style="vertical-align: middle"/>/Mpc (lesson <a href="../lessons/L5_2.html">L5.2</a>).</li>
+<li><strong>Baryon suppression</strong>: before recombination baryons could not cluster, so a
+  universe with more baryons has less small-scale power.</li>
+</ul>
+<h2>The amplitude: σ8</h2>
+<p>Instead of <img src="../assets/img/e7629f416743fe53.png" width="13" height="13" style="vertical-align: middle"/>, cosmologists quote <a href="../glossary.html#sigma8" title="The root-mean-square linear matter fluctuation in spheres of radius 8 Mpc/h today, the standard measure of the amplitude of clustering. Planck finds about 0.81." style="color:#c7771a; text-decoration:none;">σ8</a>: the root-mean-square fluctuation of
+matter in spheres of radius 8 Mpc/<img src="../assets/img/1d0b5de9b4ffe1d8.png" width="10" height="13" style="vertical-align: middle"/>, calculated with linear theory. That scale
+was chosen because the galaxy number fluctuations on it are close to 1.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/aec90b433a1f3d83.png" width="385" height="46" /></p>
+<p>where <img src="../assets/img/caea068599442e48.png" width="17" height="13" style="vertical-align: middle"/> is the Fourier transform of a sphere. Planck gives <img src="../assets/img/d7f1bab688886905.png" width="68" height="16" style="vertical-align: middle"/>.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">The S8 tension</b></p><p>Weak gravitational lensing surveys (lesson <a href="../lessons/L5_6.html">L5.6</a>) find
+<img src="../assets/img/7f4ce4ed4466cd81.png" width="125" height="25" style="vertical-align: middle"/> a few percent lower than predicted from the CMB.
+Whether this is a statistical fluke, a systematic error, or new physics (for
+example, massive neutrinos or interacting dark matter) is an active question.</p></td></tr></table>
+<h2>Growth over time</h2>
+<p>All linear modes grow together, so the whole spectrum simply moves up as
+<img src="../assets/img/3f81a1e853d640cc.png" width="45" height="21" style="vertical-align: middle"/>: at redshift 2 the power was about 5.7 times lower than today, at redshift 6
+about 30 times lower. On small scales today, <img src="../assets/img/afbcb9f77d95ff84.png" width="8" height="14" style="vertical-align: middle"/> has exceeded 1 and linear theory
+fails. There, gravity transfers power from large to small scales and <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> rises
+above the linear prediction.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: 2D N-body Structure Formation</b></p><p style='margin:0;'>Change the spectral index n in the N-body simulator. More negative values put more power on large scales and give big coherent filaments; values near zero give many small clumps.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S13" style="color:#2059c4; text-decoration:none;"><b>▶ Open the 2D N-body Structure Formation</b></a></p></td></tr></table>
+<h2>How P(k) is measured</h2>
+<ul>
+<li><strong>Galaxy redshift surveys</strong> (SDSS, 2dFGRS, DESI, Euclid) measure the clustering of
+  galaxies. Galaxies are <strong>biased</strong> tracers: <img src="../assets/img/bb5d7d878ed34304.png" width="76" height="21" style="vertical-align: middle"/>, with a bias
+  <img src="../assets/img/7a453e2996a315d0.png" width="8" height="13" style="vertical-align: middle"/> of order 1–3 that must be modelled.</li>
+<li><strong>Weak lensing</strong> measures the matter itself, dark matter included.</li>
+<li><strong>The Lyman-α forest</strong>: absorption by hydrogen clouds in quasar spectra probes
+  small scales at redshifts 2–5.</li>
+<li><strong>The CMB</strong> measures the primordial spectrum on the largest scales.</li>
+</ul>
+<p>Together they trace the same ΛCDM spectrum over more than three decades in scale,
+from thousands of Mpc down to about 1 Mpc.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li><img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> measures how strongly matter fluctuates on the scale <img src="../assets/img/b0458af635180403.png" width="36" height="18" style="vertical-align: middle"/>.</li>
+<li>The primordial spectrum is almost scale-invariant, <img src="../assets/img/b34024f436415831.png" width="56" height="14" style="vertical-align: middle"/> with
+  <img src="../assets/img/e3570b7717505dc1.png" width="76" height="16" style="vertical-align: middle"/>.</li>
+<li>Modes that entered the horizon in the radiation era grew less: the spectrum peaks
+  at <img src="../assets/img/94f9abe58081f959.png" width="96" height="17" style="vertical-align: middle"/>/Mpc and falls on small scales.</li>
+<li>BAO wiggles and baryon suppression are imprinted on top.</li>
+<li>The amplitude is quoted as <img src="../assets/img/d7f1bab688886905.png" width="68" height="16" style="vertical-align: middle"/>; weak lensing finds slightly lower
+  values (the S8 tension).</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="0"><p><b>1.</b> A large value of P(k) at wavenumber k means...</p><ol type="a"><li><button type="button" data-index="0">strong density fluctuations on scales of about 2π/k</button></li><li><button type="button" data-index="1">that the universe is expanding faster</button></li><li><button type="button" data-index="2">that there are no galaxies at that scale</button></li><li><button type="button" data-index="3">a high CMB temperature</button></li></ol><p class="explanation" hidden>The power spectrum measures the squared amplitude of density waves with wavelength 2π/k.</p></div><div class="question" data-answer="0"><p><b>2.</b> What does the spectral index n_s = 0.965 tell us?</p><ol type="a"><li><button type="button" data-index="0">Primordial fluctuations were slightly stronger on large scales than exact scale invariance</button></li><li><button type="button" data-index="1">The universe is 96.5% dark energy</button></li><li><button type="button" data-index="2">Space is closed</button></li><li><button type="button" data-index="3">Neutrinos are massless</button></li></ol><p class="explanation" hidden>n_s = 1 would be scale-invariant; a value slightly below 1 is a prediction of simple inflation models.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why does the matter power spectrum turn over near k ≈ 0.016 h/Mpc?</p><ol type="a"><li><button type="button" data-index="0">Galaxies stop existing on smaller scales</button></li><li><button type="button" data-index="1">Smaller-scale modes entered the horizon during radiation domination, when growth stalled</button></li><li><button type="button" data-index="2">BAO removes all power there</button></li><li><button type="button" data-index="3">Telescopes cannot measure those scales</button></li></ol><p class="explanation" hidden>The turnover marks the scale entering the horizon at matter–radiation equality; its position depends on Ω_m h.</p></div><div class="question" data-answer="1"><p><b>4.</b> What is σ8?</p><ol type="a"><li><button type="button" data-index="0">The age of the universe in units of 8 billion years</button></li><li><button type="button" data-index="1">The RMS linear matter fluctuation in spheres of radius 8 Mpc/h</button></li><li><button type="button" data-index="2">The number of neutrino species</button></li><li><button type="button" data-index="3">The angle of the first CMB peak</button></li></ol><p class="explanation" hidden>It is the standard measure of the amplitude of matter clustering; Planck gives about 0.81.</p></div><div class="question" data-answer="0"><p><b>5.</b> Why do galaxy surveys not measure the matter power spectrum directly?</p><ol type="a"><li><button type="button" data-index="0">Galaxies are biased tracers, clustering more or less strongly than matter</button></li><li><button type="button" data-index="1">Galaxies do not follow gravity</button></li><li><button type="button" data-index="2">Surveys only measure the CMB</button></li><li><button type="button" data-index="3">The power spectrum cannot be defined for galaxies</button></li></ol><p class="explanation" hidden>P_gal = b² P with a bias b that must be modelled; weak lensing measures the matter itself.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L5_3.html">◀ L5.3 Jeans Instability and Linear Perturbation Growth</a><a href="../lessons/L5_5.html">L5.5 Hierarchical Structure Formation and N-body Simulations ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

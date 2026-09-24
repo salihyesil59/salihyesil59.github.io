@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L5.5 Hierarchical Structure Formation and N-body Simulations · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 5 · CMB &amp; Structure Formation</p><h1>L5.5 Hierarchical Structure Formation and N-body Simulations</h1><p class="lead">Small dark matter halos form first and merge into ever larger ones. Supercomputer simulations follow this process from nearly smooth beginnings to today&#x27;s cosmic web.</p><p class="meta">≈ 20 min read · Before this: <a href="../lessons/L5_4.html">L5.4</a> · Simulators: <a href="../simulators.html#S13">2D N-body Structure Formation</a>, <a href="../simulators.html#S27">Halo Mass Function Explorer</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>How an overdense region stops expanding and collapses into a halo (spherical collapse)</li>
+<li>Why structure forms "bottom-up" in cold dark matter</li>
+<li>How the Press–Schechter model predicts the number of halos of each mass</li>
+<li>How N-body simulations work and what they have revealed</li>
+</ul></td></tr></table>
+<h2>From linear ripples to bound objects</h2>
+<p>Linear theory (lesson <a href="../lessons/L5_3.html">L5.3</a>) works while density contrasts are small.
+Eventually the densest regions reach <img src="../assets/img/111a03af737188ab.png" width="37" height="14" style="vertical-align: middle"/> and something new happens:
+they <strong>detach from the expansion</strong> and collapse under their own gravity.</p>
+<h2>Spherical collapse</h2>
+<p>Picture a slightly overdense sphere in an Einstein–de Sitter universe. It behaves
+like a small closed universe inside the larger one (lesson <a href="../lessons/L2_3.html">L2.3</a>):</p>
+<ol>
+<li>At first it expands with the universe, but more slowly.</li>
+<li>It reaches a maximum size (<strong>turnaround</strong>) and starts to fall back.</li>
+<li>It collapses. In reality the matter does not reach a point: particles pass
+   through the centre and exchange energy until the halo settles into
+   <strong>virial equilibrium</strong>, where kinetic and gravitational energy balance.</li>
+</ol>
+<p>Two famous numbers come out of this model:</p>
+<ul>
+<li>A region collapses when its <strong>linear</strong> density contrast, extrapolated with linear
+  theory, reaches</li>
+</ul>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/80f818fe06070052.png" width="88" height="18" /></p>
+<ul>
+<li>The final halo is about <strong>200 times denser</strong> than the average universe (178 in the
+  simplest model). This is why halo masses are often quoted as <img src="../assets/img/674993a14a4fe840.png" width="36" height="16" style="vertical-align: middle"/>, the mass
+  inside a sphere 200 times denser than the critical density.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">A simple rule</b></p><p>Take the linear density field, smooth it on the scale of a halo, and look for regions
+where it exceeds 1.686. Those regions have collapsed into halos of that mass. This
+simple rule works remarkably well.</p></td></tr></table>
+<h2>Bottom-up: small things first</h2>
+<p>How strongly the density fluctuates depends on the smoothing scale. Using the power
+spectrum of lesson <a href="../lessons/L5_4.html">L5.4</a>, the typical fluctuation <img src="../assets/img/2cbfc141eaaf9c6e.png" width="40" height="18" style="vertical-align: middle"/> is
+<strong>larger for smaller masses</strong>. In cold dark matter:</p>
+<ul>
+<li>small halos reach <img src="../assets/img/27831def8dac9c6b.png" width="14" height="17" style="vertical-align: middle"/> first;</li>
+<li>they later <strong>merge</strong> into larger halos, which merge again;</li>
+<li>galaxy clusters, the largest objects, are still forming today.</li>
+</ul>
+<p>This is <strong>hierarchical</strong> or <strong>bottom-up</strong> <a href="../glossary.html#hierarchical-structure-formation" title="The &quot;bottom-up&quot; growth of structure in cold dark matter: small halos collapse first and merge into ever larger ones, up to galaxy clusters today." style="color:#c7771a; text-decoration:none;">structure formation</a>.
+The opposite "top-down" picture, where huge pancakes form first and fragment,
+applies to <strong>hot dark matter</strong> such as fast neutrinos, which erase small-scale
+fluctuations. Observations of galaxies at very high redshift and of the cosmic web
+rule out hot dark matter as the main component.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">When do typical halos form?</b></p><p>For Planck 2018 parameters, typical (one-sigma) halos of <img src="../assets/img/e0ff8496550b4b38.png" width="62" height="20" style="vertical-align: middle"/> formed around
+redshift 3, Milky Way–sized halos of <img src="../assets/img/2cfde05c01a23846.png" width="68" height="20" style="vertical-align: middle"/> around redshift 0.4, while
+cluster-sized halos of <img src="../assets/img/ebfbe7db92bbed53.png" width="30" height="17" style="vertical-align: middle"/>–<img src="../assets/img/e8e8a2c72776e96d.png" width="68" height="20" style="vertical-align: middle"/> are still rare peaks today. The first
+stars formed in rare, early peaks of much smaller halos at redshift 20–30.</p></td></tr></table>
+<h2>Counting halos: Press–Schechter</h2>
+<p>In 1974 <strong>William Press</strong> and <strong>Paul Schechter</strong> turned this idea into a formula for
+the <a href="../glossary.html#halo-mass-function" title="The number density of dark matter halos as a function of mass and redshift. The Press–Schechter model predicts it from the linear power spectrum; massive clusters are exponentially rare." style="color:#c7771a; text-decoration:none;">halo mass function</a>, the number density of halos of
+each mass. With <img src="../assets/img/0308b957540dd1bf.png" width="106" height="18" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/9cb7ad0c80bbadee.png" width="241" height="33" /></p>
+<p>The exponential makes massive halos extremely sensitive to <img src="../assets/img/7cb94d59bd7f8687.png" width="10" height="9" style="vertical-align: middle"/>: a small change
+in <img src="../assets/img/ebc8bd4edc2d3b16.png" width="17" height="12" style="vertical-align: middle"/> or <img src="../assets/img/244295f35e19e48d.png" width="25" height="16" style="vertical-align: middle"/> changes the number of massive clusters enormously. Counting
+clusters is therefore a powerful cosmological test.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/8530ca93a4f28f80.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Refinements</b></p><p>Press–Schechter captures the physics but underpredicts massive halos by a factor of
+a few. Later versions (Sheth–Tormen, Tinker) are calibrated on simulations and are
+accurate to a few percent.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Halo Mass Function Explorer</b></p><p style='margin:0;'>Switch between Press–Schechter and Sheth–Tormen and compare them at 10¹⁵ M☉/h. Then raise σ8 by ten per cent and count the clusters on the sky.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S27" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Halo Mass Function Explorer</b></a></p></td></tr></table>
+<p>Haloes are only half the story: lesson <a href="../lessons/L5_8.html">L5.8</a> follows the gas that falls into
+them and becomes galaxies.</p>
+<h2>N-body simulations</h2>
+<p>Beyond simple models, cosmologists simulate the universe directly. An
+<a href="../glossary.html#n-body-simulation" title="A computer simulation that follows the gravitational motion of many particles representing dark matter, from nearly smooth initial conditions to the cosmic web and halos of today." style="color:#c7771a; text-decoration:none;">N-body simulation</a> represents dark matter by <img src="../assets/img/f493e39889dbe532.png" width="14" height="12" style="vertical-align: middle"/> particles,
+each weighing millions to billions of solar masses:</p>
+<ol>
+<li><strong>Initial conditions:</strong> particles are placed on a grid and displaced slightly
+   using the linear power spectrum at high redshift (the Zel'dovich approximation).</li>
+<li><strong>Gravity:</strong> the force on every particle is computed, efficiently, with
+   particle-mesh methods using fast Fourier transforms, or with tree codes.</li>
+<li><strong>Time steps:</strong> particles move and the force is recalculated, thousands of times.</li>
+<li><strong>Analysis:</strong> halos are identified as dense groups of particles.</li>
+</ol>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/55facb5497f4b76a.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">Milestones</b></p><ul>
+<li><strong>1970s–1980s:</strong> simulations with thousands of particles showed that cold dark
+  matter produces a cosmic web resembling galaxy surveys (Davis, Efstathiou, Frenk and
+  White).</li>
+<li><strong>1996:</strong> Navarro, Frenk and White found that halos of all masses share a
+  universal density profile, the NFW profile used in lesson <a href="../lessons/L3_2.html">L3.2</a>.</li>
+<li><strong>2005:</strong> the Millennium Simulation followed ten billion particles.</li>
+<li><strong>Today:</strong> simulations such as IllustrisTNG, EAGLE and FLAMINGO also include gas,
+  stars and black holes, and trillion-particle runs prepare for Euclid and the
+  Rubin Observatory.</li>
+</ul></td></tr></table>
+<h2>The cosmic web</h2>
+<p>Simulations explain the pattern seen by redshift surveys (lesson
+<a href="../lessons/L1_4.html">L1.4</a>). Matter first flows out of <strong>voids</strong> onto flat <strong>sheets</strong>, then
+along the sheets into <strong>filaments</strong>, and finally along filaments into <strong>halos</strong> at
+their intersections. Galaxies form inside halos, where gas can cool and form stars.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: 2D N-body Structure Formation</b></p><p style='margin:0;'>Run the N-body simulator to D = 3. Watch sheets and filaments appear first, then small clumps that merge into bigger ones. Try warm dark matter with the same seed.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S13" style="color:#2059c4; text-decoration:none;"><b>▶ Open the 2D N-body Structure Formation</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">Small-scale puzzles</b></p><p>On galaxy scales, simulations with only dark matter predicted more satellite galaxies
+and denser halo centres than observed ("missing satellites" and "cusp–core"
+problems). Including the effects of supernovae, gas physics and faint-galaxy
+discoveries has resolved much of this, but it is still debated whether dark matter
+might be warm, self-interacting or fuzzy.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Overdense regions detach from the expansion and collapse when their linear density
+  contrast reaches <img src="../assets/img/83634b221eff2126.png" width="73" height="17" style="vertical-align: middle"/>, forming halos about 200 times denser than
+  average.</li>
+<li>In cold dark matter, small halos form first and merge into larger ones: hierarchical,
+  bottom-up growth.</li>
+<li>The Press–Schechter mass function predicts how many halos of each mass exist; massive
+  clusters are exponentially rare and sensitive to cosmology.</li>
+<li>N-body simulations follow billions of particles and reproduce the cosmic web and the
+  universal NFW halo profile.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> In the spherical collapse model, a region has collapsed into a halo when its linearly extrapolated density contrast reaches...</p><ol type="a"><li><button type="button" data-index="0">0.01</button></li><li><button type="button" data-index="1">1.686</button></li><li><button type="button" data-index="2">200</button></li><li><button type="button" data-index="3">10⁶</button></li></ol><p class="explanation" hidden>δ_c ≈ 1.686 is the critical linear overdensity; the resulting halo is about 200 times denser than average.</p></div><div class="question" data-answer="1"><p><b>2.</b> In a cold dark matter universe, which objects form first?</p><ol type="a"><li><button type="button" data-index="0">Galaxy clusters, which then fragment</button></li><li><button type="button" data-index="1">Small halos, which later merge into larger ones</button></li><li><button type="button" data-index="2">All objects form at the same time</button></li><li><button type="button" data-index="3">Superclusters</button></li></ol><p class="explanation" hidden>Fluctuations are larger on small mass scales, so structure grows hierarchically, bottom-up.</p></div><div class="question" data-answer="0"><p><b>3.</b> Why are counts of massive galaxy clusters a sensitive test of cosmology?</p><ol type="a"><li><button type="button" data-index="0">Their abundance depends exponentially on σ(M), so small changes in σ8 or Ωm change the number enormously</button></li><li><button type="button" data-index="1">Clusters are the only objects that contain dark energy</button></li><li><button type="button" data-index="2">Clusters never merge</button></li><li><button type="button" data-index="3">They are easy to see in visible light only</button></li></ol><p class="explanation" hidden>The factor exp(−ν²/2) in the mass function makes rare, massive halos highly sensitive to the fluctuation amplitude.</p></div><div class="question" data-answer="1"><p><b>4.</b> How are initial conditions for a cosmological N-body simulation usually created?</p><ol type="a"><li><button type="button" data-index="0">Particles are placed at random</button></li><li><button type="button" data-index="1">Particles on a grid are displaced slightly according to the linear power spectrum (Zel&#x27;dovich approximation)</button></li><li><button type="button" data-index="2">Particles start at rest in a single point</button></li><li><button type="button" data-index="3">Real galaxy positions are used as particles</button></li></ol><p class="explanation" hidden>Small displacements reproduce the tiny Gaussian density fluctuations predicted at high redshift.</p></div><div class="question" data-answer="1"><p><b>5.</b> What universal result did Navarro, Frenk and White find in simulations?</p><ol type="a"><li><button type="button" data-index="0">All halos have the same mass</button></li><li><button type="button" data-index="1">Halos of all masses share a similar density profile (the NFW profile)</button></li><li><button type="button" data-index="2">Dark matter forms perfect spheres of constant density</button></li><li><button type="button" data-index="3">Halos rotate faster than light</button></li></ol><p class="explanation" hidden>The NFW profile describes halos from dwarf galaxies to clusters and is used to model rotation curves and lensing.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L5_4.html">◀ L5.4 The Matter Power Spectrum</a><a href="../lessons/L5_6.html">L5.6 Gravitational Lensing: Strong and Weak ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L5.7 CMB Polarisation and Lensing: E-modes, B-modes and What They Carry · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 5 · CMB &amp; Structure Formation</p><h1>L5.7 CMB Polarisation and Lensing: E-modes, B-modes and What They Carry</h1><p class="lead">The microwave background is not only hot and cold — it is faintly polarised, and the pattern splits into two kinds. One confirms everything the temperature already told us. The other could carry the signature of inflation itself, if the Galaxy would get out of the way.</p><p class="meta">≈ 24 min read · Before this: <a href="../lessons/L5_1.html">L5.1</a>, <a href="../lessons/L5_6.html">L5.6</a> · Simulators: <a href="../simulators.html#S12">CMB Power Spectrum Explorer</a>, <a href="../simulators.html#S24">CMB Sky Viewer</a>, <a href="../simulators.html#S14">Gravitational Lensing Simulator</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>Why Thomson scattering polarises the CMB, and why only a quadrupole can do it</li>
+<li>The split into E and B modes, and why density ripples can only make E</li>
+<li>Why the E-mode peaks sit where the temperature peaks do not</li>
+<li>What the reionisation bump measures, and how τ is entangled with the amplitude</li>
+<li>How lensing makes B modes, and why primordial B modes are the prize</li>
+</ul></td></tr></table>
+<h2>A second layer of information</h2>
+<p>Everything in <a href="../lessons/L5_1.html">L5.1</a> came from one number per direction on the sky: the
+temperature. But the microwave background carries a second, much fainter signal. A
+few percent of it is <strong>linearly polarised</strong> — the electric field of the wave prefers
+one direction over the other — at the level of a few μK against the 100 μK of the
+temperature ripples.</p>
+<p>That signal is not a bonus. It comes from a different moment and a different physical
+quantity than the temperature does, and it is what turned the CMB from a strong
+measurement into an overdetermined one.</p>
+<h2>Why scattering polarises anything</h2>
+<p>Thomson scattering — a photon bouncing off a free electron — is the whole mechanism,
+and it has one crucial property: <strong>it only polarises light if the radiation arriving
+at the electron is anisotropic in a particular way.</strong></p>
+<p>Picture an electron in the plasma just before decoupling. Light arrives from every
+direction. If the incoming intensity is the same all round (a monopole), the
+scattered light is unpolarised: the preferences from opposite sides cancel. If one
+side is hotter than the other (a dipole), they still cancel. Only if the radiation is
+hotter along one <em>axis</em> and colder along the perpendicular one — a <strong>quadrupole</strong> —
+does a net polarisation survive.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">It takes a quadrupole</b></p><p>A monopole gives nothing. A dipole gives nothing. Polarisation is made by the
+quadrupole of the radiation field, and nothing else.</p></td></tr></table>
+<p>And where does the quadrupole come from? From the <strong>velocity</strong> of the plasma. An
+electron flowing through the photon bath sees the radiation blueshifted ahead and
+redshifted behind; in the plasma's own frame, the flow gradients produce exactly the
+quadrupole needed. The temperature spectrum is built mostly from the <em>compression</em> of
+the plasma; the polarisation comes from its <em>motion</em>.</p>
+<p>That single fact has an immediate, testable consequence.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The peaks interleave</b></p><p>Compression and velocity are a quarter-cycle out of phase, like the position and the
+speed of a pendulum. So the <strong>E-mode peaks fall where the temperature peaks do not</strong>.
+Finding them there, exactly where the model said, was one of the strongest
+confirmations the acoustic picture ever received.</p></td></tr></table>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/391b7d9fc8de1476.png" width="640" height="340" /></p>
+<p>There is a second consequence. Polarisation is only generated while the plasma is
+actually decoupling, which lasts a short time. On angular scales much larger than the
+thickness of the last-scattering surface, the electron simply does not have time to
+see a quadrupole. That is why the polarisation signal dies away towards small ℓ,
+while the temperature has its Sachs–Wolfe plateau there.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: CMB Power Spectrum Explorer</b></p><p style='margin:0;'><strong>Watch the interleaving.</strong> Open the <strong>E modes and TE</strong> tab. The dashed grey curve is the temperature spectrum divided by 120. Every E-mode peak sits in a temperature trough.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S12" style="color:#2059c4; text-decoration:none;"><b>▶ Open the CMB Power Spectrum Explorer</b></a></p></td></tr></table>
+<h2>E modes and B modes</h2>
+<p>A polarisation field is not a number on the sky; at every point it is a direction and
+a strength — a headless vector. Such a field can be split, uniquely and without
+reference to any coordinate system, into two parts:</p>
+<ul>
+<li><strong>E modes</strong> — patterns with no handedness, whose polarisation directions point
+  radially towards or tangentially around a hot or cold spot. Think of the field
+  lines around a charge, which is where the name comes from.</li>
+<li><strong>B modes</strong> — patterns with a curl, swirling clockwise or anticlockwise around a
+  spot, like a magnetic field around a wire.</li>
+</ul>
+<p>The split matters because of a theorem:</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Density ripples cannot make B modes</b></p><p>A scalar perturbation — a density ripple, the thing that makes all the structure in
+the universe — produces a velocity field that is a pure gradient. The polarisation
+pattern it generates has no curl at all. <strong>At the last-scattering surface, scalar
+perturbations produce E modes and nothing else.</strong></p></td></tr></table>
+<p>So a B mode is either not primordial, or not scalar. Both possibilities are
+interesting, and they are the rest of this lesson.</p>
+<h2>The reionisation bump</h2>
+<p>Look at the E-mode spectrum below ℓ ≈ 10 and there is a separate bump, at completely
+the wrong place to be an acoustic peak. It comes from a completely different epoch.</p>
+<p>When the first stars reionised the universe (<a href="../lessons/L6_4.html">L6.4</a>), they filled space
+with free electrons again, and a few percent of CMB photons scattered one more time
+on their way to us. That late scattering polarises them at the angular scale of the
+horizon at reionisation — which is large, hence small ℓ.</p>
+<p>The height of that bump measures the <a href="../glossary.html#optical-depth" title="A measure of how likely light is to be scattered or absorbed along its path. The CMB optical depth to reionisation, τ ≈ 0.054, counts scatterings off free electrons." style="color:#c7771a; text-decoration:none;">optical depth</a> τ, which is
+essentially the total number of electrons the photons met. It is the <em>only</em> clean way
+to measure τ, and it matters far beyond reionisation, because the acoustic peaks are
+damped by a factor <img src="../assets/img/9a9c1462ec52d35c.png" width="32" height="17" style="vertical-align: middle"/>. Without an independent τ, the amplitude of the
+primordial fluctuations <img src="../assets/img/70d9f3801a8214c1.png" width="20" height="17" style="vertical-align: middle"/> and the optical depth are hopelessly entangled: the
+combination <img src="../assets/img/6df6a99d96c182eb.png" width="50" height="20" style="vertical-align: middle"/> is measured superbly, and neither alone.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Why σ8 needed a satellite</b></p><p>τ feeds straight into σ8, the amplitude of matter clustering today. WMAP's first
+estimate of τ was 0.17; Planck's polarisation brought it down to 0.054. That single
+correction moved σ8 by several percent — which is why the S8 tension of
+<a href="../lessons/L6_6.html">L6.6</a> could only be argued about after the low-ℓ polarisation was
+measured properly.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: CMB Power Spectrum Explorer</b></p><p style='margin:0;'><strong>The bump and the damping.</strong> Raise <strong>τ</strong> from 0.056 towards 0.09 and watch two things at once: the bump at ℓ ≈ 5 grows as τ², and the acoustic peaks shrink as e^(−2τ).</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S12" style="color:#2059c4; text-decoration:none;"><b>▶ Open the CMB Power Spectrum Explorer</b></a></p></td></tr></table>
+<h2>Lensing: B modes we make ourselves</h2>
+<p>Between us and the last-scattering surface lie 13.8 billion years of matter, and it
+bends light (<a href="../lessons/L5_6.html">L5.6</a>). Each CMB photon is deflected by a couple of
+arcminutes, with deflections correlated across a degree or so.</p>
+<p>Lensing does not create polarisation. It <strong>moves</strong> it — and in doing so it shears the
+E-mode pattern. A sheared gradient is no longer a pure gradient, so a small part of
+the E-mode power is converted into B modes. The result is a smooth B-mode spectrum
+peaking near ℓ ≈ 1000, first detected by SPTpol in 2013 and now measured well.</p>
+<p>This is a signal in its own right, not merely a nuisance:</p>
+<ul>
+<li>It is sourced by <em>all</em> the matter along the line of sight, so it maps the total
+  mass distribution with no galaxies involved.</li>
+<li>Its amplitude measures how much structure has grown, which constrains σ8 and — as
+  in <a href="../lessons/L4_7.html">L4.7</a> — the sum of the neutrino masses.</li>
+<li>It smooths the acoustic peaks slightly, an effect that shows up in the temperature
+  spectrum as well.</li>
+</ul>
+<h2>Primordial B modes: the prize</h2>
+<p>The other way to make a B mode is with a <strong>tensor</strong> perturbation — a gravitational
+wave. Inflation (<a href="../lessons/L6_3.html">L6.3</a>) stretches the quantum fluctuations of spacetime
+itself into a background of long-wavelength gravitational waves, and those waves
+distort space at last scattering in a way that has a handedness. They make E modes
+and B modes in comparable amounts.</p>
+<p>Their strength is written as the <a href="../glossary.html#tensor-to-scalar-ratio" title="The power in primordial gravitational waves divided by the power in density perturbations. It fixes the energy scale of inflation, V^(1/4) ≈ 10^16 GeV (r/0.01)^(1/4), and would be measured from B modes at ℓ ≈ 80. The limit today is r &lt; 0.036." style="color:#c7771a; text-decoration:none;">tensor-to-scalar ratio</a> r,
+and it is a direct measure of the energy scale at which inflation happened:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/1d7baf3eddfa42aa.png" width="262" height="26" /></p>
+<p>A detection would be a measurement of physics at <img src="../assets/img/fa2cfc3130708c96.png" width="30" height="17" style="vertical-align: middle"/> GeV — a trillion times
+beyond the LHC — and evidence that gravity is quantised, since the waves began as
+zero-point fluctuations of the gravitational field.</p>
+<p>The signal peaks at ℓ ≈ 80, the horizon size at recombination, with a second bump at
+ℓ ≈ 5 from reionisation.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/d5693959d0b2f95e.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">BICEP2, and the dust</b></p><p>In March 2014 the BICEP2 collaboration announced a B-mode detection at ℓ ≈ 80
+corresponding to r ≈ 0.2, and it was reported worldwide as the discovery of
+inflation. Within months it became clear that the patch of sky they observed contains
+more polarised dust than assumed: spinning, magnetically aligned grains in our own
+Galaxy that emit polarised microwaves with B modes of their own. A joint analysis
+with Planck, which had the extra frequencies needed to separate dust from the CMB,
+showed the signal was consistent with dust alone. The current limit is r &lt; 0.036.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: CMB Power Spectrum Explorer</b></p><p style='margin:0;'><strong>Why BICEP2 was fooled.</strong> Open the <strong>B modes</strong> tab. With the default dust level, raise r until the primordial curve rises above dust plus lensing at ℓ = 80. It takes r ≈ 0.08 — which is why a claim of r = 0.2 looked so convincing, and why it needed a second frequency to test.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S12" style="color:#2059c4; text-decoration:none;"><b>▶ Open the CMB Power Spectrum Explorer</b></a></p></td></tr></table>
+<h2>What it takes to go further</h2>
+<p>Three obstacles, and what is being done about each:</p>
+<ol>
+<li><strong>Foregrounds.</strong> Dust dominates above about 100 GHz and synchrotron emission below
+   about 40 GHz. The answer is many frequency bands: the Simons Observatory, LiteBIRD
+   and CMB-S4 all observe across a wide range specifically to separate them.</li>
+<li><strong>Lensing B modes.</strong> They are a genuine CMB signal and cannot be avoided by
+   observing elsewhere. They can, however, be <strong>delensed</strong>: measure the matter
+   distribution well enough — from the CMB lensing reconstruction itself, or from a
+   galaxy survey — predict the lensing B modes and subtract them. Removing 90% is the
+   working target.</li>
+<li><strong>Sheer sensitivity.</strong> Reaching r ≈ 0.001 needs hundreds of thousands of detectors
+   observing for years. CMB-S4 is designed for exactly that.</li>
+</ol>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">What a non-detection would mean</b></p><p>If r is below about 0.001, the simplest large-field inflation models are excluded —
+which is real information, not a failure. But no measurement can ever prove r = 0, so
+the question does not close, it narrows.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Polarisation is made by Thomson scattering off a <strong>quadrupole</strong>, which the plasma's
+  velocity supplies — so E modes peak where the temperature does not.</li>
+<li>Polarisation dies away on large scales because it is only generated during the
+  short time the universe is decoupling.</li>
+<li>The <strong>E/B split</strong> is coordinate-free, and scalar density ripples make E modes only.</li>
+<li>The low-ℓ E-mode bump measures <strong>τ</strong>, which breaks the degeneracy with the
+  fluctuation amplitude and hence fixes σ8.</li>
+<li><strong>Lensing</strong> converts E into B and maps all the matter along the line of sight.</li>
+<li><strong>Primordial B modes</strong> would measure r, the energy scale of inflation. Dust and
+  lensing stand in the way; r &lt; 0.036 today.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="9"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="2"><p><b>1.</b> Thomson scattering polarises the CMB only if the radiation reaching the electron has which kind of anisotropy?</p><ol type="a"><li><button type="button" data-index="0">A monopole</button></li><li><button type="button" data-index="1">A dipole</button></li><li><button type="button" data-index="2">A quadrupole</button></li><li><button type="button" data-index="3">Any anisotropy at all</button></li></ol><p class="explanation" hidden>A monopole and a dipole both cancel. Only a quadrupole — hotter along one axis, colder along the perpendicular one — leaves a net polarisation.</p></div><div class="question" data-answer="1"><p><b>2.</b> Why do the E-mode acoustic peaks fall where the temperature peaks do not?</p><ol type="a"><li><button type="button" data-index="0">Polarisation travels more slowly</button></li><li><button type="button" data-index="1">Polarisation is generated by the plasma&#x27;s velocity, which is a quarter-cycle out of phase with its compression</button></li><li><button type="button" data-index="2">They are measured at a different frequency</button></li><li><button type="button" data-index="3">Lensing shifts them</button></li></ol><p class="explanation" hidden>Temperature comes mostly from compression, polarisation from the velocity — like the position and speed of a pendulum.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why does the polarisation signal die away at very low ℓ, where the temperature has its Sachs–Wolfe plateau?</p><ol type="a"><li><button type="button" data-index="0">Foregrounds swamp it</button></li><li><button type="button" data-index="1">Polarisation is only generated during the short time the universe is decoupling, so very large scales have no time to build a quadrupole</button></li><li><button type="button" data-index="2">Those scales are outside the observable universe</button></li><li><button type="button" data-index="3">The detectors are not sensitive there</button></li></ol><p class="explanation" hidden>The finite thickness of the last-scattering surface sets the largest angle over which an electron can see a quadrupole.</p></div><div class="question" data-answer="1"><p><b>4.</b> What can produce B modes at the last-scattering surface?</p><ol type="a"><li><button type="button" data-index="0">Density (scalar) perturbations</button></li><li><button type="button" data-index="1">Gravitational waves (tensor perturbations)</button></li><li><button type="button" data-index="2">Both equally</button></li><li><button type="button" data-index="3">Nothing: B modes are always instrumental</button></li></ol><p class="explanation" hidden>A scalar perturbation gives a pure-gradient velocity field, whose polarisation pattern has no curl. Tensors have a handedness and make both E and B.</p></div><div class="question" data-answer="1"><p><b>5.</b> What does the E-mode bump at ℓ &lt; 10 measure?</p><ol type="a"><li><button type="button" data-index="0">The tensor-to-scalar ratio r</button></li><li><button type="button" data-index="1">The optical depth τ from reionisation</button></li><li><button type="button" data-index="2">The baryon density</button></li><li><button type="button" data-index="3">The curvature of space</button></li></ol><p class="explanation" hidden>Photons rescattering off the electrons freed by the first stars are polarised on the angular scale of the horizon at reionisation; the bump&#x27;s height gives τ.</p></div><div class="question" data-answer="1"><p><b>6.</b> Why does τ matter so much beyond reionisation itself?</p><ol type="a"><li><button type="button" data-index="0">It changes the age of the universe</button></li><li><button type="button" data-index="1">The acoustic peaks are damped by e^(−2τ), so without an independent τ the fluctuation amplitude A_s cannot be separated from it</button></li><li><button type="button" data-index="2">It sets the CMB temperature</button></li><li><button type="button" data-index="3">It determines the number of neutrino species</button></li></ol><p class="explanation" hidden>Only the combination A_s e^(−2τ) is well measured from temperature alone, and A_s feeds straight into σ8.</p></div><div class="question" data-answer="1"><p><b>7.</b> How does gravitational lensing create B modes?</p><ol type="a"><li><button type="button" data-index="0">It creates new polarisation</button></li><li><button type="button" data-index="1">It shears the E-mode pattern, and a sheared gradient is no longer a pure gradient</button></li><li><button type="button" data-index="2">It rotates the polarisation angle at random</button></li><li><button type="button" data-index="3">It converts temperature into polarisation</button></li></ol><p class="explanation" hidden>Lensing moves the polarisation around rather than making it, but the shearing mixes a little E power into B, peaking near ℓ ≈ 1000.</p></div><div class="question" data-answer="1"><p><b>8.</b> BICEP2&#x27;s 2014 claim of r ≈ 0.2 did not survive. What was the signal?</p><ol type="a"><li><button type="button" data-index="0">An instrumental artefact</button></li><li><button type="button" data-index="1">Mostly polarised emission from dust in our own Galaxy</button></li><li><button type="button" data-index="2">Lensing B modes</button></li><li><button type="button" data-index="3">A statistical fluctuation</button></li></ol><p class="explanation" hidden>Magnetically aligned dust grains in the Milky Way emit polarised microwaves with B modes of their own; separating them needs several observing frequencies.</p></div><div class="question" data-answer="1"><p><b>9.</b> What is &#x27;delensing&#x27;?</p><ol type="a"><li><button type="button" data-index="0">Observing a patch of sky with no foreground matter</button></li><li><button type="button" data-index="1">Predicting the lensing B modes from a measured matter distribution and subtracting them</button></li><li><button type="button" data-index="2">Using a wider telescope</button></li><li><button type="button" data-index="3">Removing gravitational lensing from the galaxy survey</button></li></ol><p class="explanation" hidden>Lensing B modes are a real CMB signal, so they cannot be avoided by looking elsewhere — but they can be modelled and removed, with 90% as the working target.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L5_6.html">◀ L5.6 Gravitational Lensing: Strong and Weak</a><a href="../lessons/L5_8.html">L5.8 Galaxy Formation: Cooling, Feedback and How Galaxies Live in Their Haloes ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

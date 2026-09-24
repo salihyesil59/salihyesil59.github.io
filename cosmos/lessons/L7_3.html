@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.3 MCMC in Practice: Degeneracies, Combined Probes and Convergence · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.3 MCMC in Practice: Degeneracies, Combined Probes and Convergence</h1><p class="lead">A chain is only as good as the questions you ask it. How parameters hide behind each other, why cosmologists combine measurements, how to tell a converged chain from a stuck one, and how samples propagate errors for free.</p><p class="meta">≈ 22 min read · Before this: <a href="../lessons/L7_2.html">L7.2</a> · Simulators: <a href="../simulators.html#S19">Likelihood &amp; MCMC Explorer</a>, <a href="../simulators.html#S20">Distance Ladder Builder</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>What a parameter degeneracy is and why supernovae alone leave one</li>
+<li>Why multiplying independent likelihoods breaks a degeneracy</li>
+<li>How to read burn-in, autocorrelation, effective sample size and R̂</li>
+<li>How to get the error on any derived quantity straight from the samples</li>
+<li>How independent errors combine in quadrature, and why systematics do not average away</li>
+</ul></td></tr></table>
+<h2>From one chain to a real analysis</h2>
+<p>Lesson <a href="../lessons/L7_2.html">L7.2</a> built the machine: a likelihood, a random walker and a
+cloud of samples. Real analyses use exactly that machine, but they spend most of
+their effort on four practical questions:</p>
+<ol>
+<li>Which combinations of parameters do the data actually measure?</li>
+<li>What happens when a second measurement is added?</li>
+<li>Has the chain really finished exploring?</li>
+<li>How do the errors on the fitted parameters turn into errors on the quantities
+   people care about?</li>
+</ol>
+<h2>1. Degeneracies: when parameters hide behind each other</h2>
+<p>Run the chain on the supernovae alone and the cloud is not round. It is a long,
+tilted ellipse: a universe with more matter <strong>and</strong> more dark energy fits the data
+almost as well as one with less of both. The parameters are <strong>degenerate</strong> along
+that direction — see <a href="../glossary.html#parameter-degeneracy" title="A direction in parameter space along which different combinations fit the data almost equally well, so the data measure a combination of the parameters rather than each one. It shows up as a long, tilted contour and is broken by adding a measurement that constrains a different direction." style="color:#c7771a; text-decoration:none;">degeneracy</a>.</p>
+<p>The reason is physical. Supernovae measure distances, and a distance depends on the
+whole expansion history at once. Extra matter slows the expansion, extra dark energy
+speeds it up; add both in the right proportion and the distances barely change.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The data measure combinations, not parameters</b></p><p>Along the long axis of the ellipse the data are almost silent; across it they are
+precise. For supernovae the well-measured combination is roughly
+<img src="../assets/img/4c759519c08161bc.png" width="116" height="14" style="vertical-align: middle"/> (the combination the 1998 discovery
+papers quoted), while <img src="../assets/img/392cdf8a9226e956.png" width="66" height="14" style="vertical-align: middle"/> — the curvature — is
+poorly constrained.</p></td></tr></table>
+<p>The single-parameter error bars in a table hide this. Quoting
+"<img src="../assets/img/70c050db75227dc2.png" width="122" height="14" style="vertical-align: middle"/>" is correct, but the error comes almost entirely
+from the long axis. That is why cosmologists show contours, and why you should
+always look at them — lesson <a href="../lessons/L7_1.html">L7.1</a>.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Marginalising</b></p><p>The histograms along the edges of the contour plot are <strong>marginal</strong> distributions:
+the samples with the other parameter ignored. With samples, <a href="../glossary.html#marginalisation" title="Removing a parameter you are not interested in by integrating the posterior over it. With MCMC samples it is trivial: simply ignore that column. The histograms along the edges of a contour plot are marginal distributions." style="color:#c7771a; text-decoration:none;">marginalisation</a> is
+just "throw away that column". With a grid it would be an integral.</p></td></tr></table>
+<h2>2. Combining probes: multiply the likelihoods</h2>
+<p>Independent experiments have independent errors, so their likelihoods simply
+multiply:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/48250f2f614ce3ae.png" width="506" height="26" /></p>
+<p>The magic is in the <strong>directions</strong>. The CMB acoustic scale fixes the geometry of
+space, <img src="../assets/img/b58225a0db7695e2.png" width="94" height="14" style="vertical-align: middle"/>: a narrow band running the
+other way across the supernova ellipse. Each probe alone allows a long strip; the
+product allows only the small patch where the strips cross.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/7632ea3b8d98d2df.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Numbers from the simulator</b></p><p>With the real Pantheon+ supernovae the chain finds <img src="../assets/img/70c050db75227dc2.png" width="122" height="14" style="vertical-align: middle"/>.
+Add the CMB geometry, <img src="../assets/img/ab3b1adf921643d3.png" width="166" height="14" style="vertical-align: middle"/>, and it
+becomes <img src="../assets/img/888c7af5af803884.png" width="81" height="13" style="vertical-align: middle"/> — four times tighter — although the CMB constraint alone
+says nothing at all about <img src="../assets/img/bc5daef9ad4321af.png" width="22" height="14" style="vertical-align: middle"/> by itself.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Likelihood &amp; MCMC Explorer</b></p><p style='margin:0;'>Choose "+ CMB geometry" as the second probe and compare the error on ΩΛ with the supernovae alone. Then try "+ BAO matter density": which direction does that one cut?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S19" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Likelihood &amp; MCMC Explorer</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">Combining only works for consistent data</b></p><p>Multiplying likelihoods assumes both experiments measure the same universe with
+honest error bars. If the two strips do not overlap — as with the
+<a href="../glossary.html#hubble-tension" title="The disagreement between the Hubble constant inferred from the early universe (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae (about 73 km/s/Mpc)." style="color:#c7771a; text-decoration:none;">Hubble tension</a> — the product is a narrow patch in a place neither
+experiment likes. Always check that the probes agree <strong>before</strong> combining them.</p></td></tr></table>
+<h2>3. Has the chain converged?</h2>
+<p>A chain gives the right answer only once it has forgotten its starting point and
+visited the whole posterior in the right proportions. Four checks catch most
+failures.</p>
+<p><strong>Burn-in.</strong> The walker starts wherever you put it. Look at the trace: the early
+steps drift towards the good region. Discard them.</p>
+<p><strong>Autocorrelation.</strong> Successive samples are not independent — a walker takes small
+steps. The <strong>autocorrelation length</strong> <img src="../assets/img/32d8d7eae0f8dc91.png" width="8" height="9" style="vertical-align: middle"/> counts how many steps it needs to
+forget where it was, and the useful number of samples is the
+<a href="../glossary.html#effective-sample-size" title="The number of statistically independent samples in a correlated chain: the chain length divided by the autocorrelation length. A long but sticky chain may contain only a few dozen independent samples." style="color:#c7771a; text-decoration:none;">effective sample size</a>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/78ac1726deec43c5.png" width="70" height="22" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/bba2ee5144487b9c.png" width="640" height="340" /></p>
+<p>A sticky chain can look beautifully smooth in its trace and still contain only a
+few dozen independent samples. Both a step that is too small (accepts everything,
+moves nowhere) and a step that is too large (rejects everything, stays put) make
+<img src="../assets/img/32d8d7eae0f8dc91.png" width="8" height="9" style="vertical-align: middle"/> large.</p>
+<p><strong>Several chains, R̂.</strong> Start four walkers far apart. If they end up describing the
+same distribution, the between-chain spread matches the within-chain spread and
+<img src="../assets/img/acc724b2d906ebd6.png" width="42" height="18" style="vertical-align: middle"/>. Values above about 1.01 mean the walkers have not met yet.</p>
+<p><strong>Sanity.</strong> Does the best fit agree with a simple grid search, when one is possible?
+Does the answer change when you double the chain length? If it does, it was not
+converged.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Thinning does not help</b></p><p>Keeping only every tenth sample makes a chain look less correlated, but throws
+information away: the effective sample size never increases. Thinning is only a way
+to save disk space.</p></td></tr></table>
+<h2>4. Derived parameters: error propagation for free</h2>
+<p>Often the interesting number is not a fitted parameter but a function of them —
+the deceleration parameter <img src="../assets/img/86b21ff872834b82.png" width="118" height="18" style="vertical-align: middle"/>, the
+curvature <img src="../assets/img/bb8e07e936af855e.png" width="136" height="16" style="vertical-align: middle"/>, the age of the
+universe. With samples there is nothing to derive: compute the quantity for every
+sample, and the mean and spread of the results are the answer and its error bar.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/368d9bfdbc480b40.png" width="640" height="340" /></p>
+<p>This matters because the parameters are correlated. The textbook propagation
+formula without the correlation term gives <img src="../assets/img/73cd292fdd3cbc76.png" width="129" height="16" style="vertical-align: middle"/>; the samples give
+<img src="../assets/img/30a194235e0181ee.png" width="44" height="13" style="vertical-align: middle"/>. The correlation is <strong>real information</strong>: matter and dark energy that
+move together partly cancel in <img src="../assets/img/c5a528cf94fc2267.png" width="14" height="12" style="vertical-align: middle"/>. With samples it is included automatically.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/84599f2de67732e3.png" width="212" height="45" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Where the difference comes from</b></p><p>For <img src="../assets/img/86b21ff872834b82.png" width="118" height="18" style="vertical-align: middle"/> the formula above gives
+<img src="../assets/img/617ceaeee581e3a5.png" width="180" height="22" style="vertical-align: middle"/>.
+With <img src="../assets/img/58352779d81afad6.png" width="60" height="16" style="vertical-align: middle"/> the last term removes about half of the variance. Dropping it
+is the "naive" error.</p></td></tr></table>
+<h2>Chains of measurements: the distance ladder</h2>
+<p>The same bookkeeping applies when a result is built in <strong>stages</strong>. The local Hubble
+constant comes from a three-rung <a href="../glossary.html#distance-ladder" title="The chain of methods (radar, parallax, Cepheids, Type Ia supernovae, redshift) in which each method is calibrated by the one below it to measure ever larger distances." style="color:#c7771a; text-decoration:none;">distance ladder</a>: parallaxes
+calibrate <a href="../glossary.html#cepheid" title="A pulsating giant star whose pulsation period is tightly related to its luminosity (the Leavitt law). This makes Cepheids standard candles for measuring distances to nearby galaxies." style="color:#c7771a; text-decoration:none;">Cepheids</a>, Cepheids calibrate type Ia supernovae, and distant
+supernovae measure the expansion (lesson <a href="../lessons/L1_1.html">L1.1</a>). The rungs use
+different stars and different telescopes, so their errors are independent, and
+independent percentage errors add <strong>in quadrature</strong>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/d859c9b55b8ef00d.png" width="185" height="36" /></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/76e1f84bc52f4edc.png" width="640" height="340" /></p>
+<p>Two lessons follow. First, <strong>improve the weakest rung</strong>: perfecting a rung that
+contributes 0.6% barely moves a 2.4% total. Second, a Monte Carlo check is easy:
+simulate the whole measurement many times and look at the spread of the answers —
+exactly what a chain does for a likelihood.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Distance Ladder Builder</b></p><p style='margin:0;'>Start from the Key Project preset. Find the rung that dominates the error budget, fix only that one, then press Repeat 300× to confirm the error bar.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S20" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Distance Ladder Builder</b></a></p></td></tr></table>
+<h2>Systematic errors do not average away</h2>
+<p>Everything above describes <strong>statistical</strong> errors, which shrink as data accumulate.
+A <a href="../glossary.html#systematic-error" title="A bias that repeats in every measurement — a calibration offset, unmodelled dust, a selection effect. Unlike statistical noise it does not shrink as more data are collected, and it is usually what cosmological disputes are about." style="color:#c7771a; text-decoration:none;">systematic error</a> is different: a parallax zero point that is
+slightly wrong, Cepheids blended with their neighbours, a calibration offset between
+two telescopes. It shifts every measurement in the same direction, so averaging a
+thousand of them reproduces the shift a thousand times.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">A precise answer can be precisely wrong</b></p><p>In the ladder simulator a parallax offset of 20 µas moves H0 by about 2 km/s/Mpc
+while the error bar keeps shrinking with more supernovae. The chain, the error
+propagation and the Monte Carlo will all report the same confident, biased number.
+Only an <strong>independent</strong> method — a different calibrator, a different telescope, a
+different physical probe — can reveal it. This is why the Hubble tension is argued
+over with JWST Cepheids, tip-of-the-red-giant-branch stars and gravitational-wave
+sirens rather than with more of the same data.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Distance Ladder Builder</b></p><p style='margin:0;'>Add a parallax zero-point offset of +20 µas and raise the number of Hubble-flow supernovae. Watch the error bar shrink while the systematic shift stays put.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S20" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Distance Ladder Builder</b></a></p></td></tr></table>
+<h2>The tools of the trade</h2>
+<p>The simulator's walker is the Metropolis algorithm from 1953. Research codes use the
+same idea with better proposals: <strong>emcee</strong> moves an ensemble of walkers that learn
+the shape of the posterior, <strong>Cobaya</strong> and <strong>MontePython</strong> connect samplers to
+Boltzmann codes such as CAMB and CLASS, and <strong>nested sampling</strong> (PolyChord,
+dynesty) also computes the evidence used to compare models. The diagnostics in this
+lesson apply to all of them.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Data constrain combinations of parameters; the long axis of a contour is a
+  degeneracy.</li>
+<li>Independent probes multiply their likelihoods; measurements that constrain
+  different directions break each other's degeneracies — if they agree.</li>
+<li>A converged chain has discarded its burn-in, has a healthy <img src="../assets/img/dd032e7b5ce48670.png" width="28" height="16" style="vertical-align: middle"/> and
+  <img src="../assets/img/acc724b2d906ebd6.png" width="42" height="18" style="vertical-align: middle"/> across several walkers.</li>
+<li>Any derived quantity and its error bar come straight from the samples, with
+  correlations included.</li>
+<li>Independent errors add in quadrature, so fix the weakest link first; systematic
+  errors survive any amount of data.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="8"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> The supernova contours in the Ωm–ΩΛ plane form a long, tilted ellipse. What does the long axis mean?</p><ol type="a"><li><button type="button" data-index="0">The chain has not converged along that direction</button></li><li><button type="button" data-index="1">A degeneracy: combinations along it fit the data almost equally well</button></li><li><button type="button" data-index="2">The error bars of the supernovae are too large</button></li><li><button type="button" data-index="3">Ωm and ΩΛ are uncorrelated</button></li></ol><p class="explanation" hidden>More matter and more dark energy change the distances in opposite ways, so universes along that line predict nearly the same supernova brightnesses.</p></div><div class="question" data-answer="1"><p><b>2.</b> Two independent experiments are combined. What happens to their χ² values?</p><ol type="a"><li><button type="button" data-index="0">They are averaged</button></li><li><button type="button" data-index="1">They are added, because the likelihoods multiply</button></li><li><button type="button" data-index="2">The smaller one is kept</button></li><li><button type="button" data-index="3">They are multiplied</button></li></ol><p class="explanation" hidden>Independent likelihoods multiply, and −2 ln L turns a product into a sum: χ²_total = χ²_A + χ²_B.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why does adding the CMB shrink the supernova error on ΩΛ about fourfold, although the CMB alone says nothing about ΩΛ?</p><ol type="a"><li><button type="button" data-index="0">The CMB has more data points</button></li><li><button type="button" data-index="1">Its constraint Ωm + ΩΛ ≈ 1 runs across the supernova degeneracy, so only a small patch fits both</button></li><li><button type="button" data-index="2">The CMB is measured with a better telescope</button></li><li><button type="button" data-index="3">Because the CMB removes systematic errors from supernovae</button></li></ol><p class="explanation" hidden>Each probe allows a long strip in a different direction; their product is the small overlap where they cross.</p></div><div class="question" data-answer="2"><p><b>4.</b> A chain of 10 000 steps has an autocorrelation length of 250 steps. How many independent samples does it contain?</p><ol type="a"><li><button type="button" data-index="0">10 000</button></li><li><button type="button" data-index="1">About 2500</button></li><li><button type="button" data-index="2">About 40</button></li><li><button type="button" data-index="3">250</button></li></ol><p class="explanation" hidden>N_eff = N / τ = 10 000 / 250 = 40. A smooth-looking trace can still hold very little independent information.</p></div><div class="question" data-answer="1"><p><b>5.</b> Four chains started far apart give R̂ = 1.15. What should you conclude?</p><ol type="a"><li><button type="button" data-index="0">The chains have converged well</button></li><li><button type="button" data-index="1">The walkers have not yet explored the same distribution: run longer or fix the proposal</button></li><li><button type="button" data-index="2">The model is wrong</button></li><li><button type="button" data-index="3">The error bars are 15% too small</button></li></ol><p class="explanation" hidden>R̂ compares the spread between chains with the spread within them; values above about 1.01 mean they disagree.</p></div><div class="question" data-answer="1"><p><b>6.</b> How do you get the error bar on q0 = Ωm/2 − ΩΛ from an MCMC chain?</p><ol type="a"><li><button type="button" data-index="0">Add the errors of Ωm and ΩΛ in quadrature</button></li><li><button type="button" data-index="1">Compute q0 for every sample and take the spread of the results</button></li><li><button type="button" data-index="2">It cannot be obtained without a new chain</button></li><li><button type="button" data-index="3">Take the error of ΩΛ, which dominates</button></li></ol><p class="explanation" hidden>Samples propagate errors automatically, including the correlation between Ωm and ΩΛ that the simple quadrature sum ignores.</p></div><div class="question" data-answer="1"><p><b>7.</b> A distance ladder has rung errors of 1.9%, 1.4% and 0.6%. Which improvement lowers the total error most?</p><ol type="a"><li><button type="button" data-index="0">Making the 0.6% rung perfect</button></li><li><button type="button" data-index="1">Halving the 1.9% rung</button></li><li><button type="button" data-index="2">Halving the 1.4% rung</button></li><li><button type="button" data-index="3">They all help equally</button></li></ol><p class="explanation" hidden>Independent errors add in quadrature (total ≈ 2.4%). Removing 0.6% gives 2.33%; halving 1.9% gives about 1.8%.</p></div><div class="question" data-answer="1"><p><b>8.</b> A parallax zero-point error shifts H0 by 2 km/s/Mpc. What happens if you observe ten times more Hubble-flow supernovae?</p><ol type="a"><li><button type="button" data-index="0">The shift shrinks by a factor of √10</button></li><li><button type="button" data-index="1">The statistical error shrinks, but the shift stays</button></li><li><button type="button" data-index="2">The shift disappears</button></li><li><button type="button" data-index="3">The shift grows</button></li></ol><p class="explanation" hidden>A systematic error moves every measurement the same way. Only an independent calibration can reveal it.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_2.html">◀ L7.2 From Data to a Number: Likelihood, χ² and 5σ</a><a href="../lessons/L7_4.html">L7.4 How a Survey Is Built: DESI, Euclid, Rubin and JWST ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

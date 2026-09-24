@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.7 Reading a Cosmology Paper: From the Abstract to the Contour Plot · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.7 Reading a Cosmology Paper: From the Abstract to the Contour Plot</h1><p class="lead">Everything in this course was first a paper. How a cosmology paper is built, how to read one in three passes without drowning, what the numbers in an abstract really claim, how to read a parameter table and a triangle plot, and the questions that separate a result from a hint.</p><p class="meta">≈ 22 min read · Before this: <a href="../lessons/L7_1.html">L7.1</a>, <a href="../lessons/L7_2.html">L7.2</a>, <a href="../lessons/L7_6.html">L7.6</a> · Simulators: <a href="../simulators.html#S19">Likelihood &amp; MCMC Explorer</a>, <a href="../simulators.html#S16">Supernova Ia Discovery</a>, <a href="../simulators.html#S29">Dark Matter Detection</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>How a cosmology paper is organised, and where to find the claim, the data and the caveats</li>
+<li>How to read a paper in three passes, and when to stop</li>
+<li>What "±", "68%", "95% upper limit" and "3σ" mean in an abstract</li>
+<li>How to read a parameter table and a triangle plot of posterior contours</li>
+<li>Which questions to ask before believing a surprising result</li>
+</ul></td></tr></table>
+<h2>Everything was a paper first</h2>
+<p>The Hubble constant, the acoustic peaks, the neutrino mass limit, the S8 tension — every
+number in this course was announced in a scientific paper. Almost all of them appeared
+first on <a href="../glossary.html#arxiv" title="The free online preprint server where physicists and astronomers post their papers, usually before (and sometimes instead of) journal publication. Almost every cosmology result appears there first." style="color:#c7771a; text-decoration:none;">arXiv</a>, the free preprint server where physicists post their work, often
+months before a journal publishes it. Anyone can read them. The trick is knowing how.</p>
+<p>A cosmology paper is not written to be read from the first word to the last. It is a
+reference document with a predictable layout, and experienced readers jump around it.</p>
+<h2>The anatomy of a paper</h2>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th>Section</th>
+<th>What it is for</th>
+<th>What to look for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Abstract</strong></td>
+<td>The claim, in 200 words</td>
+<td>The headline numbers with their errors</td>
+</tr>
+<tr>
+<td><strong>Introduction</strong></td>
+<td>Why it matters, what was known</td>
+<td>The one sentence saying what is new</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>What was observed, how much</td>
+<td>Sky area, number of objects, redshift range</td>
+</tr>
+<tr>
+<td><strong>Method</strong></td>
+<td>How the data became a measurement</td>
+<td>The model, the priors, the likelihood</td>
+</tr>
+<tr>
+<td><strong>Systematics</strong></td>
+<td>What could fake the result</td>
+<td>Tests that split the data, and what survived</td>
+</tr>
+<tr>
+<td><strong>Results</strong></td>
+<td>Tables and contour plots</td>
+<td>The main table, the main figure</td>
+</tr>
+<tr>
+<td><strong>Discussion</strong></td>
+<td>What it means, what it does not</td>
+<td>Comparisons with other experiments, caveats</td>
+</tr>
+</tbody>
+</table>
+<p>Large collaborations such as Planck, DES or DESI split a result over many papers: one
+for the data, one for each probe, one "cosmological constraints" paper that combines them.
+The combined paper is usually the one with the headline — and it cites the others for
+everything that could go wrong.</p>
+<h2>Three passes</h2>
+<p>A good way to read, adapted from a well-known guide by the computer scientist Srinivasan
+Keshav:</p>
+<ol>
+<li><strong>Five minutes.</strong> Title, abstract, the section headings, the main figure and the
+   conclusions. At the end you should be able to say in one sentence what was measured and
+   what came out. Most papers stop here, and that is fine.</li>
+<li><strong>An hour.</strong> Read the introduction, the data section and the results properly. Look at
+   every figure and read its caption — captions are written to stand alone. Mark what you
+   do not understand but do not stop for it.</li>
+<li><strong>As long as it takes.</strong> Only for a paper you need: follow the method, check the
+   systematics tests, compare with the papers it cites. At this level you are trying to
+   rebuild the result in your head, and to find where you would have done it differently.</li>
+</ol>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e4f3ea;"><tr><td width="5" style="background-color:#1f9d57;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#1f9d57;">Start with the figure</b></p><p>In cosmology the main figure <em>is</em> the result: a Hubble diagram, a power spectrum, a
+contour plot. If you can read that one picture (<a href="../lessons/L7_1.html">L7.1</a>), you have understood
+most of the paper.</p></td></tr></table>
+<h2>Decoding an abstract</h2>
+<p>Here is the kind of sentence you will meet, taken from the Planck 2018 results:</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">From an abstract</b></p><p><em>We find a Hubble constant <img src="../assets/img/0febb80698b13a04.png" width="126" height="18" style="vertical-align: middle"/> km s⁻¹ Mpc⁻¹, a matter density
+parameter <img src="../assets/img/64cb2d6a14821f60.png" width="142" height="16" style="vertical-align: middle"/>, and a matter fluctuation amplitude
+<img src="../assets/img/a09b8fab696c770b.png" width="134" height="16" style="vertical-align: middle"/>.</em></p></td></tr></table>
+<p>Unless the paper says otherwise, "±" is a <strong>68% interval</strong>: one standard deviation for a
+Gaussian <a href="../glossary.html#posterior" title="What is believed about the parameters after seeing the data: the likelihood multiplied by the prior. The cloud of points an MCMC chain leaves behind is a sample of it." style="color:#c7771a; text-decoration:none;">posterior</a>. The true value lies outside it about a third of the time.
+Other phrases have fixed meanings too:</p>
+<ul>
+<li><strong>"95% upper limit"</strong>, as in <img src="../assets/img/ea13ce1852f97f55.png" width="97" height="25" style="vertical-align: middle"/> eV: the data are consistent with zero,
+  and this is the value excluded at 95% confidence (<a href="../lessons/L4_7.html">L4.7</a>).</li>
+<li><strong>"consistent with"</strong> means within about two standard deviations. It does not mean
+  "equal to".</li>
+<li><strong>"in 3σ tension"</strong> means two measurements differ by three times their combined error
+  (<a href="../lessons/L7_2.html">L7.2</a>). Tension is between measurements, not between a measurement and
+  the truth.</li>
+<li><strong>"a preference for"</strong> or <strong>"a hint of"</strong> usually signals something between 2σ and 3σ.
+  <strong>"Evidence"</strong> is often used around 3σ, and <strong>"detection"</strong> is reserved for 5σ.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Adding up a tension</b></p><p>Two independent measurements <img src="../assets/img/a274866d197a83bc.png" width="46" height="16" style="vertical-align: middle"/> and <img src="../assets/img/0b2df6507d72ca7f.png" width="44" height="16" style="vertical-align: middle"/> differ by</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/774557e6bb9941d0.png" width="112" height="41" /></p>
+<p>standard deviations. For SH0ES (<img src="../assets/img/4c6b5a1df4a36f56.png" width="89" height="13" style="vertical-align: middle"/>) against Planck (<img src="../assets/img/ce4eba08e4f536d0.png" width="72" height="13" style="vertical-align: middle"/>) that is
+<img src="../assets/img/07a9994c9e2d392c.png" width="121" height="18" style="vertical-align: middle"/> — the Hubble tension of <a href="../lessons/L6_6.html">L6.6</a>.</p></td></tr></table>
+<h2>Reading a parameter table</h2>
+<p>The results section usually holds a table: one column per combination of data, one row per
+parameter. Three things are easy to miss.</p>
+<ul>
+<li><strong>Which data.</strong> "Planck TT,TE,EE+lowE+lensing+BAO" and "Planck TT" give different
+  numbers. When two papers disagree, check first whether they used the same combination.</li>
+<li><strong>Which parameters were fitted and which were derived.</strong> <img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/> is often <em>derived</em> from
+  the angle of the acoustic peaks and the densities, not fitted directly. A derived
+  parameter inherits every assumption of the model — here, ΛCDM.</li>
+<li><strong>Which model.</strong> A table for ΛCDM and a table for "ΛCDM + <img src="../assets/img/dd032e7b5ce48670.png" width="28" height="16" style="vertical-align: middle"/>" are
+  different measurements. Freeing a parameter almost always widens the errors on the
+  others.</li>
+</ul>
+<h2>Reading the triangle plot</h2>
+<p>The figure every constraint paper contains is the <a href="../glossary.html#triangle-plot" title="The standard figure of a parameter analysis: the one-dimensional posterior of each parameter on the diagonal and 68% / 95% contours for every pair below it, all computed from the same MCMC chain. Also called a corner plot." style="color:#c7771a; text-decoration:none;">triangle plot</a> (or corner plot): the
+<a href="../glossary.html#mcmc" title="A random walk through parameter space that visits each region in proportion to its posterior probability. The density of visited points is the measurement, error bars and correlations included." style="color:#c7771a; text-decoration:none;">MCMC</a> chain of <a href="../lessons/L7_3.html">L7.3</a> displayed as all its two-parameter slices.</p>
+<ul>
+<li>Along the diagonal, each panel is the posterior of one parameter, with all the others
+  <a href="../glossary.html#marginalisation" title="Removing a parameter you are not interested in by integrating the posterior over it. With MCMC samples it is trivial: simply ignore that column. The histograms along the edges of a contour plot are marginal distributions." style="color:#c7771a; text-decoration:none;">marginalised</a> over.</li>
+<li>Below the diagonal, each panel shows two parameters with 68% and 95%
+  <a href="../glossary.html#confidence-contour" title="The region of a two-parameter plane that holds a given fraction (usually 68% or 95%) of the probability. Its tilt shows which combination of the two parameters the data actually measure." style="color:#c7771a; text-decoration:none;">contours</a>: the darker inner region holds 68% of the probability.</li>
+<li>A tilted, cigar-shaped contour is a <a href="../glossary.html#parameter-degeneracy" title="A direction in parameter space along which different combinations fit the data almost equally well, so the data measure a combination of the parameters rather than each one. It shows up as a long, tilted contour and is broken by adding a measurement that constrains a different direction." style="color:#c7771a; text-decoration:none;">degeneracy</a>: the data
+  constrain a combination of the two parameters well, and each one separately badly. The
+  combination is often what the paper quotes — <img src="../assets/img/7f4ce4ed4466cd81.png" width="125" height="25" style="vertical-align: middle"/> exists
+  for exactly this reason.</li>
+<li>When several data sets are overlaid, look at where their contours <strong>overlap</strong>. Combining
+  data is only honest when they do.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Likelihood &amp; MCMC Explorer</b></p><p style='margin:0;'>Fit a model, then look at the contours. Add the second probe and watch a long, tilted degeneracy shrink to a small ellipse where the two overlap.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S19" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Likelihood &amp; MCMC Explorer</b></a></p></td></tr></table>
+<h2>Before you believe it</h2>
+<p>A result that would change the textbook deserves a few questions. None of them is an
+accusation; they are what the authors' own referees ask.</p>
+<ol>
+<li><strong>How many σ, and after what?</strong> A 3σ effect found after trying twenty ways of cutting
+   the data is much weaker than it looks. This is the <a href="../glossary.html#look-elsewhere-effect" title="The more places, bins or data cuts one searches, the more likely a fluctuation that looks significant appears by chance somewhere. A 3σ bump found after many tries is much weaker evidence than one predicted in advance." style="color:#c7771a; text-decoration:none;">look-elsewhere effect</a>.</li>
+<li><strong>Was the analysis <a href="../glossary.html#blinding" title="Hiding the true result of an analysis, for instance by shifting the data by an unknown amount, until the method has been tested and frozen. It stops analysts from tuning their choices, consciously or not, towards an expected answer." style="color:#c7771a; text-decoration:none;">blinded</a>?</strong> Modern surveys hide the answer from
+   themselves until every choice is frozen, so that nobody can steer towards the expected
+   number without meaning to.</li>
+<li><strong>Does it survive the systematics tests?</strong> Split by sky region, by redshift, by
+   instrument. A real signal is the same in every half; a <a href="../glossary.html#systematic-error" title="A bias that repeats in every measurement — a calibration offset, unmodelled dust, a selection effect. Unlike statistical noise it does not shrink as more data are collected, and it is usually what cosmological disputes are about." style="color:#c7771a; text-decoration:none;">systematic</a>
+   usually is not (<a href="../lessons/L7_6.html">L7.6</a>).</li>
+<li><strong>Does it depend on one data set?</strong> The DESI 2024 preference for evolving dark energy
+   ranged from 2.5σ to 3.9σ depending on which supernova sample was included. That spread
+   is itself information.</li>
+<li><strong>Has anyone else seen it?</strong> The DAMA annual modulation (<a href="../lessons/L3_6.html">L3.6</a>) has been
+   significant for twenty years in one experiment and absent in every other.</li>
+<li><strong>Can you check it?</strong> Many collaborations now publish their chains, likelihoods and
+   code. A result you can rerun is worth more than one you have to take on trust.</li>
+</ol>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">Peer review is a filter, not a guarantee</b></p><p>A published paper has been read critically by one or two experts, which catches many
+mistakes but not all. A preprint has not yet been. Neither is the final word: that comes
+when independent teams, with different instruments and different systematics, find the
+same number.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">How the field argues</b></p><p>When the 1998 supernova papers claimed that the expansion was accelerating
+(<a href="../lessons/L3_3.html">L3.3</a>), two independent teams had reached the same answer with different
+data and different methods. That, more than any single σ, is why the community accepted
+a result that almost nobody had expected.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Cosmology papers appear first on arXiv; they are reference documents, not stories, and
+  are best read in passes: abstract and main figure first, details only when needed.</li>
+<li>"±" usually means a 68% interval; "95% upper limit", "consistent with", "tension",
+  "evidence" and "detection" all have specific meanings.</li>
+<li>Parameter tables depend on the data combination, the model and whether a parameter was
+  fitted or derived.</li>
+<li>Triangle plots show marginalised posteriors and 68%/95% contours; tilted contours are
+  degeneracies, and combined data are honest only where contours overlap.</li>
+<li>Before believing a surprise, ask about the look-elsewhere effect, blinding, systematics
+  tests, dependence on one data set, independent confirmation and reproducibility.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="6"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> Unless a paper says otherwise, what does &#x27;H₀ = 67.4 ± 0.5&#x27; in an abstract mean?</p><ol type="a"><li><button type="button" data-index="0">The true value is certainly between 66.9 and 67.9</button></li><li><button type="button" data-index="1">A 68% interval: one standard deviation, so the truth lies outside it about a third of the time</button></li><li><button type="button" data-index="2">A 95% interval</button></li><li><button type="button" data-index="3">The instrument&#x27;s resolution</button></li></ol><p class="explanation" hidden>The default in cosmology is the 68% credible interval of the posterior — one σ for a Gaussian.</p></div><div class="question" data-answer="1"><p><b>2.</b> A paper reports Σm_ν &lt; 0.12 eV (95%). What does that say?</p><ol type="a"><li><button type="button" data-index="0">The neutrino mass has been measured as 0.12 eV</button></li><li><button type="button" data-index="1">The data are consistent with a small or zero sum, and larger values are excluded at 95% confidence</button></li><li><button type="button" data-index="2">Neutrinos are massless</button></li><li><button type="button" data-index="3">Each neutrino weighs 0.12 eV</button></li></ol><p class="explanation" hidden>An upper limit means no detection; oscillation experiments already require at least about 0.06 eV.</p></div><div class="question" data-answer="2"><p><b>3.</b> Two measurements are 73.0 ± 1.0 and 67.4 ± 0.5. Roughly how many σ apart are they?</p><ol type="a"><li><button type="button" data-index="0">2σ</button></li><li><button type="button" data-index="1">3σ</button></li><li><button type="button" data-index="2">5σ</button></li><li><button type="button" data-index="3">11σ</button></li></ol><p class="explanation" hidden>5.6 / √(1.0² + 0.5²) = 5.6 / 1.12 ≈ 5σ. Errors add in quadrature, not linearly.</p></div><div class="question" data-answer="1"><p><b>4.</b> In a triangle plot, what does a long, tilted contour between two parameters mean?</p><ol type="a"><li><button type="button" data-index="0">The analysis failed</button></li><li><button type="button" data-index="1">A degeneracy: the data fix a combination of the two well, and each one separately badly</button></li><li><button type="button" data-index="2">The parameters are independent</button></li><li><button type="button" data-index="3">There are too few data points</button></li></ol><p class="explanation" hidden>That is why papers quote combinations such as S₈ = σ₈√(Ωm/0.3), which lie along the well-measured direction.</p></div><div class="question" data-answer="1"><p><b>5.</b> Why do modern surveys blind their analysis?</p><ol type="a"><li><button type="button" data-index="0">To hide results from competitors</button></li><li><button type="button" data-index="1">So that no choice in the analysis can be steered, even unconsciously, towards the expected answer</button></li><li><button type="button" data-index="2">Because the data are secret</button></li><li><button type="button" data-index="3">To make the paper shorter</button></li></ol><p class="explanation" hidden>Every cut and model choice is frozen before the answer is revealed; only then is the result unblinded.</p></div><div class="question" data-answer="1"><p><b>6.</b> A new 3σ signal appears after the authors tried many ways of splitting the data. What should you worry about?</p><ol type="a"><li><button type="button" data-index="0">Nothing: 3σ is a discovery</button></li><li><button type="button" data-index="1">The look-elsewhere effect: with enough tries, a 3σ fluctuation somewhere is expected</button></li><li><button type="button" data-index="2">That the error bars are too large</button></li><li><button type="button" data-index="3">That the paper is on arXiv</button></li></ol><p class="explanation" hidden>The more places you look, the more likely chance alone produces a bump; 5σ and independent confirmation are the real test.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_6.html">◀ L7.6 Systematics: The Errors That Do Not Shrink with More Data</a><span></span></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

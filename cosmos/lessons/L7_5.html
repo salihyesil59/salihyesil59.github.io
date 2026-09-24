@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.5 Simulations as Experiments: From Initial Conditions to a Mock Catalogue · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.5 Simulations as Experiments: From Initial Conditions to a Mock Catalogue</h1><p class="lead">Cosmology cannot run a controlled experiment on the universe, so it builds one. How a simulation starts from a random field, grows it under gravity, turns it into galaxies, and is finally observed the way a telescope would — and why the error bars in every modern paper come out of thousands of those fake universes.</p><p class="meta">≈ 22 min read · Before this: <a href="../lessons/L7_4.html">L7.4</a>, <a href="../lessons/L5_4.html">L5.4</a> · Simulators: <a href="../simulators.html#S23">Redshift Survey Slice</a>, <a href="../simulators.html#S16">Supernova Ia Discovery</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>Why a simulation is the closest thing cosmology has to a laboratory experiment</li>
+<li>The chain from initial conditions through gravity to haloes, galaxies and a catalogue</li>
+<li>What a mock catalogue is and why an analysis is never trusted until it recovers the truth from one</li>
+<li>How thousands of mocks produce a covariance matrix, and why that is the real product</li>
+<li>What a simulation cannot do, and where its results stop being predictions</li>
+</ul></td></tr></table>
+<h2>The experiment we cannot run</h2>
+<p>Every other experimental science changes something and watches what happens. We
+cannot. There is one universe, we see it from one place, and it has already run
+once. Everything in Level 7 so far has been about squeezing that single sample for
+information: reading its plots (<a href="../lessons/L7_1.html">L7.1</a>), fitting it
+(<a href="../lessons/L7_2.html">L7.2</a>), sampling the posterior (<a href="../lessons/L7_3.html">L7.3</a>), designing the
+survey that collects it (<a href="../lessons/L7_4.html">L7.4</a>).</p>
+<p>A simulation closes the loop. It is a universe whose cosmology you <em>chose</em>, so you
+know the right answer before you start. Run your analysis on it. If the analysis
+gives back what you put in, it works. If it does not, you have found a bug — in the
+code, in the method, or in your understanding — and you have found it <em>before</em> you
+published a claim about the real universe.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">What a simulation is for</b></p><p>Not mainly to predict what the universe looks like. Mainly to <strong>test the analysis</strong>:
+a simulation is the only place where you can compare an answer with the truth.</p></td></tr></table>
+<h2>The chain</h2>
+<h3>1. Initial conditions</h3>
+<p>Inflation leaves a Gaussian random field: every Fourier mode is an independent
+random number whose typical size is set by the power spectrum <img src="../assets/img/292a8f3b7688714b.png" width="33" height="18" style="vertical-align: middle"/> of
+<a href="../lessons/L5_4.html">L5.4</a>. So the simulation starts by drawing one.</p>
+<p>Pick a seed. Draw white noise on a grid, multiply each mode by <img src="../assets/img/50a185b267488003.png" width="50" height="25" style="vertical-align: middle"/>,
+transform back — and you have a possible early universe, with the statistics we
+measure in the CMB and nothing else specified. Change the seed and you get a
+<em>different</em> universe with the <em>same</em> statistics. That is not a nuisance; it is the
+point, and we come back to it below.</p>
+<p>The particles are then displaced from a regular grid by the
+<a href="../glossary.html#zeldovich-approximation" title="The first-order solution for gravitational collapse: instead of integrating the forces, each particle is simply displaced from its starting point along the gradient of the initial potential. It is exact while fluctuations are small and is used to set the initial conditions of almost every simulation." style="color:#c7771a; text-decoration:none;">Zel&#x27;dovich approximation</a>: move each one along the
+gradient of the gravitational potential, which is exactly how linear theory says
+matter starts to fall.</p>
+<h3>2. Gravity</h3>
+<p>From there it is Newton's law, several billion times over. An N-body code computes
+the force on every particle and steps it forward. The largest runs today follow
+more than <img src="../assets/img/f3b7c22d1e640753.png" width="30" height="17" style="vertical-align: middle"/> particles in boxes a few Gpc across — the fastest part of the
+calculation is not the physics but keeping the force computation from costing
+<img src="../assets/img/b34c39c234ae52d8.png" width="24" height="16" style="vertical-align: middle"/>, which tree codes and particle-mesh grids solve.</p>
+<p><a href="../simulators.html#S16">S16</a> runs a small two-dimensional version of exactly this loop, which is
+enough to watch a smooth field turn into filaments, knots and voids.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">What the particles are not</b></p><p>The particles are not dark-matter particles. Each one weighs <img src="../assets/img/9e596aaf7d543519.png" width="25" height="17" style="vertical-align: middle"/> solar masses
+or more; it represents a lump of dark matter, not a WIMP. A simulation resolves
+structures made of many particles and says nothing reliable below that.</p></td></tr></table>
+<h3>3. From dark matter to galaxies</h3>
+<p>Gravity gives dark-matter <a href="../glossary.html#dark-matter-halo" title="A gravitationally bound, roughly spherical concentration of dark matter, about 200 times denser than the cosmic average, that hosts a galaxy, group or cluster." style="color:#c7771a; text-decoration:none;">haloes</a>. Telescopes see galaxies, and no
+simulation can follow gas, star formation, supernovae and black-hole feedback across
+a Gpc box from first principles. So the last step is a <em>recipe</em>:</p>
+<ul>
+<li><strong>Halo occupation</strong> — a statistical rule for how many galaxies of a given type sit
+  in a halo of a given mass, with a few free parameters tuned to reproduce the
+  observed clustering.</li>
+<li><strong>Semi-analytic models</strong> — simplified equations for gas cooling, star formation
+  and feedback, run on the merger history of each halo.</li>
+<li><strong>Hydrodynamic simulations</strong> — the gas physics included directly. The most
+  faithful and by far the most expensive, so the boxes are small.</li>
+</ul>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/0bb70c7b8af6fde2.png" width="640" height="340" /></p>
+<h3>4. Observing it</h3>
+<p>A simulation box is not a catalogue. To compare with data it has to be <em>observed</em>:</p>
+<ol>
+<li>Put an observer somewhere and build a light cone — objects are seen at the time
+   their light left them, not all at the same moment.</li>
+<li>Convert distances into <strong>redshifts</strong>, adding each galaxy's own velocity. This is
+   where <a href="../glossary.html#redshift-space-distortion" title="The apparent displacement of galaxies in a map because a redshift measures distance plus the galaxy&#x27;s own line-of-sight motion. Coherent infall squashes structures along the line of sight (the Kaiser effect); random orbits inside clusters stretch them into fingers pointing at the observer." style="color:#c7771a; text-decoration:none;">redshift-space distortions</a> enter.</li>
+<li>Apply the survey's <strong>selection</strong>: its sky footprint, its flux limit, its redshift
+   failures, the holes where a bright star was.</li>
+<li>Add the <strong>measurement errors</strong>: redshift uncertainties, photometric-redshift
+   scatter, whatever the instrument does.</li>
+</ol>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/47f0cf97cc3cc55f.png" width="640" height="340" /></p>
+<p>Step 2 is the one that changes the map most visibly. Step 3 is the one that is
+easiest to forget: a flux-limited survey keeps only the luminous tail far away, so
+the catalogue thins out with distance for a reason that has nothing to do with the
+universe.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/9977b67d3fdf6b1a.png" width="640" height="340" /></p>
+<p>The result is a <strong>mock catalogue</strong>: a file that looks exactly like the real data
+file, column for column, except that you know which cosmology made it.
+<a href="../simulators.html#S23">S23</a> walks through this last stage and lets you switch each effect on and
+off.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Redshift Survey Slice</b></p><p style='margin:0;'><strong>Observe a simulated universe.</strong> Start with <em>the true universe</em>, then add velocities, then a flux limit, then a photometric redshift error. Each step makes the map look less like the truth — and each step is something a real survey does to you.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S23" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Redshift Survey Slice</b></a></p></td></tr></table>
+<h2>The real product: the covariance matrix</h2>
+<p>Here is the part that is easy to miss. When a survey measures the correlation
+function in fifteen separation bins, it needs to know not only the error on each bin
+but <strong>how the bins are correlated</strong> — a large-scale fluctuation pushes several of
+them up together. That information is the
+<a href="../glossary.html#covariance-matrix" title="The table of how the uncertainties in a set of measurements move together. Its diagonal holds the squared error bars; the off-diagonal entries say how strongly a fluctuation in one bin drags another with it. For a real survey it is usually measured from thousands of mock catalogues." style="color:#c7771a; text-decoration:none;">covariance matrix</a>, and there is no way to compute it
+analytically for a realistic survey geometry.</p>
+<p>So it is measured from mocks. Build a thousand independent universes with the same
+cosmology and the same survey geometry, measure the correlation function in each,
+and look at how the measurements scatter. That scatter <em>is</em> the error bar.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/859bf1b45e88f2f4.png" width="309" height="56" /></p>
+<p>A thousand full N-body runs is unaffordable, which is why fast approximate methods
+exist — lognormal fields, as in <a href="../simulators.html#S23">S23</a>, or Zel'dovich-based codes. They get
+the covariance right even though they get the small-scale structure wrong, and that
+is all they are asked to do.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">Millennium, and what came after</b></p><p>The Millennium Simulation (2005) followed <img src="../assets/img/5f5f3ce9264ae2c3.png" width="30" height="17" style="vertical-align: middle"/> particles in a 500 Mpc/h box and
+was, for a decade, the reference for what ΛCDM predicts. Its descendants — Illustris
+and IllustrisTNG, EAGLE, Bolshoi, AbacusSummit, Uchuu — trade volume against physics
+in different directions. AbacusSummit, built for DESI, is 150 <em>billion</em> particles
+across enough boxes to give the covariance matrices the survey needs.</p></td></tr></table>
+<h2>Cosmic variance, made visible</h2>
+<p>Change the seed and everything changes: this filament is somewhere else, that void
+is bigger. The statistics are identical; the realisation is not.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/368bd1a3ba37d658.png" width="640" height="340" /></p>
+<p>That is <a href="../glossary.html#sample-variance" title="The uncertainty that comes from observing only a finite piece of the universe, whose structures are one random realisation. It can be reduced only by covering more volume; on the largest scales even the whole observable universe is a single sample." style="color:#c7771a; text-decoration:none;">cosmic variance</a>, and simulations make it something you
+can measure instead of something you have to argue about. Run the same analysis on
+a hundred seeds and the spread of the answers tells you how much of your result is
+the universe and how much is the particular piece of it you happen to live in. On
+the very largest scales, where the observable universe holds only a few independent
+patches, this is an irreducible floor — no telescope will ever fix it.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Redshift Survey Slice</b></p><p style='margin:0;'><strong>One universe out of many.</strong> Move the <b>random seed</b> through ten values with everything else fixed. The cosmology never changes. Would you have described these as the same universe?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S23" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Redshift Survey Slice</b></a></p></td></tr></table>
+<h2>What simulations cannot do</h2>
+<ul>
+<li><strong>Below the resolution</strong> there is nothing. A particle mass of <img src="../assets/img/e4a2405f9ecd30ba.png" width="60" height="20" style="vertical-align: middle"/>
+  means dwarf galaxies are absent, not rare.</li>
+<li><strong>The galaxy recipe is tuned, not derived.</strong> If a result depends strongly on how
+  galaxies were painted onto haloes, it is a statement about the recipe.</li>
+<li><strong>The box is periodic and finite.</strong> Modes longer than the box are missing, so a
+  small box systematically under-predicts large-scale power.</li>
+<li><strong>The cosmology was assumed.</strong> A simulation tests whether your analysis recovers
+  the input. It cannot tell you the input was right.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">A simulation is not evidence</b></p><p>"The simulation shows it" is not a measurement. It shows what <em>would</em> follow if
+ΛCDM, that resolution and that galaxy recipe were correct. The evidence is always
+the agreement — or the disagreement — with data.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>A simulation is cosmology's substitute for a controlled experiment: a universe
+  whose answer you know.</li>
+<li>The chain is initial conditions → gravity → haloes → a galaxy recipe → a light
+  cone → the survey's selection and errors → a <strong>mock catalogue</strong>.</li>
+<li>Mocks are what validate an analysis, and thousands of them are what produce the
+  covariance matrix behind every error bar you have seen in this course.</li>
+<li>Different seeds are different universes with the same statistics: that spread is
+  cosmic variance.</li>
+<li>Resolution, box size and the galaxy recipe set the limits of what a simulation is
+  allowed to claim.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="7"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> What is the main reason cosmologists run simulations?</p><ol type="a"><li><button type="button" data-index="0">To make pictures for press releases</button></li><li><button type="button" data-index="1">To test an analysis in a universe where the right answer is known</button></li><li><button type="button" data-index="2">To replace observations</button></li><li><button type="button" data-index="3">To prove that ΛCDM is correct</button></li></ol><p class="explanation" hidden>A simulation is the only place where a measurement can be compared with the truth, because the cosmology was an input.</p></div><div class="question" data-answer="1"><p><b>2.</b> Two simulations use the same cosmology but different random seeds. What differs?</p><ol type="a"><li><button type="button" data-index="0">The statistics of the density field</button></li><li><button type="button" data-index="1">Where each individual filament, cluster and void happens to be</button></li><li><button type="button" data-index="2">The value of H0</button></li><li><button type="button" data-index="3">Nothing: the seed only affects the run time</button></li></ol><p class="explanation" hidden>The seed picks one realisation out of many. The statistics are identical; the particular structures are not. That spread is cosmic variance.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why is a galaxy recipe (halo occupation, semi-analytic model) needed at all?</p><ol type="a"><li><button type="button" data-index="0">Gravity is too slow to compute</button></li><li><button type="button" data-index="1">Gas physics, star formation and feedback cannot be followed from first principles across a Gpc box</button></li><li><button type="button" data-index="2">Dark matter does not cluster</button></li><li><button type="button" data-index="3">Telescopes cannot see dark matter</button></li></ol><p class="explanation" hidden>An N-body run gives dark-matter haloes; turning them into observable galaxies needs a tuned recipe, and results that depend strongly on it are statements about the recipe.</p></div><div class="question" data-answer="1"><p><b>4.</b> What is a mock catalogue?</p><ol type="a"><li><button type="button" data-index="0">A list of galaxies that turned out not to exist</button></li><li><button type="button" data-index="1">A simulated data file with the same columns, geometry and selection as the real one</button></li><li><button type="button" data-index="2">A catalogue of simulations</button></li><li><button type="button" data-index="3">The output of an N-body code before any processing</button></li></ol><p class="explanation" hidden>The box has to be observed — light cone, redshifts, footprint, flux limit, measurement errors — before it looks like data.</p></div><div class="question" data-answer="1"><p><b>5.</b> How is the covariance matrix of a survey measurement usually obtained?</p><ol type="a"><li><button type="button" data-index="0">Analytically, from the survey geometry</button></li><li><button type="button" data-index="1">From the scatter of the same measurement across many independent mock catalogues</button></li><li><button type="button" data-index="2">By repeating the observations</button></li><li><button type="button" data-index="3">It is assumed to be diagonal</button></li></ol><p class="explanation" hidden>Thousands of fast approximate mocks are measured the same way as the data; how their answers scatter is the error bar.</p></div><div class="question" data-answer="1"><p><b>6.</b> A simulation has a particle mass of 10⁹ solar masses. What can it say about dwarf galaxies of 10⁷ solar masses?</p><ol type="a"><li><button type="button" data-index="0">That they are rare</button></li><li><button type="button" data-index="1">Nothing: they are below its resolution</button></li><li><button type="button" data-index="2">That they do not exist</button></li><li><button type="button" data-index="3">That they are more common than predicted</button></li></ol><p class="explanation" hidden>Below the resolution there is no information, and absence in the simulation is not a prediction of absence in the universe.</p></div><div class="question" data-answer="1"><p><b>7.</b> Why do fast approximate methods such as lognormal fields remain useful next to full N-body runs?</p><ol type="a"><li><button type="button" data-index="0">They are more accurate</button></li><li><button type="button" data-index="1">They get the large-scale statistics and the covariance right cheaply enough to run thousands of times</button></li><li><button type="button" data-index="2">They include gas physics</button></li><li><button type="button" data-index="3">They need no cosmology as input</button></li></ol><p class="explanation" hidden>A covariance matrix needs many realisations, not perfect small-scale structure — so cheap mocks are exactly the right tool.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_4.html">◀ L7.4 How a Survey Is Built: DESI, Euclid, Rubin and JWST</a><a href="../lessons/L7_6.html">L7.6 Systematics: The Errors That Do Not Shrink with More Data ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
