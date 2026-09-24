@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L1.1 The Cosmic Distance Ladder · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 1 · Observational Cosmology</p><h1>L1.1 The Cosmic Distance Ladder</h1><p class="lead">No single method measures all cosmic distances. Astronomers build a ladder in which each rung calibrates the next.</p><p class="meta">≈ 16 min read · Before this: <a href="../lessons/L0_2.html">L0.2</a>, <a href="../lessons/L0_3.html">L0.3</a> · Simulators: <a href="../simulators.html#S5">Hubble Diagram Fitter</a>, <a href="../simulators.html#S20">Distance Ladder Builder</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>Why distance is the hardest quantity to measure in astronomy</li>
+<li>Parallax as the geometric foundation</li>
+<li>Standard candles and the inverse-square law</li>
+<li>Cepheid variables and Type Ia supernovae</li>
+</ul></td></tr></table>
+<h2>The hardest measurement</h2>
+<p>A photograph of the sky is flat. A faint star might be a weak star nearby or a
+brilliant one far away. Measuring the brightness, colour or position of an object
+is comparatively easy; measuring its <strong>distance</strong> is one of the central
+challenges of astronomy.</p>
+<p>No single technique works from the Solar System to the edge of the observable
+universe. Instead astronomers use a chain of overlapping methods, the
+<a href="../glossary.html#distance-ladder" title="The chain of methods (radar, parallax, Cepheids, Type Ia supernovae, redshift) in which each method is calibrated by the one below it to measure ever larger distances." style="color:#c7771a; text-decoration:none;">cosmic distance ladder</a>. Each rung is calibrated using the
+rung below it.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/d5159d53391b5f27.png" width="640" height="340" /></p>
+<h2>Rung 1: radar and parallax</h2>
+<p>Inside the Solar System, distances are measured by bouncing radar signals off
+planets and timing the echo. This fixes the astronomical unit very precisely.</p>
+<p>With the AU known, <a href="../glossary.html#parallax" title="The apparent shift of a nearby star against distant background stars as the Earth orbits the Sun. The distance in parsecs is 1 divided by the parallax angle in arcseconds." style="color:#c7771a; text-decoration:none;">parallax</a> gives distances to nearby stars by pure
+geometry (lesson <a href="../lessons/L0_2.html">L0.2</a>): <img src="../assets/img/8e59b7712fe6af77.png" width="141" height="18" style="vertical-align: middle"/>.
+The European <strong>Gaia</strong> satellite has measured parallaxes of more than a billion
+stars, reaching thousands of parsecs for the brightest.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Geometry is the foundation</b></p><p>Parallax needs no assumptions about what stars are like. Every other method
+ultimately depends on it, so errors at this rung propagate all the way up the
+ladder.</p></td></tr></table>
+<h2>Standard candles and the inverse-square law</h2>
+<p>Beyond parallax we use <strong>standard candles</strong>: objects whose true brightness we
+know. The light of a source spreads over a sphere of area <img src="../assets/img/9f43288186d98402.png" width="37" height="17" style="vertical-align: middle"/>, so the
+flux <img src="../assets/img/709cbd71f18a370f.png" width="12" height="12" style="vertical-align: middle"/> (the brightness we measure) of a source with
+<a href="../glossary.html#luminosity" title="The total power emitted by an object, measured in watts or solar luminosities. The observed brightness (flux) falls off with distance as luminosity/(4πd²)." style="color:#c7771a; text-decoration:none;">luminosity</a> <img src="../assets/img/8e86cc5879554028.png" width="12" height="12" style="vertical-align: middle"/> at distance <img src="../assets/img/f6e7750ab17da0f8.png" width="9" height="13" style="vertical-align: middle"/> is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/dc1c4c01e5de5fbf.png" width="224" height="36" /></p>
+<p>If we know <img src="../assets/img/8e86cc5879554028.png" width="12" height="12" style="vertical-align: middle"/> and measure <img src="../assets/img/709cbd71f18a370f.png" width="12" height="12" style="vertical-align: middle"/>, we get <img src="../assets/img/f6e7750ab17da0f8.png" width="9" height="13" style="vertical-align: middle"/>. Move a lamp twice as far away and it
+looks four times fainter.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Magnitudes</b></p><p>Astronomers often express brightness in magnitudes, a logarithmic scale where
+larger numbers mean fainter. The difference between apparent magnitude <img src="../assets/img/727db7eb75814646.png" width="16" height="9" style="vertical-align: middle"/> and
+absolute magnitude <img src="../assets/img/9d617a9666799d0d.png" width="17" height="12" style="vertical-align: middle"/> is the <em>distance modulus</em>:
+<img src="../assets/img/55f59b1c4c0fe0b2.png" width="186" height="18" style="vertical-align: middle"/>.</p></td></tr></table>
+<h2>Rung 2: Cepheid variable stars</h2>
+<p><a href="../glossary.html#cepheid" title="A pulsating giant star whose pulsation period is tightly related to its luminosity (the Leavitt law). This makes Cepheids standard candles for measuring distances to nearby galaxies." style="color:#c7771a; text-decoration:none;">Cepheid variables</a> are giant pulsating stars whose brightness rises
+and falls with a period of days to months. In 1912 <strong>Henrietta Swan Leavitt</strong>,
+studying Cepheids in the Small Magellanic Cloud, discovered that the brighter a
+Cepheid is, the longer its period: the <strong>period–luminosity relation</strong> (also
+called the Leavitt law).</p>
+<p>So: measure the period, read off the luminosity, compare with the observed flux,
+and obtain the distance. Cepheids are bright enough to be seen in galaxies tens
+of millions of parsecs away. Their relation is calibrated with Cepheids in the
+Milky Way whose distances are known from parallax.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">Hubble and Andromeda</b></p><p>In 1923–1924 Edwin Hubble found Cepheids in the Andromeda "nebula". Their
+distance showed it lies far outside the Milky Way: Andromeda is a galaxy in its
+own right. The universe suddenly became vastly larger.</p></td></tr></table>
+<h2>Rung 3: Type Ia supernovae</h2>
+<p>For truly cosmological distances we need something far brighter.
+<a href="../glossary.html#type-ia-supernova" title="The thermonuclear explosion of a white dwarf star. Its peak luminosity can be standardised, making it a precise distance indicator out to billions of light-years. Used to discover cosmic acceleration." style="color:#c7771a; text-decoration:none;">Type Ia supernovae</a> are thermonuclear explosions of white
+dwarf stars. At their peak they can outshine an entire galaxy, and their peak
+luminosities are very similar. After a correction based on how quickly they fade
+(brighter ones fade more slowly), they are excellent <strong>standardisable candles</strong>,
+visible billions of light-years away.</p>
+<p>They are calibrated in nearby galaxies that host both a Type Ia supernova and
+Cepheids. In 1998 Type Ia supernovae revealed that the expansion of the universe
+is accelerating (lesson <a href="../lessons/L3_3.html">L3.3</a>).</p>
+<h2>Rung 4: redshift</h2>
+<p>At the top of the ladder, the <a href="../glossary.html#hubble-lemaitre-law" title="The observation that galaxies recede with velocities proportional to their distance, v = H0 d. It is the signature of uniform cosmic expansion." style="color:#c7771a; text-decoration:none;">Hubble–Lemaître law</a>
+connects a galaxy's redshift with its distance. Once calibrated with the lower
+rungs, measuring a redshift (which is easy) gives a distance. The next lesson
+explains this law.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">Distances are uncertain</b></p><p>Each rung adds uncertainty. Hubble's own distances in 1929 were too small by a
+factor of about seven, because the Cepheid calibration of his time was wrong.
+Today's best distances are accurate to a few percent, and small disagreements
+between methods are an active research topic.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Hubble Diagram Fitter</b></p><p style='margin:0;'>Load Hubble's 1929 data and see how a distance calibration error changes the slope.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S5" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Hubble Diagram Fitter</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Distances are measured with a ladder of overlapping methods.</li>
+<li>Parallax (pure geometry) is the foundation.</li>
+<li>Standard candles use the inverse-square law <img src="../assets/img/9f296ce43d4c9168.png" width="88" height="21" style="vertical-align: middle"/>.</li>
+<li>Cepheids (period–luminosity relation) reach tens of Mpc; Type Ia supernovae
+  reach billions of light-years.</li>
+<li>Redshift gives distances once the Hubble–Lemaître law is calibrated.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> Why is parallax considered the foundation of the distance ladder?</p><ol type="a"><li><button type="button" data-index="0">It works for all galaxies</button></li><li><button type="button" data-index="1">It uses pure geometry and needs no assumptions about the physics of stars</button></li><li><button type="button" data-index="2">It is the newest method</button></li><li><button type="button" data-index="3">It measures redshift directly</button></li></ol><p class="explanation" hidden>Parallax only uses the size of the Earth&#x27;s orbit and a measured angle. All other rungs are calibrated with it.</p></div><div class="question" data-answer="1"><p><b>2.</b> A standard candle is moved to twice its original distance. Its observed brightness becomes...</p><ol type="a"><li><button type="button" data-index="0">half</button></li><li><button type="button" data-index="1">one quarter</button></li><li><button type="button" data-index="2">one eighth</button></li><li><button type="button" data-index="3">unchanged</button></li></ol><p class="explanation" hidden>Flux F = L / 4πd² falls with the square of distance: (1/2)² = 1/4.</p></div><div class="question" data-answer="1"><p><b>3.</b> What did Henrietta Swan Leavitt discover about Cepheid variables?</p><ol type="a"><li><button type="button" data-index="0">Their colour depends on their distance</button></li><li><button type="button" data-index="1">Brighter Cepheids pulsate with longer periods</button></li><li><button type="button" data-index="2">They are all at the same distance</button></li><li><button type="button" data-index="3">They are exploding white dwarfs</button></li></ol><p class="explanation" hidden>The period–luminosity relation lets astronomers find a Cepheid&#x27;s luminosity from its period, making it a standard candle.</p></div><div class="question" data-answer="1"><p><b>4.</b> Why are Type Ia supernovae useful for cosmology?</p><ol type="a"><li><button type="button" data-index="0">They are nearby and easy to measure with parallax</button></li><li><button type="button" data-index="1">They are extremely bright and have standardisable peak luminosities</button></li><li><button type="button" data-index="2">They emit only radio waves</button></li><li><button type="button" data-index="3">They never fade</button></li></ol><p class="explanation" hidden>They can outshine a whole galaxy and, after correcting for their fading rate, their peak luminosities are nearly identical.</p></div><div class="question" data-answer="1"><p><b>5.</b> What did Hubble&#x27;s discovery of Cepheids in Andromeda show in the 1920s?</p><ol type="a"><li><button type="button" data-index="0">Andromeda is a gas cloud inside the Milky Way</button></li><li><button type="button" data-index="1">Andromeda is a separate galaxy far outside the Milky Way</button></li><li><button type="button" data-index="2">The universe is contracting</button></li><li><button type="button" data-index="3">Cepheids do not exist in other galaxies</button></li></ol><p class="explanation" hidden>The Cepheid distance placed Andromeda far beyond the Milky Way&#x27;s edge, proving it is a galaxy of its own.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L0_7.html">◀ L0.7 Orders of Magnitude: Estimating in Your Head Before You Compute</a><a href="../lessons/L1_2.html">L1.2 The Hubble–Lemaître Law ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L3.5 Computing the Age of the Universe · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 3 · Contents of the Universe</p><h1>L3.5 Computing the Age of the Universe</h1><p class="lead">Turn the Friedmann equation into a number. Step by step from simple models with exact answers to a numerical calculation that gives 13.8 billion years.</p><p class="meta">≈ 18 min read · Before this: <a href="../lessons/L3_4.html">L3.4</a> · Simulators: <a href="../simulators.html#S1">Cosmology Calculator</a>, <a href="../simulators.html#S2">Expansion History Explorer</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>How the age follows from the expansion history, t = ∫ da / (aH)</li>
+<li>Exact ages of the empty, matter-only and flat ΛCDM universes</li>
+<li>How to evaluate the age integral numerically</li>
+<li>How the age depends on H0 and on the contents of the universe, and how it is checked against the oldest stars</li>
+</ul></td></tr></table>
+<h2>From expansion rate to age</h2>
+<p>The Hubble parameter tells us how fast the universe grows: <img src="../assets/img/6de4971542e6ebfa.png" width="61" height="18" style="vertical-align: middle"/>.
+Turning this around, the time needed for the scale factor to grow by a small
+amount <img src="../assets/img/d6a013fbf0667a18.png" width="18" height="13" style="vertical-align: middle"/> is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/67fdba97118247c5.png" width="126" height="29" /></p>
+<p>Adding up these small steps from the Big Bang (<img src="../assets/img/dcc1a56f4abcdbff.png" width="38" height="13" style="vertical-align: middle"/>) to today (<img src="../assets/img/038e070ac052e5da.png" width="38" height="13" style="vertical-align: middle"/>) gives
+the <a href="../glossary.html#age-of-universe" title="The time elapsed since the Big Bang, about 13.8 billion years according to the ΛCDM model. It follows from integrating the expansion history, and is close to the Hubble time 1/H0 by coincidence." style="color:#c7771a; text-decoration:none;">age of the universe</a>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/4cbdc188079e84a0.png" width="234" height="56" /></p>
+<p>where, from lesson <a href="../lessons/L2_4.html">L2.4</a>,</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/4482a7181c0c50df.png" width="425" height="33" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Two ingredients</b></p><p>The age is the <a href="../glossary.html#hubble-time" title="The time 1/H0, about 14 billion years. It is the age the universe would have if it had always expanded at today&#x27;s rate." style="color:#c7771a; text-decoration:none;">Hubble time</a> <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/> multiplied by a pure number
+that depends only on the <strong>contents</strong> of the universe (the Ω values). Measuring
+<img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/> sets the overall scale; measuring the Ω values sets the factor.</p></td></tr></table>
+<p>The same formula with the upper limit <img src="../assets/img/1ac3cd56cb9f5d47.png" width="96" height="18" style="vertical-align: middle"/> gives the age of the universe
+when light was emitted at redshift <img src="../assets/img/7e07b7c25fa4247c.png" width="8" height="9" style="vertical-align: middle"/>.</p>
+<h2>Exact answers for simple universes</h2>
+<p>For a few universes the integral can be solved with pen and paper.</p>
+<p><strong>Empty universe</strong> (<img src="../assets/img/cd3bda25230cfdaa.png" width="41" height="13" style="vertical-align: middle"/>, the Milne model). Then <img src="../assets/img/9c7eba9c641c09b9.png" width="60" height="17" style="vertical-align: middle"/> and the
+integrand is 1:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/7862109e7371050a.png" width="60" height="26" /></p>
+<p>The expansion never slows down, so the Hubble time is exactly the age.</p>
+<p><strong>Flat, matter only</strong> (Einstein–de Sitter). Then <img src="../assets/img/199094ba68f8330c.png" width="72" height="17" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/894dbfb2bbbb766e.png" width="210" height="56" /></p>
+<p>Gravity slowed the expansion, so the universe needed less time to reach today's
+size. With <img src="../assets/img/a912958c1d878ffe.png" width="72" height="16" style="vertical-align: middle"/> km/s/Mpc this is only <strong>9.6 billion years</strong>.</p>
+<p><strong>Flat, radiation only.</strong> <img src="../assets/img/df56d216cd60ff60.png" width="60" height="17" style="vertical-align: middle"/> gives <img src="../assets/img/aa8734ec38895fa3.png" width="56" height="22" style="vertical-align: middle"/>. Radiation
+decelerates the expansion even more strongly.</p>
+<p><strong>Flat ΛCDM, ignoring radiation.</strong> The integral can still be done exactly:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/5f89464a76c75cb8.png" width="237" height="42" /></p>
+<p>For <img src="../assets/img/d726463d6cac9f35.png" width="74" height="14" style="vertical-align: middle"/> and <img src="../assets/img/e6a4dd26b43ea25a.png" width="73" height="14" style="vertical-align: middle"/> this gives
+<img src="../assets/img/a3ee782c5cfb9e16.png" width="121" height="18" style="vertical-align: middle"/> <strong>13.8 billion years</strong>. Radiation changes the result by
+less than 0.1%, because it only mattered during the first few hundred thousand
+years.</p>
+<h2>Seeing the integral</h2>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/3fa75ac3218da001.png" width="640" height="340" /></p>
+<p>The curve shows <img src="../assets/img/3e03dacfd3c94767.png" width="53" height="18" style="vertical-align: middle"/>: the time the universe spends while the scale factor grows
+by one unit. The area under the curve is the age.</p>
+<ul>
+<li>Near <img src="../assets/img/dcc1a56f4abcdbff.png" width="38" height="13" style="vertical-align: middle"/> the expansion was extremely fast, so very little time passed.</li>
+<li>In the matter-only universe (dashed) the curve always rises: the expansion keeps
+  slowing down.</li>
+<li>With dark energy the curve reaches a maximum around <img src="../assets/img/f7a05963e0301c61.png" width="52" height="13" style="vertical-align: middle"/> and then falls
+  again as the expansion accelerates. The extra area compared with the dashed curve
+  is why ΛCDM is older.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">A numerical estimate by hand</b></p><p>Split the range <img src="../assets/img/4b7e1491ccb00103.png" width="66" height="14" style="vertical-align: middle"/> into five equal steps and evaluate the integrand at
+the middle of each step (the <em>midpoint rule</em>). For Planck 2018 the values of
+<img src="../assets/img/3e03dacfd3c94767.png" width="53" height="18" style="vertical-align: middle"/> at <img src="../assets/img/a797c210910f4bab.png" width="170" height="16" style="vertical-align: middle"/> are 8.2, 13.8, 16.2, 16.4 and 15.2
+billion years. Their average, <img src="../assets/img/73a9d6ad742e2ecb.png" width="106" height="18" style="vertical-align: middle"/>, times the step range of 1,
+is already within about 1% of the exact result. With 100 steps the estimate is
+13.806 billion years.</p></td></tr></table>
+<p>The Cosmos app evaluates the integral with an adaptive method that refines the
+steps automatically until the answer is accurate to about one part in a hundred
+million.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Cosmology Calculator</b></p><p style='margin:0;'>Compare the ages of Planck 2018, Einstein–de Sitter and the empty Milne universe. Which one equals the Hubble time?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S1" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Cosmology Calculator</b></a></p></td></tr></table>
+<h2>What the age depends on</h2>
+<p><strong>The Hubble constant.</strong> For fixed Ω values, <img src="../assets/img/47c77695233937b0.png" width="72" height="18" style="vertical-align: middle"/>. A faster expansion
+means a younger universe:</p>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th><img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/> (km/s/Mpc)</th>
+<th>Age for Ωm = 0.31, ΩΛ = 0.69</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>67.7 (CMB)</td>
+<td>13.8 billion years</td>
+</tr>
+<tr>
+<td>73.0 (Cepheids and supernovae)</td>
+<td>12.8 billion years</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="../glossary.html#hubble-tension" title="The disagreement between the Hubble constant inferred from the early universe (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae (about 73 km/s/Mpc)." style="color:#c7771a; text-decoration:none;">Hubble tension</a> therefore also affects the age.</p>
+<p><strong>Matter and dark energy.</strong> More matter means more deceleration and a younger
+universe. Dark energy makes it older.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/c3331b96614c86ff.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Expansion History Explorer</b></p><p style='margin:0;'>Move Ωm and ΩΛ on the map and watch the age in the summary change. Can you find a universe older than 20 billion years?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S2" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Expansion History Explorer</b></a></p></td></tr></table>
+<h2>Checking the age: the oldest stars</h2>
+<p>A universe cannot be younger than its oldest stars. Astronomers estimate stellar
+ages independently of cosmology:</p>
+<ul>
+<li><strong>Globular clusters</strong>, dense groups of very old stars in the halo of the Milky Way.
+  Comparing their colours and brightnesses with models of stellar evolution gives
+  ages of about 12–13.5 billion years.</li>
+<li><strong>White dwarf cooling.</strong> White dwarfs cool like embers at a predictable rate; the
+  faintest ones in old clusters are about 12 billion years old.</li>
+<li><strong>Radioactive dating.</strong> Uranium and thorium in very old stars decay like a clock
+  and give ages of roughly 12–14 billion years, with larger uncertainties.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">The age problem</b></p><p>In the 1990s many astronomers believed the universe contained only matter. With
+the measured <img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/> this gave ages of 8–10 billion years, younger than the
+globular clusters. The discovery of dark energy in 1998 resolved the conflict: in
+ΛCDM the universe is older than its oldest stars, as it must be. The figure above
+shows the shaded band of stellar ages crossing the curves.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>The age of the universe is <img src="../assets/img/01e09e66d6a6c92a.png" width="124" height="46" style="vertical-align: middle"/>: the Hubble time times a
+  number set by the cosmic contents.</li>
+<li>Empty universe: <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/>. Matter only: <img src="../assets/img/32062900598059bb.png" width="41" height="22" style="vertical-align: middle"/>. Flat ΛCDM:
+  <img src="../assets/img/4405e0f39032c29e.png" width="125" height="22" style="vertical-align: middle"/> billion years.</li>
+<li>The integral is easy to evaluate numerically; even five steps give about 1%
+  accuracy.</li>
+<li>Faster expansion or more matter make the universe younger; dark energy makes it
+  older.</li>
+<li>The oldest stars (12–13.5 billion years) are consistent with ΛCDM but not with a
+  matter-only universe.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> Which formula gives the age of the universe?</p><ol type="a"><li><button type="button" data-index="0">t0 = H0</button></li><li><button type="button" data-index="1">t0 = ∫ da / (a H), from a = 0 to a = 1</button></li><li><button type="button" data-index="2">t0 = c / H0</button></li><li><button type="button" data-index="3">t0 = ∫ H da, from a = 0 to a = 1</button></li></ol><p class="explanation" hidden>The time for a small growth da is da/ȧ = da/(aH). Adding all steps from the Big Bang to today gives the age.</p></div><div class="question" data-answer="0"><p><b>2.</b> What is the age of an empty universe (no matter, radiation or dark energy)?</p><ol type="a"><li><button type="button" data-index="0">Exactly 1/H0</button></li><li><button type="button" data-index="1">2/(3H0)</button></li><li><button type="button" data-index="2">1/(2H0)</button></li><li><button type="button" data-index="3">Infinite</button></li></ol><p class="explanation" hidden>With nothing to slow or speed it up, the expansion rate stays constant, so the age equals the Hubble time.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why is a flat matter-only universe younger than 1/H0?</p><ol type="a"><li><button type="button" data-index="0">Matter makes light travel slower</button></li><li><button type="button" data-index="1">Gravity slowed the expansion, so it expanded faster in the past and needed less time to reach today&#x27;s size</button></li><li><button type="button" data-index="2">Matter-only universes have no Big Bang</button></li><li><button type="button" data-index="3">It is actually older than 1/H0</button></li></ol><p class="explanation" hidden>Its age is 2/3 of the Hubble time, about 9.6 billion years for H0 = 67.7 km/s/Mpc.</p></div><div class="question" data-answer="1"><p><b>4.</b> If H0 were 73 km/s/Mpc instead of 67.7 (with the same Ωm and ΩΛ), the age of the universe would be...</p><ol type="a"><li><button type="button" data-index="0">larger, about 14.9 billion years</button></li><li><button type="button" data-index="1">smaller, about 12.8 billion years</button></li><li><button type="button" data-index="2">unchanged</button></li><li><button type="button" data-index="3">about 1.4 billion years</button></li></ol><p class="explanation" hidden>For fixed contents the age scales as 1/H0: 13.8 × 67.7/73 ≈ 12.8 billion years.</p></div><div class="question" data-answer="1"><p><b>5.</b> How did the discovery of dark energy solve the &#x27;age problem&#x27; of the 1990s?</p><ol type="a"><li><button type="button" data-index="0">It showed the oldest stars are younger than thought</button></li><li><button type="button" data-index="1">It made the universe older than a matter-only model, comfortably older than the oldest stars</button></li><li><button type="button" data-index="2">It changed the value of the speed of light</button></li><li><button type="button" data-index="3">It removed the need to know H0</button></li></ol><p class="explanation" hidden>Accelerated expansion in the recent past means the universe expanded more slowly earlier, giving about 13.8 billion years instead of 9–10.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L3_4.html">◀ L3.4 The ΛCDM Model</a><a href="../lessons/L3_6.html">L3.6 Hunting Dark Matter: WIMPs, Axions and the Experiments That Look for Them ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

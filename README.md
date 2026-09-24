@@ -57,6 +57,22 @@ templating language to learn.
   address is assembled in JS purely to make scraping mildly annoying, which is
   not real protection.
 
+## The Cosmos course
+
+`cosmos/` is the website edition of [Cosmos](https://github.com/salihyesil59/cosmos),
+extracted verbatim from the release asset — it is generated output, not source, so
+edit it in the Cosmos repository and re-export rather than patching it here.
+
+To move to a newer release:
+
+```bash
+gh release download vX.Y.Z --repo salihyesil59/cosmos --pattern "*-website.zip"
+rm -rf cosmos && unzip -q Cosmos-X.Y.Z-website.zip -d cosmos && rm Cosmos-X.Y.Z-website.zip
+```
+
+Then update the lesson and simulator counts in the Cosmos card in `index.html`,
+along with the `Download vX.Y.Z` link.
+
 ## Notes
 
 - Star counts come from the unauthenticated GitHub API, cached in

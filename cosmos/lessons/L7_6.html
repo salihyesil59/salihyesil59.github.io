@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.6 Systematics: The Errors That Do Not Shrink with More Data · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.6 Systematics: The Errors That Do Not Shrink with More Data</h1><p class="lead">Statistical errors fall as data accumulate; systematic errors do not. Where they come from in each probe, how selection effects fool you, and the defences — independent methods, null tests, simulations and blinding — that modern cosmology relies on.</p><p class="meta">≈ 20 min read · Before this: <a href="../lessons/L7_4.html">L7.4</a>, <a href="../lessons/L6_6.html">L6.6</a> · Simulators: <a href="../simulators.html#S20">Distance Ladder Builder</a>, <a href="../simulators.html#S21">Survey Designer</a>, <a href="../simulators.html#S16">Supernova Ia Discovery</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>The difference between statistical and systematic errors, and why the second kind sets a floor</li>
+<li>Typical systematics of the distance ladder, supernovae, lensing and galaxy surveys</li>
+<li>How a selection effect such as Malmquist bias biases a sample</li>
+<li>How nuisance parameters, null tests, simulations and blinding keep an analysis honest</li>
+<li>Why independent methods, not more data, settle a tension</li>
+</ul></td></tr></table>
+<h2>Two kinds of error</h2>
+<p>A <a href="../glossary.html#statistical-error" title="The random part of a measurement&#x27;s uncertainty, which shrinks as the square root of the number of measurements. The error bars on a plot usually show one standard deviation of it." style="color:#c7771a; text-decoration:none;">statistical error</a> comes from randomness: a finite number of
+galaxies, photons or supernovae. Repeat the experiment and it scatters around the
+truth; average <img src="../assets/img/f493e39889dbe532.png" width="14" height="12" style="vertical-align: middle"/> measurements and it falls as <img src="../assets/img/5eac65edb8f16911.png" width="49" height="24" style="vertical-align: middle"/>.</p>
+<p>A <a href="../glossary.html#systematic-error" title="A bias that repeats in every measurement — a calibration offset, unmodelled dust, a selection effect. Unlike statistical noise it does not shrink as more data are collected, and it is usually what cosmological disputes are about." style="color:#c7771a; text-decoration:none;">systematic error</a> comes from the method: a miscalibrated
+instrument, an incomplete model, a biased selection. Repeat the experiment and you get
+the same wrong answer every time. Averaging does nothing.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The floor</b></p><p>Independent errors add in quadrature,
+<img src="../assets/img/60503529c59bf031.png" width="133" height="22" style="vertical-align: middle"/>. As a survey
+grows the first term shrinks and the second does not, so the total error approaches a
+<strong>floor</strong>. A survey that is already there gains almost nothing from more data.</p></td></tr></table>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/861743f5f39337a3.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Survey Designer</b></p><p style='margin:0;'>Add a 0.3% systematic floor to the DESI programme. How many years of observing are still worth it?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S21" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Survey Designer</b></a></p></td></tr></table>
+<h2>Where systematics hide</h2>
+<p>Every probe has its own list, and experienced analysts know it by heart.</p>
+<p><strong>The distance ladder.</strong> A parallax zero-point error shifts every Cepheid distance at
+once. In crowded distant galaxies a Cepheid can blend with its neighbours and look
+too bright. The brightness of Cepheids depends slightly on their metal content, which
+differs between galaxies. Each of these moves H0 without widening the error bar —
+lesson <a href="../lessons/L7_3.html">L7.3</a>.</p>
+<p><strong>Type Ia supernovae.</strong> Different telescopes must be calibrated onto one photometric
+system to a hundredth of a magnitude. Dust in the host galaxy dims and reddens the
+light, and supernovae in massive galaxies are slightly brighter after standardisation
+(the "mass step"). If supernovae in the young universe differ from nearby ones, the
+whole Hubble diagram tilts.</p>
+<p><strong>Weak lensing.</strong> The signal is a shape distortion of about one percent, so the
+measurement of galaxy shapes must itself be calibrated to a fraction of a percent.
+Photometric redshifts that are slightly off put the lenses at the wrong distance.
+Galaxies that are intrinsically aligned by their surroundings mimic lensing, and gas
+blown out of galaxies by supernovae and black holes changes the matter distribution on
+small scales.</p>
+<p><strong>Galaxy surveys.</strong> Stars, dust and the varying depth of the imaging change how many
+targets are selected across the sky, painting false structure onto the map. Some
+redshifts fail; nearby fibres collide.</p>
+<p><strong>The CMB.</strong> Emission from dust and electrons in our own Galaxy lies in front of the
+signal and must be removed.</p>
+<h2>Selection effects: the sample lies</h2>
+<p>Some of the most treacherous systematics come from <em>which</em> objects end up in a
+catalogue. A survey that detects everything brighter than a limit sees the whole
+population nearby, but only the most luminous members far away. The distant objects
+in the catalogue are therefore brighter on average than the population they
+represent — <a href="../glossary.html#malmquist-bias" title="In a sample limited by apparent brightness, distant objects are detected only if they are intrinsically bright, so the catalogue is brighter on average than the population. Uncorrected, it makes distant standard candles look closer than they are." style="color:#c7771a; text-decoration:none;">Malmquist bias</a>.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/31cc36241d636b82.png" width="640" height="340" /></p>
+<p>If you assume every standard candle has the population's mean brightness, the
+distant ones look closer than they are. Every distance-ladder and supernova analysis
+models this selection explicitly.</p>
+<h2>The defences</h2>
+<p><strong>Nuisance parameters.</strong> A systematic you understand can be written into the model as
+an extra parameter — a calibration offset, an intrinsic-alignment amplitude, a
+photometric-redshift shift — with a prior from external data. The chain of lesson
+<a href="../lessons/L7_3.html">L7.3</a> then explores it along with the cosmology, and the error bars grow
+honestly.</p>
+<p><strong>Null tests.</strong> Split the data in ways that should not matter: north against south
+sky, early against late observations, red against blue galaxies. Each half must give
+the same answer. A <a href="../glossary.html#null-test" title="A check that splits the data in ways that should not change the result — two halves of the sky, early and late observations, red and blue galaxies — and verifies that the halves agree. A failed null test reveals a systematic error." style="color:#c7771a; text-decoration:none;">null test</a> that fails reveals a systematic long before
+it would show up in the final result.</p>
+<p><strong>Simulations.</strong> Build mock universes with a known answer, pass them through the full
+pipeline — selection, noise, instrument model — and check that the truth comes out.
+Inject fake signals into real data and see whether they are recovered.</p>
+<p><strong>Blinding.</strong> Scientists are human and stop looking for bugs once the answer "looks
+right". In a <a href="../glossary.html#blinding" title="Hiding the true result of an analysis, for instance by shifting the data by an unknown amount, until the method has been tested and frozen. It stops analysts from tuning their choices, consciously or not, towards an expected answer." style="color:#c7771a; text-decoration:none;">blinded</a> analysis the true result is hidden — the data are
+shifted by an unknown amount, or the key numbers are encrypted — until every test has
+been passed and the method is frozen. DESI, DES, KiDS and others unblind only at the
+very end.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f4eee0;"><tr><td width="5" style="background-color:#a87800;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#a87800;">Cautionary tales</b></p><p>In the 1970s two schools measured H0 as about 50 and about 100 km/s/Mpc, each with
+small error bars; the difference was systematic. In 2014 the BICEP2 team announced
+primordial gravitational waves in CMB polarisation; the signal turned out to be dust in
+our Galaxy. In 2011 the OPERA experiment reported neutrinos faster than light — a
+loose fibre-optic cable. Each result was statistically significant, and each was wrong.</p></td></tr></table>
+<h2>Settling a tension</h2>
+<p>When two measurements disagree, as in the <a href="../glossary.html#hubble-tension" title="The disagreement between the Hubble constant inferred from the early universe (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae (about 73 km/s/Mpc)." style="color:#c7771a; text-decoration:none;">Hubble tension</a>
+(lesson <a href="../lessons/L6_6.html">L6.6</a>), more data of the same kind cannot decide between "new
+physics" and "a hidden systematic": it would reproduce the same bias with smaller
+error bars. What helps is a <strong>different method with different systematics</strong>. JWST
+re-observed the Cepheids with sharper images to test crowding; other teams calibrate
+supernovae with red giant stars instead of Cepheids; gravitational-wave sirens and
+time delays of lensed quasars measure H0 without any distance ladder at all.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Distance Ladder Builder</b></p><p style='margin:0;'>Add a parallax zero-point offset of +20 µas and 1000 Hubble-flow supernovae. Watch the error bar shrink while the shift stays. What independent check would reveal it?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S20" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Distance Ladder Builder</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Statistical errors fall as <img src="../assets/img/5eac65edb8f16911.png" width="49" height="24" style="vertical-align: middle"/>; systematic errors set a floor that more data
+  cannot lower.</li>
+<li>Every probe has characteristic systematics: calibration, dust, crowding,
+  photometric redshifts, intrinsic alignments, foregrounds, selection.</li>
+<li>Selection effects such as Malmquist bias make a catalogue unrepresentative of its
+  population.</li>
+<li>Nuisance parameters, null tests, end-to-end simulations and blinding keep analyses
+  honest.</li>
+<li>Tensions are settled by independent methods with different systematics, not by more
+  of the same data.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="6"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="2"><p><b>1.</b> A survey quadruples its number of galaxies. What happens to a systematic error?</p><ol type="a"><li><button type="button" data-index="0">It halves</button></li><li><button type="button" data-index="1">It falls by a factor of four</button></li><li><button type="button" data-index="2">It stays the same</button></li><li><button type="button" data-index="3">It disappears</button></li></ol><p class="explanation" hidden>Systematic errors do not average away; only the statistical error falls, here by a factor of two.</p></div><div class="question" data-answer="1"><p><b>2.</b> The statistical error of a measurement is 0.2% and its systematic floor 0.5%. What is the total error?</p><ol type="a"><li><button type="button" data-index="0">0.3%</button></li><li><button type="button" data-index="1">0.54%</button></li><li><button type="button" data-index="2">0.7%</button></li><li><button type="button" data-index="3">0.5%</button></li></ol><p class="explanation" hidden>Independent errors add in quadrature: √(0.2² + 0.5²) = 0.54%.</p></div><div class="question" data-answer="1"><p><b>3.</b> Why are the distant galaxies in a flux-limited catalogue brighter on average than the population?</p><ol type="a"><li><button type="button" data-index="0">Distant galaxies really are brighter</button></li><li><button type="button" data-index="1">Only the most luminous ones are bright enough to be detected: Malmquist bias</button></li><li><button type="button" data-index="2">Redshift makes galaxies brighter</button></li><li><button type="button" data-index="3">Dust brightens distant objects</button></li></ol><p class="explanation" hidden>Far away, the fainter members fall below the detection limit, so the catalogue keeps only the bright tail.</p></div><div class="question" data-answer="1"><p><b>4.</b> What is a null test?</p><ol type="a"><li><button type="button" data-index="0">A test that the software returns zero</button></li><li><button type="button" data-index="1">Splitting the data in ways that should not matter and checking that every half agrees</button></li><li><button type="button" data-index="2">Measuring with the telescope shutter closed only</button></li><li><button type="button" data-index="3">Setting all parameters to zero</button></li></ol><p class="explanation" hidden>North against south, early against late, red against blue: a disagreement between halves reveals a systematic.</p></div><div class="question" data-answer="1"><p><b>5.</b> What is the purpose of blinding an analysis?</p><ol type="a"><li><button type="button" data-index="0">To keep the data secret from other teams</button></li><li><button type="button" data-index="1">To stop the analysts from — consciously or not — tuning the method until the answer looks right</button></li><li><button type="button" data-index="2">To reduce the statistical error</button></li><li><button type="button" data-index="3">To speed up the computation</button></li></ol><p class="explanation" hidden>The true result stays hidden until every test has passed and the method is frozen.</p></div><div class="question" data-answer="1"><p><b>6.</b> Two measurements of H0 disagree at 5σ. What would settle whether a systematic error is responsible?</p><ol type="a"><li><button type="button" data-index="0">Ten times more data of the same kind</button></li><li><button type="button" data-index="1">An independent method with different systematics</button></li><li><button type="button" data-index="2">Averaging the two values</button></li><li><button type="button" data-index="3">Increasing the quoted error bars</button></li></ol><p class="explanation" hidden>More of the same data would reproduce a hidden bias; methods such as red-giant calibrations, sirens or lensed quasars test it independently.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L7_5.html">◀ L7.5 Simulations as Experiments: From Initial Conditions to a Mock Catalogue</a><a href="../lessons/L7_7.html">L7.7 Reading a Cosmology Paper: From the Abstract to the Contour Plot ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

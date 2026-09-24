@@ -348,6 +348,7 @@ body::before {
   transition: color .2s var(--ease);
 }
 .card__links a:hover { color: var(--accent); }
+.card__links a.card__link--primary { color: var(--accent); font-weight: 500; }
 
 /* ---------- filters ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }

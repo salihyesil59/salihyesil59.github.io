@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L5.3 Jeans Instability and Linear Perturbation Growth · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 5 · CMB &amp; Structure Formation</p><h1>L5.3 Jeans Instability and Linear Perturbation Growth</h1><p class="lead">Why gravity turns tiny density differences into galaxies, which scales can collapse, and how fast perturbations grow in an expanding universe.</p><p class="meta">≈ 20 min read · Before this: <a href="../lessons/L3_2.html">L3.2</a>, <a href="../lessons/L4_2.html">L4.2</a> · Simulators: <a href="../simulators.html#S13">2D N-body Structure Formation</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>The competition between gravity and pressure that decides whether a cloud collapses (the Jeans criterion)</li>
+<li>Why expansion turns exponential collapse into slow power-law growth</li>
+<li>How the growth factor depends on the era and on dark energy</li>
+<li>Why structure formation requires dark matter</li>
+</ul></td></tr></table>
+<h2>Gravity is unstable</h2>
+<p>A perfectly smooth universe would stay smooth forever. But if one region is
+slightly denser than average, it pulls in matter from its surroundings and becomes
+denser still. Gravity is <strong>unstable</strong>: small differences grow.</p>
+<p>We describe a perturbation by its <a href="../glossary.html#density-contrast" title="The relative deviation of the local density from the cosmic average, δ = (ρ − ρ̄)/ρ̄. It was about 10⁻⁵ at recombination and exceeds a million in galaxies today." style="color:#c7771a; text-decoration:none;">density contrast</a></p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/95c46d5b19393ac9.png" width="68" height="29" /></p>
+<p>where <img src="../assets/img/a510de72354a8ff1.png" width="9" height="14" style="vertical-align: middle"/> is the average density. The CMB shows that at recombination
+<img src="../assets/img/afbcb9f77d95ff84.png" width="8" height="14" style="vertical-align: middle"/> was only about <img src="../assets/img/3c5b8ffe1a63d998.png" width="34" height="17" style="vertical-align: middle"/> in ordinary matter. Today galaxies have
+<img src="../assets/img/430aa91ecb21fc22.png" width="53" height="17" style="vertical-align: middle"/>. This lesson explains how the first part of that journey
+works.</p>
+<h2>The Jeans criterion</h2>
+<p>Gravity is not the only force. Pressure resists compression. In 1902 <strong>James Jeans</strong>
+compared the two for a static gas cloud.</p>
+<ul>
+<li>The time for gravity to collapse a region of density <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> is
+  <img src="../assets/img/93cd0e4973dbf201.png" width="96" height="24" style="vertical-align: middle"/> (the free-fall time).</li>
+<li>The time for pressure to respond across a size <img src="../assets/img/60948ef06b590ab1.png" width="10" height="13" style="vertical-align: middle"/> is the sound-crossing
+  time <img src="../assets/img/6a119d1579cb2f7a.png" width="33" height="18" style="vertical-align: middle"/>.</li>
+</ul>
+<p>If sound crosses the region faster than gravity can collapse it, pressure wins and
+the perturbation just oscillates. If not, gravity wins. The dividing line is the
+<a href="../glossary.html#jeans-length" title="The size above which gravity overcomes pressure and a gas cloud collapses, λ_J = c_s √(π/Gρ). The corresponding Jeans mass fell from about 10¹⁸ to 10⁵ solar masses at recombination." style="color:#c7771a; text-decoration:none;">Jeans length</a>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/330e10af88a17426.png" width="105" height="32" /></p>
+<p>The mass inside a sphere of this size is the <strong>Jeans mass</strong> <img src="../assets/img/9d1a274a43b9f2dd.png" width="25" height="16" style="vertical-align: middle"/>. Regions heavier
+than <img src="../assets/img/9d1a274a43b9f2dd.png" width="25" height="16" style="vertical-align: middle"/> collapse; lighter ones oscillate like sound waves.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">The Jeans mass before and after recombination</b></p><p><strong>Before recombination</strong>, baryons were locked to photons, and the sound speed was
+about half the speed of light. The Jeans mass of the baryons was around
+<img src="../assets/img/76bd2f86a9b1824e.png" width="30" height="17" style="vertical-align: middle"/>–<img src="../assets/img/d6e18622f22f27e5.png" width="68" height="20" style="vertical-align: middle"/>, larger than the richest galaxy clusters. Ordinary
+matter could not collapse at all; it oscillated, producing the acoustic peaks of
+lesson <a href="../lessons/L5_1.html">L5.1</a>.</p>
+<p><strong>After recombination</strong>, neutral gas at 3 000 K had a sound speed of only about
+6 km/s. The Jeans mass dropped by a factor of about <img src="../assets/img/3d39116429690920.png" width="30" height="17" style="vertical-align: middle"/>, to roughly
+<img src="../assets/img/3abef233d90c7d6a.png" width="25" height="17" style="vertical-align: middle"/>–<img src="../assets/img/7d7910922ac27ae3.png" width="62" height="20" style="vertical-align: middle"/>: the mass of a globular star cluster. From then on,
+ordinary matter could fall into any structure larger than that.</p></td></tr></table>
+<h2>Growth in an expanding universe</h2>
+<p>In a static cloud, an unstable perturbation grows <strong>exponentially</strong>, as
+<img src="../assets/img/5f90df5551e72510.png" width="58" height="17" style="vertical-align: middle"/>. In the expanding universe the background
+itself thins out while the perturbation tries to grow. For pressureless matter on
+scales much larger than the Jeans length, linear theory gives</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/ca29d688eb85ff13.png" width="154" height="25" /></p>
+<p>The right-hand side is gravity amplifying the perturbation. The term <img src="../assets/img/2c4056e745cd35c2.png" width="30" height="18" style="vertical-align: middle"/>
+acts like friction, called <strong>Hubble drag</strong>: expansion pulls matter apart and slows
+the growth.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Growth follows the scale factor</b></p><p>In a matter-dominated universe the growing solution is</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/fe02919aef645d97.png" width="101" height="21" /></p>
+<p>Perturbations grow only as fast as the universe expands: a factor of 1 000 between
+recombination and today, not exponentially.</p></td></tr></table>
+<p>The <a href="../glossary.html#growth-factor" title="The factor by which small density perturbations have grown. It equals the scale factor in a matter-dominated universe and grows more slowly once dark energy dominates." style="color:#c7771a; text-decoration:none;">linear growth factor</a> <img src="../assets/img/2a59293516545f28.png" width="37" height="18" style="vertical-align: middle"/> describes this for any
+cosmology, with <img src="../assets/img/8010c09911a6b9d8.png" width="182" height="18" style="vertical-align: middle"/>.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/e6681d0e0b592c86.png" width="640" height="340" /></p>
+<ul>
+<li><strong>Radiation era:</strong> expansion is so fast that matter perturbations barely grow,
+  only as <img src="../assets/img/ad136b6bfb161b9e.png" width="26" height="13" style="vertical-align: middle"/>. This stalling is called the <strong>Mészáros effect</strong>.</li>
+<li><strong>Matter era:</strong> <img src="../assets/img/a1d906a6e6b7e9fa.png" width="44" height="13" style="vertical-align: middle"/>.</li>
+<li><strong>Dark energy era:</strong> expansion accelerates, Hubble drag wins and growth slowly
+  freezes. In our universe perturbations today are about 22% smaller than they would
+  be in a matter-only universe.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e4f3ea;"><tr><td width="5" style="background-color:#1f9d57;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#1f9d57;">The growth rate</b></p><p>Cosmologists also measure the growth rate <img src="../assets/img/b516f0a387bc2757.png" width="112" height="18" style="vertical-align: middle"/>. A very good
+approximation is <img src="../assets/img/6a08075ea02a5b69.png" width="98" height="21" style="vertical-align: middle"/>. Galaxy surveys measure <img src="../assets/img/4a47480d854fb695.png" width="9" height="16" style="vertical-align: middle"/> from the
+way galaxies fall into overdense regions (redshift-space distortions), which tests
+general relativity on cosmic scales.</p></td></tr></table>
+<h2>Why dark matter is essential</h2>
+<p>Suppose the universe contained only ordinary matter.</p>
+<ul>
+<li>At recombination the baryon fluctuations were <img src="../assets/img/6a1fb5e4f8a28212.png" width="62" height="17" style="vertical-align: middle"/>.</li>
+<li>In our universe matter perturbations grew by a factor of roughly 900 from then
+  until today.</li>
+<li>That gives <img src="../assets/img/4a16b7b018d907f6.png" width="62" height="17" style="vertical-align: middle"/> today: still almost perfectly smooth. No
+  galaxies, no stars, no us.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Dark matter got a head start</b></p><p>Dark matter does not interact with photons, so it had no pressure and its
+perturbations could grow from matter–radiation equality (<img src="../assets/img/3da1720b9b150a66.png" width="62" height="13" style="vertical-align: middle"/>), long
+before recombination. When the baryons were released, they fell into the dark matter
+potential wells that were already much deeper. This is one of the strongest
+arguments for dark matter (lesson <a href="../lessons/L3_2.html">L3.2</a>).</p></td></tr></table>
+<h2>When linear theory breaks down</h2>
+<p>The linear equations assume <img src="../assets/img/853afc9bfaeb2d03.png" width="49" height="18" style="vertical-align: middle"/>. When <img src="../assets/img/afbcb9f77d95ff84.png" width="8" height="14" style="vertical-align: middle"/> approaches 1, a region
+stops expanding, turns around and collapses into a gravitationally bound
+<a href="../glossary.html#dark-matter-halo" title="A gravitationally bound, roughly spherical concentration of dark matter, about 200 times denser than the cosmic average, that hosts a galaxy, group or cluster." style="color:#c7771a; text-decoration:none;">dark matter halo</a>. Following this non-linear stage requires
+the spherical collapse model and computer simulations, the subject of lesson
+<a href="../lessons/L5_5.html">L5.5</a>.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: 2D N-body Structure Formation</b></p><p style='margin:0;'>Press Play and compare the simulation's density contrast with the linear-theory line. Note when they start to differ.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S13" style="color:#2059c4; text-decoration:none;"><b>▶ Open the 2D N-body Structure Formation</b></a></p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Density perturbations <img src="../assets/img/afbcb9f77d95ff84.png" width="8" height="14" style="vertical-align: middle"/> grow because gravity is unstable.</li>
+<li>Pressure resists collapse below the Jeans length <img src="../assets/img/d00717f08359887f.png" width="109" height="25" style="vertical-align: middle"/>;
+  the baryon Jeans mass fell from about <img src="../assets/img/c2e9cd5e442923d9.png" width="68" height="20" style="vertical-align: middle"/> to <img src="../assets/img/d42996f0aace2406.png" width="62" height="20" style="vertical-align: middle"/> at
+  recombination.</li>
+<li>In an expanding universe growth is slow: <img src="../assets/img/5487eb391cdb7272.png" width="37" height="14" style="vertical-align: middle"/> in the matter era,
+  almost none in the radiation era, and freezing in the dark energy era.</li>
+<li>Baryons alone would grow only to <img src="../assets/img/72c82e60be2158a5.png" width="62" height="17" style="vertical-align: middle"/> today; dark matter's head start
+  made galaxies possible.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> According to the Jeans criterion, when does a gas cloud collapse?</p><ol type="a"><li><button type="button" data-index="0">When it is smaller than the Jeans length</button></li><li><button type="button" data-index="1">When it is larger than the Jeans length, so gravity acts faster than pressure can respond</button></li><li><button type="button" data-index="2">Only when it contains dark energy</button></li><li><button type="button" data-index="3">Whenever its temperature rises</button></li></ol><p class="explanation" hidden>Above λ_J = c_s √(π/Gρ), sound cannot cross the region before gravity collapses it.</p></div><div class="question" data-answer="1"><p><b>2.</b> What happened to the Jeans mass of ordinary matter at recombination?</p><ol type="a"><li><button type="button" data-index="0">It increased enormously because photons heated the gas</button></li><li><button type="button" data-index="1">It dropped from about 10¹⁸ to about 10⁵ solar masses as the sound speed collapsed</button></li><li><button type="button" data-index="2">It stayed the same</button></li><li><button type="button" data-index="3">It became zero</button></li></ol><p class="explanation" hidden>Once photons decoupled, the gas pressure fell dramatically and even globular-cluster masses could collapse.</p></div><div class="question" data-answer="1"><p><b>3.</b> How does a density perturbation grow in a matter-dominated expanding universe (linear regime)?</p><ol type="a"><li><button type="button" data-index="0">Exponentially in time</button></li><li><button type="button" data-index="1">As δ ∝ a</button></li><li><button type="button" data-index="2">As δ ∝ a⁴</button></li><li><button type="button" data-index="3">It does not grow</button></li></ol><p class="explanation" hidden>Hubble drag slows gravitational growth from exponential to a power law: δ grows in proportion to the scale factor.</p></div><div class="question" data-answer="1"><p><b>4.</b> What is the Mészáros effect?</p><ol type="a"><li><button type="button" data-index="0">The acceleration caused by dark energy</button></li><li><button type="button" data-index="1">The stalling of matter perturbation growth during the radiation era</button></li><li><button type="button" data-index="2">The bending of light by galaxies</button></li><li><button type="button" data-index="3">The formation of the first stars</button></li></ol><p class="explanation" hidden>When radiation dominated, the expansion was so fast that matter perturbations grew only logarithmically.</p></div><div class="question" data-answer="0"><p><b>5.</b> Why are galaxies hard to explain without dark matter?</p><ol type="a"><li><button type="button" data-index="0">Baryon fluctuations of 10⁻⁵ at recombination would have grown only to about 10⁻² today</button></li><li><button type="button" data-index="1">Ordinary matter cannot form stars</button></li><li><button type="button" data-index="2">Dark matter is needed to create light</button></li><li><button type="button" data-index="3">The CMB would be too hot</button></li></ol><p class="explanation" hidden>Dark matter perturbations had been growing since matter–radiation equality, giving the baryons deep potential wells to fall into.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L5_2.html">◀ L5.2 Baryon Acoustic Oscillations</a><a href="../lessons/L5_4.html">L5.4 The Matter Power Spectrum ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

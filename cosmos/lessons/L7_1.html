@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L7.1 Reading a Scientific Plot · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 7 · How Cosmologists Work</p><h1>L7.1 Reading a Scientific Plot</h1><p class="lead">Log axes, error bars, residuals and confidence contours. Before you can judge a claim about the universe, you have to be able to read the picture that carries it.</p><p class="meta">≈ 16 min read · Before this: <a href="../lessons/L1_2.html">L1.2</a>, <a href="../lessons/L3_3.html">L3.3</a> · Simulators: <a href="../simulators.html#S19">Likelihood &amp; MCMC Explorer</a>, <a href="../simulators.html#S16">Supernova Ia Discovery</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>Why cosmology plots almost always use logarithmic axes</li>
+<li>What an error bar does and does not promise</li>
+<li>How to read a residual plot, where the real story usually hides</li>
+<li>What 68% and 95% contours mean when two parameters are measured together</li>
+</ul></td></tr></table>
+<h2>The plot is the argument</h2>
+<p>Almost every claim in this course arrived as a picture: Hubble's 24 galaxies, the
+supernova Hubble diagram, the peaks of the <a href="../glossary.html#cmb" title="The relic radiation released about 380 000 years after the Big Bang, when atoms formed. Today it fills the universe as microwaves with a blackbody temperature of 2.7255 K and tiny fluctuations of one part in 100 000." style="color:#c7771a; text-decoration:none;">CMB</a> power spectrum, a rotation
+curve that refuses to fall. A cosmologist reads those pictures the way a musician
+reads a score. This lesson teaches that reading.</p>
+<h2>Logarithmic axes</h2>
+<p>Cosmology spans huge ranges: redshifts from 0.01 to 1100, distances from parsecs
+to gigaparsecs, times from 10⁻³⁵ seconds to 14 billion years. On a linear axis,
+everything interesting piles up against one edge. A logarithmic axis plots the
+<em>exponent</em> instead of the number, so each equal step multiplies by ten.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/b659f2943010c695.png" width="640" height="340" /></p>
+<p>Two habits follow from this:</p>
+<ul>
+<li>A <strong>power law</strong> <img src="../assets/img/df940952ebb59011.png" width="49" height="17" style="vertical-align: middle"/> becomes a straight line on log–log axes, and the
+  slope of that line is the exponent <img src="../assets/img/b14d794c63c7afaa.png" width="10" height="9" style="vertical-align: middle"/>. Much of physics is spent looking for
+  straight lines on log paper.</li>
+<li><strong>Equal visual distances mean equal ratios.</strong> The gap between 1 and 10 is the
+  same as the gap between 100 and 1000.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">A log axis hides the zero</b></p><p>Zero is infinitely far to the left on a logarithmic axis, so it never appears.
+Negative values cannot be shown at all. If a plot needs both signs — a residual,
+a temperature fluctuation — the axis has to be linear, or symmetric-log.</p></td></tr></table>
+<h2>Error bars</h2>
+<p>An error bar is a statement about how much the point is allowed to be wrong. In
+almost all of astronomy it means one standard deviation: if the measurement were
+repeated many times, about <strong>68%</strong> of the results would fall inside the bar, and
+about <strong>95%</strong> inside twice the bar.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/4e5d8b0db48d0e0e.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">What a good fit looks like</b></p><p>A line that passes through every point exactly is suspicious, not impressive.
+With honest error bars, roughly a third of the points should miss the line by
+more than one error bar. If none do, the errors were overestimated — or the model
+has too many free parameters.</p></td></tr></table>
+<p>Two kinds of uncertainty hide in that bar:</p>
+<ul>
+<li><strong>Statistical</strong>: the randomness of a finite measurement. It shrinks as
+  <img src="../assets/img/5eac65edb8f16911.png" width="49" height="24" style="vertical-align: middle"/> when you collect more data.</li>
+<li><strong>Systematic</strong>: a bias that repeats every time — a miscalibrated instrument,
+  dust you forgot, a selection effect. Collecting more data does <strong>not</strong> shrink
+  it. Most disputes in cosmology, including the <a href="../glossary.html#hubble-tension" title="The disagreement between the Hubble constant inferred from the early universe (CMB, about 67–68 km/s/Mpc) and measured locally with Cepheids and supernovae (about 73 km/s/Mpc)." style="color:#c7771a; text-decoration:none;">Hubble tension</a>,
+  are arguments about systematics.</li>
+</ul>
+<h2>Residuals: where the story is</h2>
+<p>Raw data plots are dominated by the trend everyone already agrees on. Subtract
+the model and plot what is left — the <strong>residuals</strong> — and the disagreements
+become visible. The lower panel of the figure above is the same data with the
+fitted line removed; deviations of a few percent, invisible in the top panel,
+stand out immediately.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Reading the supernova diagram</b></p><p>On a plain Hubble diagram, an accelerating universe and a decelerating one look
+almost identical: both are nearly straight lines. Plotted as residuals against an
+empty universe, the 1998 supernovae sat systematically 0.2 magnitudes too faint —
+and that gap is the discovery of dark energy (lesson <a href="../lessons/L3_3.html">L3.3</a>).</p></td></tr></table>
+<h2>Contours: two parameters at once</h2>
+<p>When a measurement constrains two parameters together, the answer is not two
+error bars but a <strong>region</strong> in the plane of the two.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/e22731bb734047d4.png" width="640" height="340" /></p>
+<ul>
+<li>The inner contour holds <strong>68%</strong> of the probability, the outer <strong>95%</strong>.</li>
+<li>A tilted ellipse means the parameters are <strong>correlated</strong>: the data measure one
+  combination of them well and the other poorly. Supernovae, for instance,
+  measure roughly <img src="../assets/img/e333d410c2b795c0.png" width="66" height="14" style="vertical-align: middle"/> tightly and their sum
+  weakly, which is exactly why the contour lies at an angle to the flat-universe
+  line.</li>
+<li>Quoting a single parameter from such a plot means <strong>marginalising</strong>: squashing
+  the cloud onto one axis, which widens the interval.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Why two experiments are worth more than twice one</b></p><p>Two measurements with contours that cross at a large angle pin down both
+parameters together, even if neither can do it alone. This is why the CMB,
+supernovae and baryon acoustic oscillations are always shown on the same plane.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Likelihood &amp; MCMC Explorer</b></p><p style='margin:0;'>Run the chain and look at the posterior: the tilted cloud in the Ωm–ΩΛ plane is exactly the contour picture, sampled point by point.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S19" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Likelihood &amp; MCMC Explorer</b></a></p></td></tr></table>
+<h2>A checklist</h2>
+<p>When you meet a new plot, ask:</p>
+<ol>
+<li>What are the axes, and are they linear or logarithmic?</li>
+<li>Are those error bars statistical only, or do they include systematics?</li>
+<li>Is anything divided out — is this raw data, or residuals against a model?</li>
+<li>If it is a contour plot: what confidence level, and how many parameters were
+   marginalised over?</li>
+<li>What would the plot look like if the claim were false?</li>
+</ol>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Log axes turn huge ranges into readable pictures and power laws into lines.</li>
+<li>An error bar is one standard deviation: about two thirds of points should land
+  within one of the model.</li>
+<li>Statistical errors shrink with more data; systematic ones do not.</li>
+<li>Residual plots reveal what raw plots hide.</li>
+<li>Two parameters measured together give a contour, and its tilt tells you which
+  combination the data actually constrain.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="6"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> Why do cosmology plots so often use logarithmic axes?</p><ol type="a"><li><button type="button" data-index="0">To make the data look more impressive</button></li><li><button type="button" data-index="1">Because the quantities span many orders of magnitude, and power laws become straight lines</button></li><li><button type="button" data-index="2">Because negative numbers are easier to show</button></li><li><button type="button" data-index="3">Because computers cannot plot large numbers</button></li></ol><p class="explanation" hidden>Each equal step multiplies by ten, so 10⁻³⁵ seconds and 10¹⁰ years fit on one axis, and a power law y ∝ xⁿ appears as a line of slope n.</p></div><div class="question" data-answer="1"><p><b>2.</b> A plot shows 20 points with 1σ error bars, and every single point sits exactly on the fitted line. What should you suspect?</p><ol type="a"><li><button type="button" data-index="0">An excellent measurement</button></li><li><button type="button" data-index="1">That the error bars are overestimated, or the model has too many free parameters</button></li><li><button type="button" data-index="2">That the model is wrong</button></li><li><button type="button" data-index="3">Nothing unusual</button></li></ol><p class="explanation" hidden>With honest 1σ errors about a third of the points should miss the line by more than one error bar. A perfect fit means the uncertainties are too generous.</p></div><div class="question" data-answer="1"><p><b>3.</b> Which kind of uncertainty does NOT shrink when you collect more data?</p><ol type="a"><li><button type="button" data-index="0">Statistical</button></li><li><button type="button" data-index="1">Systematic</button></li><li><button type="button" data-index="2">Both shrink</button></li><li><button type="button" data-index="3">Neither shrinks</button></li></ol><p class="explanation" hidden>Statistical noise falls as 1/√N; a systematic bias repeats in every measurement, so more data does not help.</p></div><div class="question" data-answer="0"><p><b>4.</b> What is a residual plot?</p><ol type="a"><li><button type="button" data-index="0">The data with the model subtracted, so small deviations become visible</button></li><li><button type="button" data-index="1">The part of the data that was discarded</button></li><li><button type="button" data-index="2">A plot of the error bars alone</button></li><li><button type="button" data-index="3">The data plotted twice</button></li></ol><p class="explanation" hidden>Raw plots are dominated by the trend everyone agrees on; residuals show the disagreements, which is where discoveries such as the accelerating expansion appeared.</p></div><div class="question" data-answer="1"><p><b>5.</b> In a two-parameter contour plot, what does a strongly tilted ellipse mean?</p><ol type="a"><li><button type="button" data-index="0">The measurement is wrong</button></li><li><button type="button" data-index="1">The parameters are correlated: one combination is measured well and another poorly</button></li><li><button type="button" data-index="2">The contours were drawn at the wrong confidence level</button></li><li><button type="button" data-index="3">Both parameters are known perfectly</button></li></ol><p class="explanation" hidden>Supernovae, for example, constrain roughly ΩΛ − Ωm tightly and their sum weakly, so the contour leans.</p></div><div class="question" data-answer="1"><p><b>6.</b> The inner and outer contours of a posterior usually hold which fractions of the probability?</p><ol type="a"><li><button type="button" data-index="0">50% and 90%</button></li><li><button type="button" data-index="1">68% and 95%</button></li><li><button type="button" data-index="2">90% and 99%</button></li><li><button type="button" data-index="3">95% and 99.7%</button></li></ol><p class="explanation" hidden>They correspond to the 1σ and 2σ levels of a Gaussian.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L6_10.html">◀ L6.10 The Far Future: Heat Death, Big Rip or Big Crunch</a><a href="../lessons/L7_2.html">L7.2 From Data to a Number: Likelihood, χ² and 5σ ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

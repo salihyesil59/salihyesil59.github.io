@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L5.1 CMB Anisotropies: The Power Spectrum and Acoustic Peaks · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 5 · CMB &amp; Structure Formation</p><h1>L5.1 CMB Anisotropies: The Power Spectrum and Acoustic Peaks</h1><p class="lead">The tiny hot and cold spots in the cosmic microwave background are frozen sound waves. Their pattern reveals the geometry, contents and origin of the universe.</p><p class="meta">≈ 22 min read · Before this: <a href="../lessons/L4_4.html">L4.4</a>, <a href="../lessons/L2_5.html">L2.5</a> · Simulators: <a href="../simulators.html#S12">CMB Power Spectrum Explorer</a>, <a href="../simulators.html#S24">CMB Sky Viewer</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>How temperature fluctuations on the sky are described by multipoles and a power spectrum</li>
+<li>The Sachs–Wolfe plateau on the largest scales</li>
+<li>Why sound waves in the early plasma produce a series of acoustic peaks</li>
+<li>How baryons, dark matter, curvature and damping change the spectrum</li>
+</ul></td></tr></table>
+<h2>Ripples of one part in 100 000</h2>
+<p>The <a href="../glossary.html#cmb" title="The relic radiation released about 380 000 years after the Big Bang, when atoms formed. Today it fills the universe as microwaves with a blackbody temperature of 2.7255 K and tiny fluctuations of one part in 100 000." style="color:#c7771a; text-decoration:none;">cosmic microwave background</a> has the same temperature, 2.7255 K, in
+every direction, but not exactly. After removing the dipole caused by our own
+motion (lesson <a href="../lessons/L4_4.html">L4.4</a>), tiny differences remain: typically about
+<strong>100 microkelvin</strong>, or one part in 30 000.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/db32c916a1f6dbb9.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: CMB Sky Viewer</b></p><p style='margin:0;'>The CMB Sky Viewer shows the real WMAP nine-year map. Apply the analysis mask, then read the rms and the ratio to 2.7255 K: this is the sky the rest of the lesson is about.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S24" style="color:#2059c4; text-decoration:none;"><b>▶ Open the CMB Sky Viewer</b></a></p></td></tr></table>
+<p>These <a href="../glossary.html#cmb-anisotropies" title="The tiny temperature differences, about 100 μK or one part in 30 000, between different directions in the cosmic microwave background. They record density variations 380 000 years after the Big Bang." style="color:#c7771a; text-decoration:none;">anisotropies</a> are the imprint of small density variations
+in the universe 380 000 years after the Big Bang. The same variations later grew
+into galaxies and the cosmic web. Understanding their pattern turned cosmology into
+a precision science.</p>
+<h2>From a map to a power spectrum</h2>
+<p>A map of random-looking spots is hard to compare with theory spot by spot. What
+matters is <em>how strong the fluctuations are on each angular scale</em>. Cosmologists
+decompose the sky into <strong>spherical harmonics</strong>, the equivalent of musical notes
+on a sphere. Each has a <a href="../glossary.html#multipole" title="The index of a spherical harmonic used to describe patterns on the sky. A multipole ℓ corresponds to an angular scale of roughly 180°/ℓ." style="color:#c7771a; text-decoration:none;">multipole</a> number <img src="../assets/img/acb24f3f63327001.png" width="8" height="13" style="vertical-align: middle"/> that corresponds to
+an angular size of roughly</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/3644eceb14e5eeb9.png" width="68" height="26" /></p>
+<ul>
+<li><img src="../assets/img/d8d9a6f36e73f3c8.png" width="36" height="13" style="vertical-align: middle"/> (the quadrupole) describes patterns spanning the whole sky;</li>
+<li><img src="../assets/img/9273e3b957be72eb.png" width="53" height="13" style="vertical-align: middle"/> describes spots about one degree across, twice the size of the full
+  Moon;</li>
+<li><img src="../assets/img/9db3bdbe74a4efec.png" width="61" height="13" style="vertical-align: middle"/> describes details of a few arcminutes.</li>
+</ul>
+<p>The <a href="../glossary.html#angular-power-spectrum" title="The strength of temperature fluctuations on the sky as a function of multipole ℓ, i.e. of angular scale. For the CMB it is usually plotted as ℓ(ℓ+1)Cℓ/2π in μK²." style="color:#c7771a; text-decoration:none;">angular power spectrum</a> <img src="../assets/img/ac1a549b7655ec4c.png" width="18" height="16" style="vertical-align: middle"/> gives the variance
+of the fluctuations at each multipole. It is usually plotted as</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/080346d5636e1f7f.png" width="122" height="28" /></p>
+<p>in units of μK², which gives roughly equal weight to all scales.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/93c0f848ef609003.png" width="640" height="340" /></p>
+<p>The spectrum has three regions: a flat <strong>plateau</strong> on large scales, a series of
+<strong>acoustic peaks</strong>, and a <strong>damping tail</strong> on small scales.</p>
+<h2>Large scales: the Sachs–Wolfe plateau</h2>
+<p>When the CMB was released, regions larger than about one degree on today's sky were
+bigger than the distance light had travelled since the Big Bang (lesson
+<a href="../lessons/L2_6.html">L2.6</a>). No physical process had time to change them. We see their
+original fluctuations.</p>
+<p>Photons climbing out of a denser region, which is a gravitational potential well,
+lose energy and look cooler; photons from underdense regions look hotter. This is
+the <strong>Sachs–Wolfe effect</strong>, discovered in 1967:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/c36b5d307dc29e2e.png" width="70" height="28" /></p>
+<p>where <img src="../assets/img/ab51bb78b95d6320.png" width="13" height="12" style="vertical-align: middle"/> is the gravitational potential. If the initial fluctuations have the
+same strength on all scales, as inflation predicts (<img src="../assets/img/22a0f1c78b9700bf.png" width="45" height="16" style="vertical-align: middle"/>), this part of
+the spectrum is flat.</p>
+<h2>Intermediate scales: sound waves</h2>
+<p>Before recombination, photons, electrons and nuclei formed a single hot
+<strong>plasma</strong>. Gravity pulled the plasma into denser regions, while the enormous
+photon pressure pushed back. The result was oscillation: <strong>sound waves</strong>, just like
+air being compressed and expanded.</p>
+<p>The waves travelled at roughly half the speed of light (58% early on, about 45% by
+recombination as the baryons grew heavier relative to the photons),</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/94529db83b020f52.png" width="224" height="37" /></p>
+<p>where <img src="../assets/img/daa7b5d152edf912.png" width="13" height="13" style="vertical-align: middle"/> measures how much the baryons weigh down the plasma. By recombination a
+sound wave could have travelled the <strong>sound horizon</strong> <img src="../assets/img/91c64566d97e8def.png" width="60" height="16" style="vertical-align: middle"/> Mpc
+(comoving).</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Snapshots of oscillations</b></p><p>At recombination every Fourier mode of the plasma was caught at a particular
+moment of its oscillation. Modes that had just reached <strong>maximum compression</strong>
+(hot) or <strong>maximum rarefaction</strong> (cool) produce the strongest temperature
+differences: these are the <strong>acoustic peaks</strong>. Modes caught in between, at zero
+displacement, produce the troughs.</p></td></tr></table>
+<p>The first peak corresponds to waves that had time to compress exactly once, the
+second to waves that compressed and then rarefied, the third to waves that
+compressed twice, and so on. The peaks are therefore evenly spaced in <img src="../assets/img/acb24f3f63327001.png" width="8" height="13" style="vertical-align: middle"/>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/e5f7dfaf17f7deef.png" width="296" height="29" /></p>
+<p>with a small phase shift that moves the first peak to <img src="../assets/img/dfb8f900afcc9527.png" width="53" height="13" style="vertical-align: middle"/>.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/316d334b4ba96c46.png" width="640" height="340" /></p>
+<h2>What the peaks measure</h2>
+<p><strong>The position of the first peak: geometry.</strong> The sound horizon <img src="../assets/img/cad7616187f2c4d3.png" width="14" height="12" style="vertical-align: middle"/> is a ruler of
+known length at a known distance. Its angular size therefore measures the
+curvature of space (lesson <a href="../lessons/L2_5.html">L2.5</a>). In a closed universe the peaks move
+to lower <img src="../assets/img/acb24f3f63327001.png" width="8" height="13" style="vertical-align: middle"/> (larger spots); in an open universe to higher <img src="../assets/img/acb24f3f63327001.png" width="8" height="13" style="vertical-align: middle"/>. Planck measures
+the angle to 0.03%:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/62941c67dd81c220.png" width="168" height="25" /></p>
+<p><strong>The heights of odd and even peaks: ordinary matter.</strong> Baryons add weight to the
+plasma. The oscillation is shifted towards compression, so compression peaks (1st,
+3rd, 5th) grow relative to rarefaction peaks (2nd, 4th). The ratio of the first two
+peaks measures <img src="../assets/img/82ea523d110716f3.png" width="106" height="20" style="vertical-align: middle"/>, in perfect agreement with Big Bang
+nucleosynthesis (lesson <a href="../lessons/L4_3.html">L4.3</a>).</p>
+<p><strong>The overall height: dark matter.</strong> When modes entered the horizon during radiation
+domination, the decaying gravitational potentials gave the oscillations an extra
+push (<em>radiation driving</em>). More dark matter means earlier matter domination and
+less driving. The third peak is especially sensitive, and its height requires
+<img src="../assets/img/33d43e9d85ff6e2b.png" width="89" height="20" style="vertical-align: middle"/>: dark matter must exist and cannot be made of baryons.</p>
+<p><strong>The slope: the initial fluctuations.</strong> The spectral index <img src="../assets/img/e3570b7717505dc1.png" width="76" height="16" style="vertical-align: middle"/> tilts
+the spectrum slightly, showing that primordial fluctuations were a little stronger
+on large scales, as inflation predicts.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: CMB Power Spectrum Explorer</b></p><p style='margin:0;'>Change Ωk, Ωb h² and Ωc h² one at a time. Watch the peaks move and change height, and compare the simulated sky patches.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S12" style="color:#2059c4; text-decoration:none;"><b>▶ Open the CMB Power Spectrum Explorer</b></a></p></td></tr></table>
+<h2>Small scales: damping</h2>
+<p>Photons were not perfectly locked to the electrons: they random-walked a short
+distance between scatterings. This <strong>diffusion damping</strong> (or <em>Silk damping</em>, after
+Joseph Silk) smeared out the smallest ripples. The spectrum falls exponentially
+beyond <img src="../assets/img/9eeb2fe57bc7e1f2.png" width="61" height="13" style="vertical-align: middle"/>.</p>
+<p>Later, when the first stars <strong>reionised</strong> the universe, about 5% of CMB photons
+scattered again on free electrons, reducing all fluctuations smaller than the
+horizon at that time by a factor <img src="../assets/img/9a9c1462ec52d35c.png" width="32" height="17" style="vertical-align: middle"/> with the optical depth
+<img src="../assets/img/c3445e3cf29a2c63.png" width="66" height="13" style="vertical-align: middle"/>.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Polarisation</b></p><p>Scattering also polarised the CMB slightly. Its E-mode pattern, measured by WMAP,
+Planck, ACT and SPT, confirms the acoustic picture independently. A different
+B-mode pattern would reveal gravitational waves from inflation; experiments such as
+BICEP/Keck and the Simons Observatory are searching for it.</p></td></tr></table>
+<h2>Six numbers from a curve</h2>
+<p>Fitting the full power spectrum with Boltzmann codes such as CAMB and CLASS gives
+the six ΛCDM parameters of lesson <a href="../lessons/L3_4.html">L3.4</a> with percent precision. The
+same model then predicts the distribution of galaxies billions of years later, which
+is tested in the next lessons.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">The model in this app</b></p><p>The Cosmos simulator uses a simplified, calibrated model. Peak positions follow the
+real physics; heights are accurate to about 15%. It is ideal for understanding
+trends, not for measuring parameters.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>CMB temperature fluctuations are about 100 μK; their strength per angular scale
+  is the power spectrum <img src="../assets/img/02be0460594c0e71.png" width="20" height="16" style="vertical-align: middle"/>.</li>
+<li>Large scales show the flat Sachs–Wolfe plateau of the primordial fluctuations.</li>
+<li>Sound waves in the photon–baryon plasma, caught at recombination, produce acoustic
+  peaks spaced by <img src="../assets/img/c45dd769094952ef.png" width="62" height="14" style="vertical-align: middle"/>; the first sits at <img src="../assets/img/dfb8f900afcc9527.png" width="53" height="13" style="vertical-align: middle"/>.</li>
+<li>Peak position measures curvature (space is flat); odd/even peak heights measure
+  baryons; the third peak demands dark matter.</li>
+<li>Diffusion damps small scales; reionisation suppresses all but the largest scales
+  by <img src="../assets/img/9a9c1462ec52d35c.png" width="32" height="17" style="vertical-align: middle"/>.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="2"><p><b>1.</b> Roughly what angular size on the sky does multipole ℓ = 180 correspond to?</p><ol type="a"><li><button type="button" data-index="0">180 degrees</button></li><li><button type="button" data-index="1">10 degrees</button></li><li><button type="button" data-index="2">1 degree</button></li><li><button type="button" data-index="3">1 arcminute</button></li></ol><p class="explanation" hidden>θ ≈ 180°/ℓ, so ℓ = 180 corresponds to about one degree.</p></div><div class="question" data-answer="0"><p><b>2.</b> What produces the acoustic peaks in the CMB power spectrum?</p><ol type="a"><li><button type="button" data-index="0">Sound waves in the photon–baryon plasma caught at maximum compression or rarefaction when the CMB was released</button></li><li><button type="button" data-index="1">Radio noise from our galaxy</button></li><li><button type="button" data-index="2">Galaxy clusters between us and the CMB</button></li><li><button type="button" data-index="3">The rotation of the Earth</button></li></ol><p class="explanation" hidden>Gravity and photon pressure made the plasma oscillate. Modes at extreme compression or rarefaction at recombination give the peaks.</p></div><div class="question" data-answer="1"><p><b>3.</b> If space were closed (positively curved), where would the first acoustic peak appear?</p><ol type="a"><li><button type="button" data-index="0">At a higher multipole, because spots look smaller</button></li><li><button type="button" data-index="1">At a lower multipole, because spots look larger</button></li><li><button type="button" data-index="2">At exactly the same place</button></li><li><button type="button" data-index="3">The peak would disappear</button></li></ol><p class="explanation" hidden>Positive curvature makes light rays converge, so the sound horizon covers a larger angle and the peak moves to lower ℓ.</p></div><div class="question" data-answer="0"><p><b>4.</b> Increasing the density of ordinary matter (baryons) mainly...</p><ol type="a"><li><button type="button" data-index="0">raises the compression (odd) peaks relative to the rarefaction (even) peaks</button></li><li><button type="button" data-index="1">moves all peaks to higher ℓ by a factor of two</button></li><li><button type="button" data-index="2">removes the Sachs–Wolfe plateau</button></li><li><button type="button" data-index="3">has no effect on the CMB</button></li></ol><p class="explanation" hidden>Baryons add inertia to the plasma and shift the oscillation towards compression, so odd peaks grow relative to even peaks.</p></div><div class="question" data-answer="1"><p><b>5.</b> Why does the CMB power spectrum fall off at very small angular scales (ℓ &gt; 1000)?</p><ol type="a"><li><button type="button" data-index="0">Telescopes cannot see small scales</button></li><li><button type="button" data-index="1">Photon diffusion before recombination smoothed out the smallest ripples (Silk damping)</button></li><li><button type="button" data-index="2">Dark energy destroys small fluctuations</button></li><li><button type="button" data-index="3">The Sun&#x27;s light drowns them out</button></li></ol><p class="explanation" hidden>Photons random-walked between scatterings, erasing fluctuations smaller than the diffusion length.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L4_8.html">◀ L4.8 The Dark Ages and Cosmic Dawn: The First Stars and Galaxies</a><a href="../lessons/L5_2.html">L5.2 Baryon Acoustic Oscillations ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

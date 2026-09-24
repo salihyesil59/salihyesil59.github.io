@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L0.7 Orders of Magnitude: Estimating in Your Head Before You Compute · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 0 · Foundations</p><h1>L0.7 Orders of Magnitude: Estimating in Your Head Before You Compute</h1><p class="lead">The single most useful skill in physics is knowing roughly what the answer should be. Powers of ten, dimensional analysis, the handful of numbers worth memorising, and how to catch a mistake before it reaches a paper.</p><p class="meta">≈ 16 min read · Before this: <a href="../lessons/L0_1.html">L0.1</a> · Simulators: <a href="../simulators.html#S3">Powers of Ten Zoom</a>, <a href="../simulators.html#S1">Cosmology Calculator</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>Reading and manipulating powers of ten without a calculator</li>
+<li>Estimating an answer to within a factor of a few, and knowing when that is enough</li>
+<li>Using units to check a formula before trusting it</li>
+<li>The cosmological numbers worth carrying in your head</li>
+<li>Recognising the three ways an order-of-magnitude estimate goes wrong</li>
+</ul></td></tr></table>
+<h2>Why bother, when there is a calculator?</h2>
+<p>Because the calculator will happily tell you the universe is 13.8 <em>million</em> years
+old if you typed one wrong exponent, and only you can notice. Every working
+physicist keeps a rough answer in mind <em>before</em> computing, and compares. Most errors
+are caught that way, not by checking the algebra.</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/925d31fd66edb9ab.png" width="640" height="340" /></p>
+<p>The skill has a name — an <strong>order-of-magnitude estimate</strong>, or a <em>Fermi problem</em>,
+after Enrico Fermi, who estimated the yield of the first atomic bomb by dropping
+scraps of paper as the blast wave passed and watching how far they blew.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">The rule of the game</b></p><p>You are not trying to be right. You are trying to be right <strong>to within a factor of
+a few</strong> — one power of ten at worst — using numbers you already know. That is almost
+always enough to tell a sensible answer from a nonsensical one.</p></td></tr></table>
+<h2>Powers of ten, by hand</h2>
+<p>Everything in cosmology is written as <img src="../assets/img/ce355961bd1546f5.png" width="56" height="14" style="vertical-align: middle"/>. Three rules cover almost
+all of it:</p>
+<ul>
+<li><strong>Multiply</strong>: add the exponents. <img src="../assets/img/29a1ef4d592230c2.png" width="216" height="21" style="vertical-align: middle"/>.</li>
+<li><strong>Divide</strong>: subtract them. <img src="../assets/img/4cb61f67fd31d200.png" width="226" height="21" style="vertical-align: middle"/>.</li>
+<li><strong>Powers</strong>: multiply the exponent. <img src="../assets/img/a2d6c04fd2cca5af.png" width="148" height="21" style="vertical-align: middle"/>.</li>
+</ul>
+<p>The part that takes practice is the front number. Round it hard: <img src="../assets/img/048243952bce37bb.png" width="38" height="13" style="vertical-align: middle"/>,
+<img src="../assets/img/337bf1442bad5abe.png" width="64" height="20" style="vertical-align: middle"/>, <img src="../assets/img/0639ea68ffc0523b.png" width="72" height="13" style="vertical-align: middle"/>, and a year is <img src="../assets/img/187f3284bac4d68a.png" width="53" height="17" style="vertical-align: middle"/> seconds — a
+number worth knowing, because <img src="../assets/img/e732e32e58a6525c.png" width="54" height="17" style="vertical-align: middle"/> is accurate to half a percent.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e4f3ea;"><tr><td width="5" style="background-color:#1f9d57;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#1f9d57;">Round in opposite directions</b></p><p>If you round one factor up, round the next one down. Errors that cancel keep you
+inside your factor of a few; errors that pile up in the same direction do not.</p></td></tr></table>
+<h2>Worked example: how many stars can you see?</h2>
+<p>A dark sky shows stars down to magnitude 6. How many are there?</p>
+<p>The brightest star is magnitude <img src="../assets/img/a7fd260b302df7e9.png" width="22" height="12" style="vertical-align: middle"/>; each step of 1 magnitude is a factor 2.5 in
+brightness, and fainter stars are much more numerous. Rather than the luminosity
+function, use a fact you already have: about 20 stars are brighter than magnitude 1,
+and the count roughly triples per magnitude. Five magnitudes further down is
+<img src="../assets/img/eb1d84b007681551.png" width="62" height="17" style="vertical-align: middle"/>, so <img src="../assets/img/4b43b9f7d2925ad2.png" width="136" height="17" style="vertical-align: middle"/> over the whole sky, half of
+which is below the horizon.</p>
+<p>The answer is <strong>two to three thousand</strong>. The real number is about 2 500. A
+calculator was never involved.</p>
+<h2>Units are a free check</h2>
+<p>An equation whose units do not match is wrong, full stop — and checking costs
+seconds. If you half-remember the Friedmann equation as</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/71d06796d2b84a8b.png" width="100" height="28" /></p>
+<p>check it: <img src="../assets/img/2025f45bc08baadb.png" width="14" height="13" style="vertical-align: middle"/> is m³ kg⁻¹ s⁻², <img src="../assets/img/8e3a6e84a6db4993.png" width="9" height="12" style="vertical-align: middle"/> is kg m⁻³, so the right-hand side is s⁻². And
+<img src="../assets/img/2d0b968a53e56b9e.png" width="14" height="12" style="vertical-align: middle"/> is a velocity over a distance, also s⁻¹, so <img src="../assets/img/f16368479768c63f.png" width="24" height="16" style="vertical-align: middle"/> is s⁻². It matches, and you
+can use the formula.</p>
+<p>Units also <em>reconstruct</em> formulas. What could a black hole's radius be, built from
+<img src="../assets/img/2025f45bc08baadb.png" width="14" height="13" style="vertical-align: middle"/>, <img src="../assets/img/9d617a9666799d0d.png" width="17" height="12" style="vertical-align: middle"/> and <img src="../assets/img/1305fedbe8c3722a.png" width="8" height="9" style="vertical-align: middle"/>? Only <img src="../assets/img/fdef72bfdb083dc2.png" width="54" height="21" style="vertical-align: middle"/> has units of length. The real Schwarzschild radius
+is <img src="../assets/img/de006de5138c8fe9.png" width="64" height="21" style="vertical-align: middle"/> — the factor of 2 needs the actual theory, but the shape of the
+answer needed nothing but bookkeeping.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">The factor you cannot get</b></p><p>Dimensional analysis gives you the scaling and never the dimensionless number in
+front. That number is almost always between 0.1 and 10, which is exactly why an
+order-of-magnitude estimate is allowed to ignore it.</p></td></tr></table>
+<h2>The numbers worth memorising</h2>
+<p>A small set carries most of cosmology. Learn these to one significant figure:</p>
+<table class="data" cellspacing="0" cellpadding="6" border="1" style="border-color:#d3d9e6; margin-top:8px; margin-bottom:8px;">
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Value</th>
+<th>Useful because</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Speed of light <img src="../assets/img/1305fedbe8c3722a.png" width="8" height="9" style="vertical-align: middle"/></td>
+<td><img src="../assets/img/47b6049e6417982f.png" width="53" height="17" style="vertical-align: middle"/> m/s</td>
+<td>everything</td>
+</tr>
+<tr>
+<td>Year</td>
+<td><img src="../assets/img/187f3284bac4d68a.png" width="53" height="17" style="vertical-align: middle"/> s</td>
+<td>converts ages to seconds</td>
+</tr>
+<tr>
+<td>Parsec</td>
+<td><img src="../assets/img/2fea741a2eb31ff0.png" width="60" height="17" style="vertical-align: middle"/> m ≈ 3 light years</td>
+<td>the distance unit</td>
+</tr>
+<tr>
+<td>Hubble constant <img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/></td>
+<td>70 km/s/Mpc</td>
+<td>expansion rate</td>
+</tr>
+<tr>
+<td>Hubble time <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/></td>
+<td>14 billion years</td>
+<td>the age, near enough</td>
+</tr>
+<tr>
+<td>Hubble distance <img src="../assets/img/8e1ebf1860dc6453.png" width="37" height="18" style="vertical-align: middle"/></td>
+<td>4 300 Mpc</td>
+<td>the size of the visible universe</td>
+</tr>
+<tr>
+<td>Age of the universe</td>
+<td><img src="../assets/img/babdd968a6faaf7e.png" width="30" height="13" style="vertical-align: middle"/> Gyr <img src="../assets/img/d112cff2f94b150c.png" width="80" height="17" style="vertical-align: middle"/> s</td>
+<td>the clock</td>
+</tr>
+<tr>
+<td>CMB temperature</td>
+<td>2.7 K</td>
+<td>the thermal history</td>
+</tr>
+<tr>
+<td>Critical density</td>
+<td><img src="../assets/img/172c8bc206217d3c.png" width="40" height="17" style="vertical-align: middle"/> kg/m³</td>
+<td>about 5 hydrogen atoms per m³</td>
+</tr>
+<tr>
+<td>Milky Way</td>
+<td><img src="../assets/img/872f22bf04b51a56.png" width="30" height="17" style="vertical-align: middle"/> stars, 30 kpc across</td>
+<td>the local yardstick</td>
+</tr>
+<tr>
+<td>Galaxies observable</td>
+<td>a few <img src="../assets/img/139e6ed38df62fdd.png" width="44" height="17" style="vertical-align: middle"/></td>
+<td>the census</td>
+</tr>
+</tbody>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e4f3ea;"><tr><td width="5" style="background-color:#1f9d57;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#1f9d57;">One number, two jobs</b></p><p><img src="../assets/img/2da5ae326ab87f04.png" width="94" height="18" style="vertical-align: middle"/> Mpc and <img src="../assets/img/c1820cd8e96c190e.png" width="76" height="18" style="vertical-align: middle"/> Gyr are the same fact in different
+clothes. Knowing that the Hubble time is close to the actual age — and <em>why</em> it
+needn't have been — is worth more than either number alone.</p></td></tr></table>
+<h2>Worked example: the density of the universe</h2>
+<p>The critical density is <img src="../assets/img/3a8e46b849c4401d.png" width="108" height="22" style="vertical-align: middle"/>. Estimate it without a
+calculator.</p>
+<p><img src="../assets/img/f33203141f560be8.png" width="58" height="16" style="vertical-align: middle"/> km/s/Mpc <img src="../assets/img/f14d4c7b0d2bdc65.png" width="320" height="21" style="vertical-align: middle"/>.</p>
+<p>Then <img src="../assets/img/bf3bb1f149eb6a05.png" width="113" height="22" style="vertical-align: middle"/>, and <img src="../assets/img/82b0f78d2c07694a.png" width="266" height="17" style="vertical-align: middle"/>. So</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/30bc7bd12fb20d3a.png" width="306" height="30" /></p>
+<p>The accepted value is <img src="../assets/img/4ac1856a7ca84a5d.png" width="82" height="17" style="vertical-align: middle"/> kg/m³. Divide by the mass of a hydrogen
+atom, <img src="../assets/img/f2968f64f537b0b0.png" width="82" height="17" style="vertical-align: middle"/> kg, and the universe contains about <strong>five hydrogen atoms
+per cubic metre</strong> — emptier than the best vacuum ever made in a laboratory.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Cosmology Calculator</b></p><p style='margin:0;'><strong>Check yourself against the machine.</strong> Estimate the age of the universe as <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/> in your head, then set the Cosmology Calculator to z = 0 and compare. Why is the real age <em>close</em> to <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/> but not equal to it?</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S1" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Cosmology Calculator</b></a></p></td></tr></table>
+<h2>The three ways it goes wrong</h2>
+<ol>
+<li><strong>A missed exponent.</strong> By far the most common. Write every number as
+   <img src="../assets/img/ce355961bd1546f5.png" width="56" height="14" style="vertical-align: middle"/> and track the exponents separately from the front numbers.</li>
+<li><strong>A missing factor that is not of order one.</strong> Some numbers really are enormous —
+   the ratio of electromagnetic to gravitational force between two protons is
+   <img src="../assets/img/4758e3415897d8e7.png" width="30" height="17" style="vertical-align: middle"/>. Estimating is fine; assuming every unknown factor is 1 is not.</li>
+<li><strong>Estimating an exponential.</strong> <img src="../assets/img/1aa3b69e337cb6b6.png" width="24" height="17" style="vertical-align: middle"/> during inflation is not "a few". Where a
+   quantity depends exponentially on something, small changes in that something
+   change the answer by powers of ten, and rough is no longer good enough.</li>
+</ol>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">When an estimate is not enough</b></p><p>Precision cosmology measures parameters to a percent, and the entire Hubble tension
+(<a href="../lessons/L6_6.html">L6.6</a>) lives in a 9% disagreement. Order-of-magnitude thinking tells
+you whether a measurement is <em>possible</em>; it can never settle a question like that.
+Know which kind of question you are asking.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>Estimate first, compute second, and compare. That habit catches most mistakes.</li>
+<li>A factor of a few is a success; one power of ten is usually still useful.</li>
+<li>Units check a formula for free and often reconstruct its shape.</li>
+<li>Memorise a dozen numbers to one significant figure — <img src="../assets/img/1305fedbe8c3722a.png" width="8" height="9" style="vertical-align: middle"/>, a year, a parsec, <img src="../assets/img/80bea0799f4e55ae.png" width="21" height="16" style="vertical-align: middle"/>,
+  <img src="../assets/img/be3c36c99b2d2fb6.png" width="38" height="18" style="vertical-align: middle"/>, <img src="../assets/img/4fb3c1937feec851.png" width="40" height="16" style="vertical-align: middle"/>, <img src="../assets/img/053f39f3668dd2d4.png" width="16" height="12" style="vertical-align: middle"/> — and most of cosmology becomes arithmetic.</li>
+<li>Watch out for exponents, for genuinely huge dimensionless numbers, and for
+  anything exponential.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="8"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="0"><p><b>1.</b> What is (3×10⁸) × (2×10⁻⁵)?</p><ol type="a"><li><button type="button" data-index="0">6×10³</button></li><li><button type="button" data-index="1">6×10⁻⁴⁰</button></li><li><button type="button" data-index="2">5×10³</button></li><li><button type="button" data-index="3">6×10¹³</button></li></ol><p class="explanation" hidden>Multiply the front numbers, add the exponents: 3×2 = 6 and 8 + (−5) = 3.</p></div><div class="question" data-answer="1"><p><b>2.</b> Roughly how many seconds are there in a year?</p><ol type="a"><li><button type="button" data-index="0">3×10⁵</button></li><li><button type="button" data-index="1">3×10⁷</button></li><li><button type="button" data-index="2">3×10⁹</button></li><li><button type="button" data-index="3">9×10⁶</button></li></ol><p class="explanation" hidden>365 × 24 × 3600 ≈ 3.15×10⁷ — and π×10⁷ is accurate to half a percent.</p></div><div class="question" data-answer="1"><p><b>3.</b> Which combination of G, M and c has the units of a length?</p><ol type="a"><li><button type="button" data-index="0">GM/c</button></li><li><button type="button" data-index="1">GM/c²</button></li><li><button type="button" data-index="2">GM²/c³</button></li><li><button type="button" data-index="3">G M c²</button></li></ol><p class="explanation" hidden>G is m³ kg⁻¹ s⁻², so GM is m³ s⁻², and dividing by c² leaves metres. The Schwarzschild radius is 2GM/c².</p></div><div class="question" data-answer="1"><p><b>4.</b> An order-of-magnitude estimate is considered successful when it is right to within</p><ol type="a"><li><button type="button" data-index="0">one percent</button></li><li><button type="button" data-index="1">a factor of a few</button></li><li><button type="button" data-index="2">a factor of a thousand</button></li><li><button type="button" data-index="3">the last decimal place</button></li></ol><p class="explanation" hidden>The point is to tell a sensible answer from a nonsensical one, not to compete with a calculator.</p></div><div class="question" data-answer="2"><p><b>5.</b> The Hubble time 1/H₀ is about 14 billion years. What is c/H₀ roughly?</p><ol type="a"><li><button type="button" data-index="0">14 Mpc</button></li><li><button type="button" data-index="1">430 Mpc</button></li><li><button type="button" data-index="2">4 300 Mpc</button></li><li><button type="button" data-index="3">43 000 Mpc</button></li></ol><p class="explanation" hidden>c/H₀ = c × (1/H₀) = 14 billion light years ≈ 4 300 Mpc: the same fact written as a distance.</p></div><div class="question" data-answer="2"><p><b>6.</b> Which estimate is order-of-magnitude thinking least able to handle?</p><ol type="a"><li><button type="button" data-index="0">The number of stars visible to the naked eye</button></li><li><button type="button" data-index="1">The density of the universe</button></li><li><button type="button" data-index="2">The expansion factor during inflation, e⁶⁰</button></li><li><button type="button" data-index="3">The mass of the Milky Way</button></li></ol><p class="explanation" hidden>When a quantity depends exponentially on something, a small change in that something moves the answer by many powers of ten.</p></div><div class="question" data-answer="1"><p><b>7.</b> Dimensional analysis tells you the shape of a formula. What can it never give you?</p><ol type="a"><li><button type="button" data-index="0">The units of the answer</button></li><li><button type="button" data-index="1">The dimensionless number in front</button></li><li><button type="button" data-index="2">How the answer scales with mass</button></li><li><button type="button" data-index="3">Whether the formula is consistent</button></li></ol><p class="explanation" hidden>That factor needs the real theory — but it is almost always between 0.1 and 10, which is why estimating still works.</p></div><div class="question" data-answer="1"><p><b>8.</b> The critical density is about 10⁻²⁶ kg/m³. How much matter is that?</p><ol type="a"><li><button type="button" data-index="0">About a kilogram per cubic metre</button></li><li><button type="button" data-index="1">About five hydrogen atoms per cubic metre</button></li><li><button type="button" data-index="2">About a million hydrogen atoms per cubic metre</button></li><li><button type="button" data-index="3">One atom per cubic kilometre</button></li></ol><p class="explanation" hidden>Dividing by the hydrogen mass 1.7×10⁻²⁷ kg gives about five atoms per cubic metre — emptier than any laboratory vacuum.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L0_6.html">◀ L0.6 Olbers&#x27; Paradox: Why Is the Night Sky Dark?</a><a href="../lessons/L1_1.html">L1.1 The Cosmic Distance Ladder ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

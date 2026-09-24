@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L6.3 Inflation: Horizon, Flatness and Monopole Problems, Slow Roll, nₛ and r · Cosmos</title>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/cosmos.png">
+</head>
+<body>
+<header class="site"><a class="brand" href="../index.html">✦ Cosmos</a><nav><a href="../index.html" aria-current="page">Course</a><a href="../glossary.html">Glossary</a><a href="../formulas.html">Formulas</a><a href="../problems.html">Problems</a><a href="../simulators.html">Simulators</a></nav></header>
+<main>
+<p class="badge">Level 6 · Advanced Topics</p><h1>L6.3 Inflation: Horizon, Flatness and Monopole Problems, Slow Roll, nₛ and r</h1><p class="lead">A brief period of accelerated expansion before the hot Big Bang explains why the universe is so uniform and flat, and created the seeds of all structure. Learn how it works and how it is tested.</p><p class="meta">≈ 28 min read · Before this: <a href="../lessons/L5_1.html">L5.1</a>, <a href="../lessons/L2_6.html">L2.6</a> · Simulators: <a href="../simulators.html#S15">Inflation Slow-Roll Simulator</a></p><article class="lesson"><table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">In this lesson you will learn</b></p><ul>
+<li>The horizon, flatness and monopole problems of the standard Big Bang</li>
+<li>How accelerated expansion shrinks the comoving Hubble radius and solves them</li>
+<li>The slow-roll picture of a scalar field, e-folds and reheating</li>
+<li>How quantum fluctuations predict nₛ and r, and what observations say</li>
+</ul></td></tr></table>
+<h2>Three puzzles of the hot Big Bang</h2>
+<p>The standard Big Bang model explains the expansion, the light elements and the CMB
+beautifully. But it starts from very special initial conditions that it does not
+explain.</p>
+<h3>1. The horizon problem</h3>
+<p>When the CMB was released, the particle horizon covered only about <strong>two degrees</strong> on
+today's sky (lesson <a href="../lessons/L2_6.html">L2.6</a>). Regions further apart had never exchanged a
+signal. Yet the CMB has the same temperature, 2.7255 K, in every direction to one part in
+100 000. How could hundreds of causally disconnected patches agree so precisely?</p>
+<h3>2. The flatness problem</h3>
+<p>Deviations from flatness grow with time: <img src="../assets/img/5e80843759b0639a.png" width="80" height="18" style="vertical-align: middle"/> in the matter era and
+<img src="../assets/img/924a8994b4913203.png" width="38" height="17" style="vertical-align: middle"/> in the radiation era (lesson <a href="../lessons/L2_4.html">L2.4</a>). Today
+<img src="../assets/img/5e157b7a8de65538.png" width="89" height="18" style="vertical-align: middle"/>, so at the Planck time <img src="../assets/img/b3d987a8f781d012.png" width="50" height="18" style="vertical-align: middle"/> must have been smaller than about
+<img src="../assets/img/839e5ec4a1c40403.png" width="40" height="17" style="vertical-align: middle"/>. Why was the universe tuned so precisely?</p>
+<h3>3. The monopole problem</h3>
+<p>Many grand unified theories predict heavy particles called magnetic monopoles, produced in
+enormous numbers at energies near <img src="../assets/img/fa2cfc3130708c96.png" width="30" height="17" style="vertical-align: middle"/> GeV. They would dominate the universe today. None
+has ever been found.</p>
+<h2>The idea: accelerated expansion</h2>
+<p>Between 1980 and 1982 <strong>Alexei Starobinsky</strong>, <strong>Alan Guth</strong>, <strong>Andrei Linde</strong>, and
+<strong>Andreas Albrecht</strong> with <strong>Paul Steinhardt</strong> proposed that before the hot Big Bang, the universe
+went through a phase of rapid, accelerated expansion: <a href="../glossary.html#inflation" title="A proposed phase of accelerated expansion before the hot Big Bang, driven by a slowly rolling scalar field. It explains the flatness and uniformity of the universe and the origin of the primordial fluctuations." style="color:#c7771a; text-decoration:none;">inflation</a>.</p>
+<p>The key quantity is the <strong>comoving Hubble radius</strong> <img src="../assets/img/fc8653cdb6eb3baf.png" width="53" height="18" style="vertical-align: middle"/>, the region, measured on the
+expanding grid, within which causal processes can act at a given time.</p>
+<ul>
+<li>In a decelerating universe, <img src="../assets/img/08bb2cc7c87fbb1b.png" width="53" height="13" style="vertical-align: middle"/> decreases, so the comoving Hubble radius
+  <strong>grows</strong>. More and more of the universe comes into causal contact.</li>
+<li>In an accelerating universe, <img src="../assets/img/a1b9caf294491363.png" width="9" height="13" style="vertical-align: middle"/> increases, so the comoving Hubble radius
+  <strong>shrinks</strong>.</li>
+</ul>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/4238d41a54a2fb34.png" width="640" height="340" /></p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">How inflation solves the problems</b></p><ul>
+<li><strong>Horizon:</strong> before inflation the whole observable universe was inside one tiny causally
+  connected patch. Inflation stretched it and pushed it outside the Hubble radius; it is
+  now re-entering. The CMB is uniform because it all shared a common past.</li>
+<li><strong>Flatness:</strong> during inflation <img src="../assets/img/83064cdc430eb87d.png" width="132" height="21" style="vertical-align: middle"/> shrinks dramatically. Any
+  initial curvature is stretched flat, just as the Earth looks flat to us.</li>
+<li><strong>Monopoles:</strong> any relics produced before inflation are diluted to fewer than one in the
+  observable universe.</li>
+</ul></td></tr></table>
+<p>How much inflation is needed? The comoving Hubble radius must shrink by a factor of about
+<img src="../assets/img/1aa3b69e337cb6b6.png" width="24" height="17" style="vertical-align: middle"/>, i.e. the universe must expand by about 60 <a href="../glossary.html#e-fold" title="Growth by a factor e ≈ 2.718. The expansion during inflation is counted in e-folds, N = ln(a_end/a_start); about 60 are needed to solve the horizon and flatness problems." style="color:#c7771a; text-decoration:none;">e-folds</a>:</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/5c54d2611b0954df.png" width="136" height="24" /></p>
+<p>(the exact number depends on the energy scale and on how the universe reheated).</p>
+<h2>Slow roll: a field on a hill</h2>
+<p>What could drive accelerated expansion? From lesson <a href="../lessons/L6_2.html">L6.2</a>, we need a
+substance with <img src="../assets/img/9b3c8e6e2e0582cd.png" width="84" height="21" style="vertical-align: middle"/>. A <strong>scalar field</strong> <img src="../assets/img/33e6282306ade26c.png" width="10" height="16" style="vertical-align: middle"/>, the <a href="../glossary.html#inflaton" title="The hypothetical scalar field whose potential energy drove inflation. Its quantum fluctuations became the seeds of all cosmic structure." style="color:#c7771a; text-decoration:none;">inflaton</a>,
+does the job. Its energy density and pressure are</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/41e15d83e37a1e7f.png" width="329" height="30" /></p>
+<p>If the field changes slowly, so that the potential energy <img src="../assets/img/1b54fa399d9be482.png" width="10" height="13" style="vertical-align: middle"/> dominates the kinetic energy,
+then <img src="../assets/img/5bf7f41bebe47b51.png" width="74" height="20" style="vertical-align: middle"/>: almost a cosmological constant. The field obeys</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/bcfe597507f662e4.png" width="182" height="25" /></p>
+<p>like a ball rolling down a hill with friction <img src="../assets/img/3deffa7b827ce015.png" width="33" height="20" style="vertical-align: middle"/> from the expansion.</p>
+<p>The shape of the hill is measured by the <strong>slow-roll parameters</strong> (in units of the reduced
+Planck mass):</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/b4716dfc9bfa00d1.png" width="192" height="32" /></p>
+<p>Inflation lasts while <img src="../assets/img/e6019a1b03393208.png" width="40" height="13" style="vertical-align: middle"/> and <img src="../assets/img/5303ed8febf5d239.png" width="50" height="18" style="vertical-align: middle"/>, i.e. while the potential is flat
+enough. It ends when <img src="../assets/img/553a5159253d31d5.png" width="8" height="9" style="vertical-align: middle"/> reaches 1 and the field rolls quickly to the bottom.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Reheating</b></p><p>At the bottom of the potential the field oscillates and decays into ordinary particles,
+filling the universe with hot radiation. This <strong>reheating</strong> is the start of the hot Big Bang
+described in Level 4. Inflation therefore does not replace the Big Bang; it sets its initial
+conditions.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">Try it: Inflation Slow-Roll Simulator</b></p><p style='margin:0;'>Choose a potential and press Play. Watch the field roll, ε grow to 1 and inflation end.</p><p style="margin:6px 0 0 0;"><a href="../simulators.html#S15" style="color:#2059c4; text-decoration:none;"><b>▶ Open the Inflation Slow-Roll Simulator</b></a></p></td></tr></table>
+<h2>Quantum seeds of structure</h2>
+<p>The most remarkable prediction of inflation is quantitative. Quantum fluctuations of the
+inflaton are stretched from microscopic to cosmic scales and freeze in when they leave the
+Hubble radius. They become the density fluctuations that grow into galaxies (Level 5).</p>
+<p>Slow-roll inflation predicts:</p>
+<ul>
+<li><strong>Gaussian</strong>, <strong>adiabatic</strong> fluctuations (all components perturbed together), confirmed by
+  Planck;</li>
+<li>a nearly <strong>scale-invariant</strong> spectrum with spectral index</li>
+</ul>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/2e3beaa85e3d4a31.png" width="141" height="20" /></p>
+<p>slightly below 1, because the field rolls and <img src="../assets/img/2d0b968a53e56b9e.png" width="14" height="12" style="vertical-align: middle"/> changes slowly;
+- <strong>primordial gravitational waves</strong> with tensor-to-scalar ratio</p>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/5dffb66e3042ec27.png" width="65" height="16" /></p>
+<ul>
+<li>an amplitude set by the energy scale, <img src="../assets/img/a8b73d55c3499d8e.png" width="145" height="22" style="vertical-align: middle"/>.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">A test of inflation</b></p><p>Planck measures <img src="../assets/img/bbaaa7e9c6955094.png" width="152" height="16" style="vertical-align: middle"/>: significantly below 1, as slow-roll inflation
+predicted decades earlier. Primordial gravitational waves have not yet been detected; the
+BICEP/Keck and Planck data require <img src="../assets/img/5e2663207806f345.png" width="66" height="13" style="vertical-align: middle"/> (95% confidence).</p></td></tr></table>
+<p align="center" style="line-height:100%; margin-top:10px; margin-bottom:10px;"><img src="../assets/img/d42a1b7a360f6e06.png" width="640" height="340" /></p>
+<p>The data already exclude the simplest models:</p>
+<ul>
+<li><img src="../assets/img/d92cda29a6667d44.png" width="50" height="20" style="vertical-align: middle"/> predicts <img src="../assets/img/4c8f847c1eb2f8b9.png" width="76" height="16" style="vertical-align: middle"/> (fine) but <img src="../assets/img/2d37e788d4919479.png" width="58" height="13" style="vertical-align: middle"/> (too large);</li>
+<li><img src="../assets/img/d2a639fffee6dc67.png" width="50" height="20" style="vertical-align: middle"/> is excluded on both counts;</li>
+<li><strong>plateau models</strong> such as Starobinsky's <img src="../assets/img/c562478d7e742d71.png" width="22" height="17" style="vertical-align: middle"/> inflation or Higgs inflation predict
+  <img src="../assets/img/f15ac8c18f1f83e1.png" width="76" height="16" style="vertical-align: middle"/> and <img src="../assets/img/19a0e705a4c1b57c.png" width="66" height="13" style="vertical-align: middle"/>, in excellent agreement.</li>
+</ul>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#e6edfa;"><tr><td width="5" style="background-color:#2f6fdb;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#2f6fdb;">The energy scale of inflation</b></p><p>The tensor amplitude fixes the energy scale directly:
+<img src="../assets/img/967cc073df0ce0a0.png" width="270" height="21" style="vertical-align: middle"/>.
+The current limit therefore says inflation happened below about <img src="../assets/img/fa2cfc3130708c96.png" width="30" height="17" style="vertical-align: middle"/> GeV, a trillion
+times the energy of the Large Hadron Collider. A detection of <img src="../assets/img/b7b93e1781ab4aa2.png" width="8" height="9" style="vertical-align: middle"/> would measure it.</p></td></tr></table>
+<h2>Searching for primordial gravitational waves</h2>
+<p>Gravitational waves from inflation would leave a unique swirling pattern in the
+polarisation of the CMB, called <strong>B-modes</strong>. Experiments such as BICEP/Keck, the Simons
+Observatory, SPT-3G and the planned LiteBIRD satellite aim to reach <img src="../assets/img/34cd11c4430b731c.png" width="66" height="13" style="vertical-align: middle"/>, enough
+to test Starobinsky-like models.</p>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8e7e9;"><tr><td width="5" style="background-color:#c9384a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c9384a;">Is inflation proven?</b></p><p>Inflation is the leading explanation of the initial conditions, and its predictions for
+<img src="../assets/img/e6a82f5a4c6dd193.png" width="17" height="12" style="vertical-align: middle"/>, Gaussianity and adiabaticity have been confirmed. But there is no direct detection of
+primordial gravitational waves, the inflaton has not been identified, and alternatives such
+as bouncing or cyclic cosmologies are still studied. It is best described as a very
+successful, but not yet confirmed, theory.</p></td></tr></table>
+<table width="100%" cellspacing="0" cellpadding="0" style="margin-top:10px; margin-bottom:10px; background-color:#f8eee3;"><tr><td width="5" style="background-color:#c7771a;"></td><td style="padding:10px 14px 10px 14px;"><p style="margin:0 0 4px 0;"><b style="color:#c7771a;">Remember this</b></p><ul>
+<li>The hot Big Bang needs unexplained initial conditions: the horizon, flatness and monopole
+  problems.</li>
+<li>Inflation, an early phase of accelerated expansion lasting about 60 e-folds, shrinks the
+  comoving Hubble radius and solves all three.</li>
+<li>A slowly rolling scalar field with a flat potential drives inflation; it ends when
+  <img src="../assets/img/5c852ef5b429ab1b.png" width="36" height="13" style="vertical-align: middle"/> and reheating starts the hot Big Bang.</li>
+<li>Quantum fluctuations predict <img src="../assets/img/4a647a094704bdfa.png" width="118" height="16" style="vertical-align: middle"/> and <img src="../assets/img/6d83d8ed47c9cfac.png" width="52" height="13" style="vertical-align: middle"/>.</li>
+<li>Planck's <img src="../assets/img/e3570b7717505dc1.png" width="76" height="16" style="vertical-align: middle"/> and the limit <img src="../assets/img/5e2663207806f345.png" width="66" height="13" style="vertical-align: middle"/> favour plateau models such as Starobinsky
+  inflation; B-mode searches continue.</li>
+</ul></td></tr></table></article><section class="quiz" data-total="5"><h2>Quiz</h2><p>Choose an answer to see whether it is right, and why. Score 70% or more and you know this lesson.</p><div class="question" data-answer="1"><p><b>1.</b> What is the horizon problem?</p><ol type="a"><li><button type="button" data-index="0">Telescopes cannot see beyond the horizon of the Earth</button></li><li><button type="button" data-index="1">The CMB is uniform across regions that, in the standard Big Bang, were never in causal contact</button></li><li><button type="button" data-index="2">Galaxies disappear beyond the event horizon</button></li><li><button type="button" data-index="3">Black holes have horizons</button></li></ol><p class="explanation" hidden>At recombination causally connected patches covered only about two degrees, yet the whole sky has the same temperature.</p></div><div class="question" data-answer="1"><p><b>2.</b> How does inflation solve the horizon problem?</p><ol type="a"><li><button type="button" data-index="0">It makes light travel faster</button></li><li><button type="button" data-index="1">Accelerated expansion shrinks the comoving Hubble radius, so the observable universe came from one tiny causally connected patch</button></li><li><button type="button" data-index="2">It heats the CMB uniformly today</button></li><li><button type="button" data-index="3">It removes the CMB</button></li></ol><p class="explanation" hidden>Regions that look disconnected today were in contact before inflation stretched them apart.</p></div><div class="question" data-answer="0"><p><b>3.</b> When does slow-roll inflation end?</p><ol type="a"><li><button type="button" data-index="0">When the slow-roll parameter ε reaches about 1</button></li><li><button type="button" data-index="1">When the universe becomes 13.8 billion years old</button></li><li><button type="button" data-index="2">When dark energy appears</button></li><li><button type="button" data-index="3">It never ends</button></li></ol><p class="explanation" hidden>Once the potential is no longer flat enough, ε ≈ 1, the field rolls quickly, oscillates and reheats the universe.</p></div><div class="question" data-answer="1"><p><b>4.</b> What does slow-roll inflation predict for the spectral index n_s?</p><ol type="a"><li><button type="button" data-index="0">Exactly 1</button></li><li><button type="button" data-index="1">Slightly below 1, n_s = 1 − 6ε + 2η</button></li><li><button type="button" data-index="2">Much larger than 1</button></li><li><button type="button" data-index="3">Zero</button></li></ol><p class="explanation" hidden>Planck measures n_s = 0.965, significantly below 1, as predicted.</p></div><div class="question" data-answer="1"><p><b>5.</b> Why is the simple φ² inflation model ruled out?</p><ol type="a"><li><button type="button" data-index="0">It predicts no inflation at all</button></li><li><button type="button" data-index="1">It predicts a tensor-to-scalar ratio r ≈ 0.14, above the observed limit r &lt; 0.036</button></li><li><button type="button" data-index="2">It predicts n_s = 2</button></li><li><button type="button" data-index="3">It requires negative energy</button></li></ol><p class="explanation" hidden>Its n_s is acceptable, but it predicts too many primordial gravitational waves; plateau models fit better.</p></div><p class="score" aria-live="polite"></p></section><nav class="pager"><a href="../lessons/L6_2.html">◀ L6.2 Deriving the Friedmann Equations from Einstein&#x27;s Field Equations</a><a href="../lessons/L6_4.html">L6.4 Reionisation and 21-cm Cosmology ▶</a></nav>
+</main>
+<footer class="site">
+<p>Cosmos 0.2.0 — an interactive course in cosmology. The simulators run in the
+<a href="https://github.com/salihyesil59/cosmos/releases">desktop app</a> for Windows, macOS and Linux. Course text under the MIT licence;
+the observational data belong to the teams who measured it.</p>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>

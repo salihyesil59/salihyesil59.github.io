@@ -1,0 +1,55 @@
+
+:root { --bg: #f7f8fb; --surface: #ffffff; --text: #1b2233; --muted: #5b6477; --accent: #2f6fdb;
+        --border: #d9deea; --good: #1f9d57; --bad: #c9384a; }
+* { box-sizing: border-box; }
+html { color-scheme: light; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 system-ui, -apple-system,
+       "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); }
+header.site { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; padding: 12px 16px;
+              background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; }
+header.site .brand { font-weight: 700; text-decoration: none; color: var(--text); font-size: 1.1em; }
+header.site nav { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+header.site nav a { text-decoration: none; }
+header.site nav a[aria-current] { font-weight: 700; color: var(--text); }
+main { max-width: 860px; margin: 0 auto; padding: 16px; }
+footer.site { max-width: 860px; margin: 32px auto; padding: 16px; color: var(--muted); font-size: 0.85em;
+              border-top: 1px solid var(--border); }
+h1 { font-size: 1.9em; line-height: 1.2; margin: 0.6em 0 0.3em; }
+h2 { color: var(--accent); margin-top: 1.6em; }
+.lead { font-size: 1.1em; }
+.meta, .badge { color: var(--muted); font-size: 0.9em; }
+.badge { text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0; }
+.note { background: var(--surface); border-left: 4px solid var(--accent); padding: 10px 14px; }
+img { max-width: 100%; height: auto; }
+article.lesson table { border-collapse: collapse; }
+article.lesson table.data td, article.lesson table.data th { padding: 6px 8px; }
+article.lesson table.data { display: block; max-width: 100%; overflow-x: auto; }
+.level ol { padding-left: 0; list-style: none; }
+.level li { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0;
+            border-bottom: 1px dashed var(--border); }
+.level .id { color: var(--muted); font-variant-numeric: tabular-nums; margin-right: 6px; }
+.level .minutes { color: var(--muted); white-space: nowrap; font-size: 0.9em; }
+.pager { display: flex; justify-content: space-between; gap: 16px; margin: 32px 0; flex-wrap: wrap; }
+.quiz, .problem, .formula-card, .sim { background: var(--surface); border: 1px solid var(--border);
+       border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+.question { margin: 16px 0; }
+.question ol { padding-left: 1.4em; }
+.question button { font: inherit; text-align: left; width: 100%; padding: 6px 10px; margin: 3px 0;
+                   border: 1px solid var(--border); border-radius: 6px; background: var(--bg); cursor: pointer; }
+.question button.right { border-color: var(--good); background: #e5f5ec; }
+.question button.wrong { border-color: var(--bad); background: #fbe7ea; }
+.explanation { color: var(--muted); }
+.score { font-weight: 700; }
+.problem input { font: inherit; width: 10em; padding: 4px 8px; }
+.problem button { font: inherit; padding: 4px 12px; }
+.verdict.right { color: var(--good); font-weight: 700; }
+.verdict.wrong { color: var(--bad); font-weight: 700; }
+.stars { color: #d9822b; font-size: 0.8em; }
+details { margin: 6px 0; }
+summary { cursor: pointer; color: var(--accent); }
+.formula-card .display { text-align: center; }
+dl.glossary dt { font-weight: 700; margin-top: 16px; scroll-margin-top: 70px; }
+dl.glossary dd { margin: 0 0 0 1em; }
+.letters { letter-spacing: 0.3em; color: var(--muted); }
+:target { background: #fff7d6; }
