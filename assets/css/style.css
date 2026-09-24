@@ -204,8 +204,13 @@ body::before {
 :root[data-theme="light"] .icon-sun { display: block; }
 :root[data-theme="light"] .icon-moon { display: none; }
 
+/* the course is a destination rather than a section of this page */
+.nav__item--course a { color: var(--accent); }
+.nav__item--course a::after { background: var(--accent); }
+
 @media (max-width: 620px) {
-  .nav__links { display: none; }
+  /* the in-page anchors go, but the one real destination stays reachable */
+  .nav__links li:not(.nav__item--course) { display: none; }
 }
 
 /* ---------- hero ---------- */
