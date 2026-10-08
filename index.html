@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salih Yeşil · Mathematical Physics</title>
+<meta name="description" content="Salih Yeşil, MSc student in mathematical physics at Istanbul University, working in cosmology. Code and tools for physics, mathematics and artificial intelligence.">
+<meta name="author" content="Salih Yeşil">
+<meta name="theme-color" content="#0a0c10">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Salih Yeşil · Mathematical Physics">
+<meta property="og:description" content="Cosmology, and code and tools for physics, mathematics and artificial intelligence.">
+<meta property="og:url" content="https://salihyesil59.github.io/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<canvas id="cosmic-web" aria-hidden="true"></canvas>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="nav__brand" href="#top"><span class="nav__glyph">✦</span> Salih Yeşil</a>
+    <ul class="nav__links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#models">Models</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="nav__item--course"><a href="cosmos/">Cosmos course</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-13a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1Zm0 20a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1ZM1 13a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2H1Zm20 0a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2h-2ZM4.2 5.6a1 1 0 0 1 1.4-1.4l1.4 1.4A1 1 0 0 1 5.6 7L4.2 5.6Zm13.4 13.4a1 1 0 1 1 1.4-1.4l1.4 1.4a1 1 0 0 1-1.4 1.4l-1.4-1.4ZM17.6 7a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 1 1 1.4 1.4L19 7a1 1 0 0 1-1.4 0ZM4.2 19.8a1 1 0 0 1 0-1.4L5.6 17A1 1 0 0 1 7 18.4l-1.4 1.4a1 1 0 0 1-1.4 0Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────── hero ───────────────────────── -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="hero__kicker">MSc Mathematical Physics · Istanbul University</p>
+      <h1 class="hero__name">Salih&nbsp;Yeşil</h1>
+      <p class="hero__lede">
+        I'm a master's student in mathematical physics at Istanbul University, working in
+        <em>cosmology</em>. I enjoy turning physics and mathematics into code, so on GitHub I build
+        programs and tools in physics, mathematics and artificial intelligence.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">See the work</a>
+        <a class="btn" href="https://github.com/salihyesil59" rel="me noopener" target="_blank">GitHub ↗</a>
+        <a class="btn" href="https://huggingface.co/salihyesil59" rel="me noopener" target="_blank">Hugging Face ↗</a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>Affiliation</dt><dd>Istanbul University</dd></div>
+        <div><dt>Focus</dt><dd>Cosmology</dd></div>
+        <div><dt>Tools</dt><dd>Python · Wolfram Language · PyTorch</dd></div>
+        <div><dt>Also</dt><dd>Physics · Mathematics · AI</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── research ───────────────────────── -->
+  <section class="section" id="research">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">01</span> Research interests</h2>
+
+      <div class="cards">
+        <article class="card card--topic">
+          <h3>Cosmology</h3>
+          <p>
+            How the universe expands and how its structure grows over time, and what
+            observations can tell us about dark energy and gravity on the largest scales.
+          </p>
+          <ul class="tagrow">
+            <li>Dark energy</li><li>Gravity</li><li>Observational data</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Physics &amp; mathematics in code</h3>
+          <p>
+            Turning equations into programs: simulations, calculators and interactive tools that
+            make physics and mathematics easier to explore, check and learn.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Wolfram Language</li><li>Simulations</li>
+          </ul>
+        </article>
+
+        <article class="card card--topic">
+          <h3>Artificial intelligence</h3>
+          <p>
+            Adapting open language and vision models to physics and mathematics: answering
+            physics questions and turning written formulas into LaTeX.
+          </p>
+          <ul class="tagrow">
+            <li>PyTorch</li><li>Language models</li><li>Hugging Face</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── projects ───────────────────────── -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">02</span> Projects</h2>
+      <p class="section__lede">Open-source research code. Star counts load live from the GitHub API.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects by topic">
+        <button class="chip is-active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="cosmology" type="button">Cosmology</button>
+        <button class="chip" data-filter="gravity" type="button">Gravity</button>
+        <button class="chip" data-filter="strings" type="button">Strings</button>
+        <button class="chip" data-filter="quantum" type="button">Quantum</button>
+        <button class="chip" data-filter="ml" type="button">ML / AI</button>
+        <button class="chip" data-filter="tools" type="button">Tools</button>
+      </div>
+
+      <div class="cards cards--projects" id="project-grid">
+
+        <article class="card card--project" data-topics="cosmology tools" data-repo="CosmoFit">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/CosmoFit" target="_blank" rel="noopener">CosmoFit</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            A Python library for cosmological parameter estimation and Bayesian inference. Since
+            v2.0 it is built from components (<em>theories</em> that compute, <em>likelihoods</em>
+            that compare, <em>samplers</em> that explore), assembled from a YAML input, run with
+            the <em>cosmofit</em> command and written as getdist chains. A wide bench of dark-energy models
+            (ΛCDM, wCDM, CPL, JBP, BA, PEDE, GEDE, sign-switching Λ, Chaplygin gas, interacting DE)
+            and modified gravity (<span class="tex">f(R)</span>, <span class="tex">f(R,T)</span>,
+            <span class="tex">f(T)</span>, <span class="tex">f(Q)</span>, DGP) fitted down to structure
+            growth; 21 datasets including DESI DR2 and the CMB through CAMB; Metropolis–Hastings,
+            emcee, dynesty, profile and Fisher samplers; and a desktop GUI.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>MCMC</li><li>Modified gravity</li><li>YAML · CLI</li><li>PyPI</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/CosmoFit" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://salihyesil59.github.io/CosmoFit/" target="_blank" rel="noopener">Docs ↗</a>
+            <a href="https://pypi.org/project/cosmofit/" target="_blank" rel="noopener">PyPI ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="cosmology tools" data-repo="CosmoRecon">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/CosmoRecon" target="_blank" rel="noopener">CosmoRecon</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            Model-independent reconstruction of <span class="tex">H(z)</span>,
+            <span class="tex">d<sub>L</sub>(z)</span> and <span class="tex">fσ<sub>8</sub>(z)</span>, and then
+            the question the field mostly does not answer: how much of that result is the method
+            rather than the measurement? A reconstruction is carried as a posterior over functions,
+            as draws rather than a curve with error bars, so correlations survive every null test:
+            <span class="tex">Om</span>, curvature, distance duality, litmus, growth–geometry.
+            Significance is computed in the eigenbasis of the statistic's own covariance with the
+            effective degrees of freedom measured rather than counted, and a method ensemble splits
+            a published error bar into the part the data measured and the part the method chose.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Gaussian processes</li><li>Null tests</li><li>Pre-alpha</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/CosmoRecon" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://github.com/salihyesil59/CosmoRecon/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="cosmology tools" data-repo="cosmos">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/cosmos" target="_blank" rel="noopener">Cosmos</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            An interactive desktop application that teaches cosmology from the size of the universe
+            to the open problems at the frontier. 58 lessons across 8 levels, each readable two ways
+            (the story in words, or every formula and derivation), and 29 simulators standing on
+            real data: Pantheon+ supernovae, SPARC rotation curves, the WMAP sky, an SDSS slice.
+            Quizzes with spaced repetition, flashcards, worked problem sets, a 206-term glossary,
+            classroom mode, and an export of the whole course as a static website, all on a physics
+            engine verified against astropy. That export is hosted here: the lessons, quizzes,
+            glossary, formula sheet and problems read in the browser, with the simulators and
+            progress tracking living in the desktop app.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Qt</li><li>Education</li><li>Real data</li><li>TR / EN</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a class="card__link--primary" href="cosmos/">Read the course →</a>
+            <a href="https://github.com/salihyesil59/cosmos" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://github.com/salihyesil59/cosmos/releases/tag/v0.7.0" target="_blank" rel="noopener">Download v0.7.0 ↗</a>
+            <a href="https://github.com/salihyesil59/cosmos/blob/main/ROADMAP.md" target="_blank" rel="noopener">Roadmap ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="gravity cosmology" data-repo="wljs-gr-toolkit">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/wljs-gr-toolkit" target="_blank" rel="noopener">wljs-gr-toolkit</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            Thirteen Wolfram Language notebooks for symbolic general relativity and modified gravity.
+            A metric goes in and curvature tensors come out; an action goes in and field equations,
+            Friedmann equations and <span class="tex">E(z)</span> come out, then distances, growth,
+            <span class="tex">G<sub>eff</sub></span>, the teleparallel families, a Hamiltonian
+            mode count, what the quasi-static approximation costs, gravitational-wave propagation,
+            the Solar System bound derived rather than quoted, and which of the three families a
+            standard siren could actually catch. Every notebook ends in verification cells against
+            known limits.
+          </p>
+          <ul class="tagrow">
+            <li>Wolfram Language</li><li>WLJS Notebook</li><li>f(R) · f(T) · f(Q)</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/wljs-gr-toolkit" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="strings tools" data-repo="string-th">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/string-th" target="_blank" rel="noopener">string-th</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            A simulation toolkit for string theory. It solves the worldsheet equations numerically
+            (bosons by leapfrog, fermions by Lax–Wendroff), counts the quantum states, and reproduces
+            the classic results as computed output rather than quoted facts: the critical dimension,
+            the Regge trajectory, T-duality, orbifold twisted sectors, all five superstring theories
+            and the two heterotic lattices. It starts with the bosonic string and each layer is
+            required to reproduce the one below it. Beyond the spectrum: the Hagedorn temperature,
+            mirror symmetry as a polytope exchanged with its dual, Green–Schwarz anomaly
+            cancellation picking out its 496, and D-branes from the BIon spike to the Myers effect.
+            Anything checkable two ways is checked two ways: 1543 checks in the test suite.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Worldsheet</li><li>Superstrings</li><li>Heterotic</li><li>D-branes</li><li>Animations</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/string-th" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="quantum" data-repo="Quantum-Computing">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/Quantum-Computing" target="_blank" rel="noopener">Quantum-Computing</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            Notebooks replicating the quantum algorithms of <em>“Optimization and experimental
+            realization of the quantum permutation algorithm”</em> (Yalçınkaya &amp; Gedik, Phys. Rev. A
+            <strong>96</strong>, 062339, 2017).
+          </p>
+          <ul class="tagrow">
+            <li>Jupyter</li><li>Quantum algorithms</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/Quantum-Computing" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://doi.org/10.1103/PhysRevA.96.062339" target="_blank" rel="noopener">Paper ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="ml" data-repo="qwen3vl-8b-latex">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/qwen3vl-8b-latex" target="_blank" rel="noopener">qwen3VL-LaTeX</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            Qwen3-VL 8B fine-tuned to turn handwritten or printed mathematics into LaTeX, from an
+            image of a formula, or from a plain-language description of one. Trained with a bias
+            toward the notation physics actually uses: integrals, matrices, Dirac brackets.
+          </p>
+          <ul class="tagrow">
+            <li>VLM</li><li>Unsloth</li><li>Math OCR</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/qwen3vl-8b-latex" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://huggingface.co/salihyesil59/qwen3VL_Latex" target="_blank" rel="noopener">Model card ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="ml" data-repo="llama3.1-8b-physics">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">llama3.1-8b-physics</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            Llama 3.1 8B fine-tuned on physics, for explanation and question answering: the FLRW
+            metric, expansion history, and the rest of the standard graduate vocabulary.
+          </p>
+          <ul class="tagrow">
+            <li>LLM</li><li>Fine-tuning</li><li>Physics QA</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://huggingface.co/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">Model card ↗</a>
+          </footer>
+        </article>
+
+        <article class="card card--project" data-topics="tools" data-repo="antenna-length-calculator">
+          <header class="card__head">
+            <h3><a href="https://github.com/salihyesil59/antenna-length-calculator" target="_blank" rel="noopener">antenna-length-calculator</a></h3>
+            <span class="stars" data-stars hidden></span>
+          </header>
+          <p class="card__desc">
+            A small utility for monopole and dipole antenna lengths at a given frequency, the kind
+            of thing worth writing once instead of re-deriving on paper every time.
+          </p>
+          <ul class="tagrow">
+            <li>Python</li><li>Electromagnetics</li><li>MIT</li>
+          </ul>
+          <footer class="card__links">
+            <a href="https://github.com/salihyesil59/antenna-length-calculator" target="_blank" rel="noopener">Repository ↗</a>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── models ───────────────────────── -->
+  <section class="section" id="models">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">03</span> Open-weight models</h2>
+      <p class="section__lede">Published on the Hugging Face Hub, free to download and run locally.</p>
+
+      <ul class="modellist">
+        <li>
+          <a href="https://huggingface.co/salihyesil59/qwen3VL_Latex" target="_blank" rel="noopener">
+            <span class="modellist__name">qwen3VL_Latex</span>
+            <span class="modellist__meta">Vision-language · 8B · image → LaTeX</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://huggingface.co/salihyesil59/llama3.1-8b-physics" target="_blank" rel="noopener">
+            <span class="modellist__name">llama3.1-8b-physics</span>
+            <span class="modellist__meta">Causal LM · 8B · physics question answering</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── contact ───────────────────────── -->
+  <section class="section section--contact" id="contact">
+    <div class="wrap">
+      <h2 class="section__title"><span class="section__num">04</span> Contact</h2>
+      <p class="section__lede">
+        Always happy to talk about cosmology, physics, mathematics or AI. Feel free to get in touch.
+      </p>
+      <ul class="linklist">
+        <li><a href="https://github.com/salihyesil59" rel="me noopener" target="_blank">GitHub <span>salihyesil59</span></a></li>
+        <li><a href="https://huggingface.co/salihyesil59" rel="me noopener" target="_blank">Hugging Face <span>salihyesil59</span></a></li>
+        <li><a id="mail-link" href="#">Email <span data-mail>click to reveal</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Salih Yeşil · signature <span class="tex">(−,+,+,+)</span> · static page, no trackers</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
