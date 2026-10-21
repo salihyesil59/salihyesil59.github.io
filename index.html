@@ -323,13 +323,16 @@
             answers, graders keep the correct solutions, and the shortest correct one per problem
             becomes training data for a LoRA. Evaluated against the base model under identical
             conditions (GPQA Diamond physics from 55% to 63%, MATH-500 with a Python tool from 61%
-            to 71%), then exported as a mixed Q4 GGUF that runs locally in LM Studio.
+            to 71%), then exported as a mixed Q4 GGUF that runs locally in LM Studio. A second round,
+            RFT-Harness, trains the model on its own successful coding runs inside the local-ai
+            coding agent.
           </p>
           <ul class="tagrow">
             <li>LLM</li><li>RFT</li><li>MoE</li><li>Tool use</li><li>GGUF</li><li>Apache-2.0</li>
           </ul>
           <footer class="card__links">
             <a href="https://github.com/salihyesil59/qwen3.6-35b-a3b-rft" target="_blank" rel="noopener">Repository ↗</a>
+            <a href="https://huggingface.co/salihyesil59/Qwen3.6-35B-A3B-RFT-Harness-GGUF" target="_blank" rel="noopener">Harness model ↗</a>
             <a href="https://huggingface.co/salihyesil59/Qwen3.6-35B-A3B-RFT-Agent-GGUF" target="_blank" rel="noopener">Agent model ↗</a>
             <a href="https://huggingface.co/salihyesil59/Qwen3.6-35B-A3B-RFT-Reasoning-GGUF" target="_blank" rel="noopener">Reasoning model ↗</a>
           </footer>
@@ -345,8 +348,10 @@
             with two agents that work in a loop until the job is done. The research agent searches
             your PDFs, offline Wikipedia and arXiv, checks its calculations and writes cited reports.
             The coding agent plans, writes code, runs the tests and fixes what fails, and can
-            implement an algorithm straight from a paper. Both share the same tool servers and a
-            browser interface. Built for the Qwen3.6-35B-A3B RFT model above.
+            implement an algorithm straight from a paper. A chat mode, long reports exported as Word
+            documents, and a benchmark on SWE-bench Lite tasks come with it, all in one browser
+            interface. Its successful coding runs become training data for the Qwen3.6-35B-A3B RFT
+            model above.
           </p>
           <ul class="tagrow">
             <li>Python</li><li>LM Studio</li><li>Agents</li><li>MCP</li><li>Offline</li><li>MIT</li>
@@ -384,6 +389,12 @@
       <p class="section__lede">Published on the Hugging Face Hub, free to download and run locally.</p>
 
       <ul class="modellist">
+        <li>
+          <a href="https://huggingface.co/salihyesil59/Qwen3.6-35B-A3B-RFT-Harness-GGUF" target="_blank" rel="noopener">
+            <span class="modellist__name">Qwen3.6-35B-A3B-RFT-Harness-GGUF</span>
+            <span class="modellist__meta">MoE LM · 35B-A3B · coding agent, round 2</span>
+          </a>
+        </li>
         <li>
           <a href="https://huggingface.co/salihyesil59/Qwen3.6-35B-A3B-RFT-Agent-GGUF" target="_blank" rel="noopener">
             <span class="modellist__name">Qwen3.6-35B-A3B-RFT-Agent-GGUF</span>
